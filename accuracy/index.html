@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<!--
+  DRAW LUCY - AVATAR LP "Frank / ACCURACY" - VERSION 2026-06-26 - build v1
+  Avatar: Frank, 45, self-taught, draws family portraits, "stuck improver", skill 5.1, 89% from photos.
+  Angle: "Finally, the proportions are right." Tone: empathetic, validating - "it's not your fault, it's your method."
+  Lead = ACCURACY / proportions (NOT "learn to draw"). This buyer already draws but is STUCK.
+  Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
+  Claims: PLAY IT STRAIGHT - no "free shipping"; money-back ASTERISKED w/ restocking fine print; only 4.2/437 cited.
+  PostHog: project 486255 / flag drawlucy-avatar-accuracy / experiment 379542 (DRAFT -> default control; variant_b == control).
+  Search this file for "build v1" to confirm the latest paste.
+  ASSET GAP (flagged to client): a real FACE before/after (wonky freehand vs LUCY-accurate portrait) is the ideal hero
+  proof for this avatar. INTERIM we use the brand dog before/after as the proportion proof, labeled before/after.
+-->
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finally, the Proportions Are Right - The LUCY Drawing Tool</title>
+<meta name="description" content="If your portraits never quite look like the person, it's not your talent - it's your proportions. The LUCY puts exact placement on your paper so the eyes, nose, and jaw land where they should. As Seen on Shark Tank. 4.2&#9733; / 437 reviews. From $69.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="https://drawlucy.com/cdn/shop/files/favicons.png?v=1614333164&width=96">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- viewport guard: ensure mobile width even if a host/preview lacks the meta -->
+<script>(function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();</script>
+
+<style>
+/* ============================================================
+   DRAW LUCY - AVATAR ACCURACY (Frank) - all styles scoped to .dl-lp
+   Tokens: action #078FEA / CTA amber #EFBF65 (text #525253)
+           accent coral #DA4F49 / bg #FFFFFF / text #1A1A1A / muted #525253
+   ============================================================ */
+.dl-lp, .dl-lp * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reparented-to-<body> els (popup, sticky) live OUTSIDE .dl-lp, so re-apply box-sizing here, or width:100%+padding overflows. */
+.dl-pop, .dl-pop *, .dl-sticky, .dl-sticky * { box-sizing: border-box; }
+.dl-lp {
+  --blue:#078FEA; --blue-dk:#0676c0; --amber:#EFBF65; --amber-dk:#e3ad44;
+  --coral:#DA4F49; --ink:#1A1A1A; --muted:#525253; --bg:#FFFFFF;
+  --line:#e8e8ea; --soft:#f5f7fa; --soft-blue:#e9f5fe;
+  --radius:3px; --pill:60px;
+  --maxw:880px; --gap:clamp(20px,4vw,40px);
+  font-family:"Barlow", system-ui, -apple-system, sans-serif;
+  color:var(--ink); background:var(--bg);
+  line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+.dl-lp img { max-width:100%; display:block; }
+.dl-lp a { color:inherit; text-decoration:none; }
+.dl-lp strong { font-weight:800; }
+.dl-lp .dl-wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+.dl-lp .dl-wrap--wide { max-width:1080px; }
+.dl-lp h1,.dl-lp h2,.dl-lp h3 { line-height:1.14; letter-spacing:-0.01em; font-weight:800; }
+.dl-lp h2 { font-size:clamp(1.5rem,4.6vw,2.2rem); }
+.dl-lp .dl-eyebrow {
+  font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted);
+}
+.dl-lp .dl-section { padding:clamp(40px,6vw,64px) 0; }
+.dl-lp .dl-section--soft { background:var(--soft); }
+.dl-lp .dl-center { text-align:center; }
+.dl-lp .dl-lede { color:var(--muted); font-size:clamp(1rem,2.4vw,1.13rem); max-width:640px; margin:14px auto 0; }
+.dl-lp p { font-size:1.05rem; }
+
+/* ---- buttons ---- */
+.dl-lp .dl-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:inherit; font-weight:800; font-size:1.04rem; line-height:1.15;
+  border:none; cursor:pointer; text-align:center;
+  padding:16px 28px; transition:transform .12s ease, background .15s ease, box-shadow .15s ease;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.dl-lp .dl-btn:active { transform:scale(.97); }
+.dl-lp .dl-btn--primary { background:var(--blue); color:#fff; border-radius:var(--pill); }
+.dl-lp .dl-btn--primary:hover { background:var(--blue-dk); box-shadow:0 8px 24px rgba(7,143,234,.28); }
+.dl-lp .dl-btn--amber { background:var(--amber); color:#525253; border-radius:var(--radius); }
+.dl-lp .dl-btn--amber:hover { background:var(--amber-dk); }
+.dl-lp .dl-btn--ghost { background:#fff; color:var(--ink); border:2px solid var(--line); border-radius:var(--pill); }
+.dl-lp .dl-btn--ghost:hover { border-color:var(--blue); color:var(--blue); }
+.dl-lp .dl-btn--lg { padding:18px 36px; font-size:1.12rem; }
+.dl-lp .dl-btn--block { width:100%; }
+.dl-lp .dl-btn-note { display:block; text-align:center; font-size:.84rem; color:var(--muted); margin-top:10px; }
+
+/* focus-visible a11y */
+.dl-lp a:focus-visible, .dl-lp button:focus-visible, .dl-lp input:focus-visible, .dl-lp summary:focus-visible {
+  outline:3px solid var(--blue); outline-offset:3px; border-radius:6px;
+}
+
+/* ---- Phosphor duotone icons ---- */
+.dl-lp .ph { display:inline-block; vertical-align:middle; flex:0 0 auto; }
+.dl-lp .ph-duo { color:var(--blue); }
+.dl-lp .ph-duo path[opacity] { opacity:1; fill:var(--amber); }
+.dl-lp .ph-duo-b { color:var(--blue); }
+.dl-lp .ph-duo-b path[opacity] { opacity:.18; fill:var(--blue); }
+.dl-lp .ph-duo-coral { color:var(--coral); }
+.dl-lp .ph-duo-coral path[opacity] { opacity:.18; fill:var(--coral); }
+.dl-lp .ph-check { color:var(--blue); }
+
+/* ============== HEADER ============== */
+.dl-lp .dl-header {
+  position:sticky; top:0; z-index:60; background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px) saturate(150%); border-bottom:1px solid var(--line);
+}
+.dl-lp .dl-header__in { display:flex; align-items:center; justify-content:space-between; height:62px; }
+.dl-lp .dl-header__logo img { height:42px; width:auto; }
+.dl-lp .dl-header__cta { font-size:.95rem; padding:11px 22px; }
+
+/* ============== HERO ============== */
+.dl-lp .dl-hero { background:linear-gradient(180deg,#fbfdff 0%, #eef6fd 100%); padding:clamp(26px,5vw,52px) 0 clamp(34px,5vw,56px); }
+.dl-lp .dl-hero__rate {
+  display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap;
+  background:#fff; border:1px solid var(--line); border-radius:var(--pill);
+  padding:6px 13px; font-size:.84rem; font-weight:700; color:var(--ink);
+  box-shadow:0 2px 10px rgba(7,143,234,.08); margin-bottom:16px;
+}
+.dl-lp .dl-hero__rate .dl-stars { color:var(--amber-dk); letter-spacing:1px; }
+.dl-lp .dl-hero__rate .dl-rate-sep { color:var(--line); }
+.dl-lp .dl-hero__rate .dl-rate-tank { color:var(--coral); font-weight:800; }
+.dl-lp .dl-hero h1 { font-size:clamp(2rem,6.2vw,3.1rem); margin:4px 0 0; }
+.dl-lp .dl-hero h1 em { font-style:normal; color:var(--blue); }
+.dl-lp .dl-hero__sub { color:var(--muted); font-size:clamp(1.05rem,2.7vw,1.2rem); margin:16px 0 0; max-width:640px; }
+.dl-lp .dl-hero__sub strong { color:var(--ink); }
+.dl-lp .dl-hero__cta-row { margin-top:22px; }
+
+/* hero before/after proof block */
+.dl-lp .dl-hero__proof { margin:26px 0 0; }
+.dl-lp .dl-baproof {
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+}
+.dl-lp .dl-baproof__col {
+  position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+  background:#fff; box-shadow:0 10px 30px rgba(15,40,70,.12);
+}
+.dl-lp .dl-baproof__col img { width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top; }
+.dl-lp .dl-baproof__tag {
+  position:absolute; left:10px; top:10px; background:rgba(0,0,0,.66); color:#fff;
+  font-size:.72rem; font-weight:800; padding:5px 11px; border-radius:var(--pill);
+  letter-spacing:.04em; text-transform:uppercase;
+}
+.dl-lp .dl-baproof__tag--after { background:var(--blue); }
+.dl-lp .dl-baproof__cap {
+  position:absolute; left:0; right:0; bottom:0; padding:18px 12px 9px;
+  background:linear-gradient(0deg,rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%);
+  color:#fff; font-size:.78rem; font-weight:700; line-height:1.25;
+}
+.dl-lp .dl-baproof__note { font-size:.82rem; color:var(--muted); margin-top:10px; text-align:center; }
+.dl-lp .dl-baproof__note em { color:var(--ink); font-style:normal; font-weight:700; }
+
+/* ============== EMPATHY / "it's not you" ============== */
+.dl-lp .dl-empathy p { color:var(--ink); font-size:clamp(1.06rem,2.5vw,1.18rem); line-height:1.7; }
+.dl-lp .dl-empathy p + p { margin-top:16px; }
+.dl-lp .dl-empathy p:first-of-type { font-size:clamp(1.12rem,2.8vw,1.3rem); }
+.dl-lp .dl-empathy .dl-pullquote {
+  margin:24px 0; padding:20px 22px; background:#fff; border-left:5px solid var(--amber);
+  border-radius:0 12px 12px 0; box-shadow:0 6px 22px rgba(15,40,70,.07);
+}
+.dl-lp .dl-empathy .dl-pullquote p { font-size:clamp(1.12rem,2.9vw,1.32rem); font-style:italic; color:var(--ink); margin:0; line-height:1.5; }
+.dl-lp .dl-empathy .dl-pullquote cite { display:block; margin-top:10px; font-style:normal; font-weight:700; font-size:.9rem; color:var(--muted); }
+.dl-lp .dl-reframe {
+  margin:26px 0 0; background:var(--soft-blue); border:1px solid #cfe7fb; border-radius:14px;
+  padding:22px 22px; display:flex; gap:14px; align-items:flex-start;
+}
+.dl-lp .dl-reframe__icon { flex:0 0 auto; }
+.dl-lp .dl-reframe h3 { font-size:1.12rem; margin-bottom:6px; }
+.dl-lp .dl-reframe p { color:var(--ink); font-size:1.02rem; margin:0; line-height:1.6; }
+.dl-lp .dl-reframe p strong { color:var(--blue-dk); }
+
+/* ============== HOW IT WORKS ============== */
+.dl-lp .dl-steps { display:grid; grid-template-columns:1fr; gap:18px; margin-top:30px; counter-reset:step; }
+.dl-lp .dl-step {
+  position:relative; background:#fff; border:1px solid var(--line); border-radius:16px;
+  padding:26px 22px 24px; box-shadow:0 6px 22px rgba(15,40,70,.06);
+}
+.dl-lp .dl-step__num {
+  counter-increment:step; width:44px; height:44px; border-radius:12px; background:var(--blue);
+  color:#fff; font-weight:800; font-size:1.2rem; display:inline-flex; align-items:center;
+  justify-content:center; margin-bottom:14px; font-variant-numeric:tabular-nums;
+}
+.dl-lp .dl-step__num::before { content:counter(step); }
+.dl-lp .dl-step:nth-child(2) .dl-step__num { background:var(--amber-dk); }
+.dl-lp .dl-step:nth-child(3) .dl-step__num { background:#1C9D50; }
+.dl-lp .dl-step h3 { font-size:1.18rem; }
+.dl-lp .dl-step p { color:var(--muted); font-size:.98rem; margin-top:8px; line-height:1.6; }
+.dl-lp .dl-steps__fig { margin-top:22px; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 10px 30px rgba(15,40,70,.1); position:relative; }
+.dl-lp .dl-steps__fig img { width:100%; aspect-ratio:16/10; object-fit:cover; object-position:center; }
+.dl-lp .dl-steps__fig figcaption {
+  position:absolute; left:0; right:0; bottom:0; padding:14px; color:#fff; font-size:.84rem; font-weight:700;
+  background:linear-gradient(0deg,rgba(0,0,0,.66) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* ============== FREEHAND vs GRID vs LUCY ============== */
+.dl-lp .dl-versus { display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px; }
+.dl-lp .dl-vcard {
+  background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px 22px;
+  box-shadow:0 6px 22px rgba(15,40,70,.06);
+}
+.dl-lp .dl-vcard--lucy { border:2px solid var(--blue); box-shadow:0 14px 40px rgba(7,143,234,.16); }
+.dl-lp .dl-vcard__head { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.dl-lp .dl-vcard__title { font-size:1.18rem; font-weight:800; }
+.dl-lp .dl-vcard__tag { font-size:.74rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:4px 11px; border-radius:var(--pill); }
+.dl-lp .dl-vcard__tag--problem { background:#fdeceb; color:#b23a34; }
+.dl-lp .dl-vcard__tag--win { background:#e6f6ec; color:#1c7a3e; }
+.dl-lp .dl-vcard p { color:var(--ink); font-size:1rem; line-height:1.6; }
+.dl-lp .dl-vcard p + p { margin-top:10px; }
+.dl-lp .dl-vcard__list { list-style:none; margin:12px 0 0; display:flex; flex-direction:column; gap:10px; }
+.dl-lp .dl-vcard__list li { display:flex; align-items:flex-start; gap:10px; font-size:1rem; color:var(--ink); line-height:1.5; }
+.dl-lp .dl-vcard__list li .ph { margin-top:2px; }
+
+/* ============== PROOF / TANK STRIP ============== */
+.dl-lp .dl-proof__stat { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:8px; }
+.dl-lp .dl-proof__stat .dl-bignum { font-size:clamp(2.2rem,6vw,3rem); font-weight:800; color:var(--blue); font-variant-numeric:tabular-nums; }
+.dl-lp .dl-proof__stat .dl-stars { color:var(--amber-dk); font-size:1.4rem; letter-spacing:2px; }
+.dl-lp .dl-quote {
+  padding:18px 20px; background:#fff; border:1px solid var(--line);
+  border-radius:12px; box-shadow:0 5px 18px rgba(15,40,70,.06);
+}
+.dl-lp .dl-quote .dl-q-stars { color:var(--amber-dk); letter-spacing:2px; font-size:.95rem; margin-bottom:8px; }
+.dl-lp .dl-quote p { font-size:1.04rem; line-height:1.55; font-style:italic; color:var(--ink); }
+.dl-lp .dl-quote cite { display:block; margin-top:10px; font-weight:700; font-size:.9rem; font-style:normal; color:var(--muted); }
+.dl-lp .dl-quote cite .dl-verified { color:var(--blue); }
+.dl-lp .dl-tank {
+  display:grid; grid-template-columns:1fr; gap:16px; align-items:center; margin-top:26px;
+  background:linear-gradient(135deg,#0a2540 0%, #103a5e 100%); color:#fff; border-radius:16px; padding:26px 22px;
+}
+.dl-lp .dl-tank h3 { color:#fff; font-size:clamp(1.25rem,3.4vw,1.6rem); }
+.dl-lp .dl-tank p { color:#cfe2f3; margin-top:10px; font-size:1rem; }
+.dl-lp .dl-tank .dl-tank__deal { color:var(--amber); font-weight:800; }
+.dl-lp .dl-press { margin-top:30px; text-align:center; }
+.dl-lp .dl-press__label { font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.dl-lp .dl-press__row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 26px; margin-top:16px; }
+.dl-lp .dl-press__row span { font-weight:800; font-size:1rem; color:var(--muted); opacity:.85; }
+
+/* ============== OFFER LADDER ============== */
+.dl-lp .dl-ladder { display:grid; grid-template-columns:1fr; gap:18px; margin-top:30px; align-items:stretch; }
+.dl-lp .dl-tier {
+  position:relative; background:#fff; border:2px solid var(--line); border-radius:16px; padding:26px 22px 24px;
+  display:flex; flex-direction:column; box-shadow:0 6px 22px rgba(15,40,70,.07);
+  transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+.dl-lp .dl-tier:hover { transform:translateY(-4px); box-shadow:0 16px 38px rgba(15,40,70,.13); }
+.dl-lp .dl-tier--featured { border-color:var(--blue); box-shadow:0 14px 40px rgba(7,143,234,.18); }
+.dl-lp .dl-tier__flag {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  font-size:.74rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  padding:6px 16px; border-radius:var(--pill); white-space:nowrap;
+}
+.dl-lp .dl-tier__flag--start { background:var(--amber); color:#525253; }
+.dl-lp .dl-tier__flag--pop { background:var(--blue); color:#fff; }
+.dl-lp .dl-tier__flag--big { background:var(--coral); color:#fff; }
+.dl-lp .dl-tier__name { font-size:1.3rem; font-weight:800; }
+.dl-lp .dl-tier__best { font-size:.86rem; color:var(--muted); font-weight:700; margin-top:3px; }
+.dl-lp .dl-tier__img { width:100%; aspect-ratio:5/3; object-fit:contain; background:var(--soft); border-radius:10px; margin:14px 0; padding:8px; }
+.dl-lp .dl-tier__price { display:flex; align-items:baseline; gap:10px; }
+.dl-lp .dl-tier__price .dl-now { font-size:2.1rem; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums; }
+.dl-lp .dl-tier__price .dl-was { font-size:1.05rem; color:var(--muted); text-decoration:line-through; }
+.dl-lp .dl-tier__save { display:inline-block; margin-top:6px; font-size:.82rem; font-weight:800; color:var(--coral); }
+.dl-lp .dl-tier__affirm { font-size:.84rem; color:var(--muted); margin-top:8px; }
+.dl-lp .dl-tier__list { list-style:none; margin:16px 0 20px; display:flex; flex-direction:column; gap:9px; }
+.dl-lp .dl-tier__list li { display:flex; align-items:flex-start; gap:9px; font-size:.94rem; color:var(--ink); }
+.dl-lp .dl-tier__list li .ph { margin-top:1px; }
+.dl-lp .dl-tier__cta { margin-top:auto; }
+.dl-lp .dl-ladder__fine { font-size:.84rem; color:var(--muted); margin-top:16px; text-align:center; }
+
+/* ============== RISK REVERSAL ============== */
+.dl-lp .dl-risk { display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px; }
+.dl-lp .dl-risk__card {
+  display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--line);
+  border-radius:12px; padding:20px; box-shadow:0 5px 18px rgba(15,40,70,.06);
+}
+.dl-lp .dl-risk__card h3 { font-size:1.05rem; }
+.dl-lp .dl-risk__card p { color:var(--muted); font-size:.9rem; margin-top:3px; }
+
+/* ============== FAQ ============== */
+.dl-lp .dl-faq { max-width:760px; margin:28px auto 0; }
+.dl-lp .dl-faq details {
+  background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:12px; overflow:hidden;
+  box-shadow:0 4px 14px rgba(15,40,70,.05);
+}
+.dl-lp .dl-faq summary {
+  list-style:none; cursor:pointer; padding:18px 50px 18px 20px; font-weight:700; font-size:1.04rem; position:relative;
+}
+.dl-lp .dl-faq summary::-webkit-details-marker { display:none; }
+.dl-lp .dl-faq summary::after {
+  content:"+"; position:absolute; right:20px; top:50%; transform:translateY(-50%);
+  font-size:1.5rem; font-weight:700; color:var(--blue); transition:transform .2s ease;
+}
+.dl-lp .dl-faq details[open] summary::after { content:"\2212"; }
+.dl-lp .dl-faq .dl-faq__a { padding:0 20px 20px; color:var(--muted); font-size:.98rem; line-height:1.6; }
+.dl-lp .dl-faq .dl-faq__a strong { color:var(--ink); }
+
+/* ============== FINAL CTA ============== */
+.dl-lp .dl-final { background:linear-gradient(135deg,#078FEA 0%, #0676c0 100%); color:#fff; text-align:center; }
+.dl-lp .dl-final h2 { color:#fff; }
+.dl-lp .dl-final p { color:#e3f1fc; margin:14px auto 0; max-width:560px; font-size:1.08rem; }
+.dl-lp .dl-final .dl-btn--amber { margin-top:24px; }
+.dl-lp .dl-final__trust { margin-top:18px; font-size:.9rem; color:#cfe6fa; display:flex; gap:8px 18px; flex-wrap:wrap; justify-content:center; }
+.dl-lp .dl-final__trust span { display:inline-flex; align-items:center; gap:6px; }
+
+/* ============== FOOTER ============== */
+.dl-lp .dl-footer { background:#0d1b26; color:#9fb3c2; padding:40px 0 120px; font-size:.86rem; }
+.dl-lp .dl-footer__logo { height:26px; opacity:.9; margin-bottom:16px; filter:brightness(0) invert(1); }
+.dl-lp .dl-footer p { margin-bottom:10px; line-height:1.6; font-size:.86rem; }
+.dl-lp .dl-footer__disc { font-size:.78rem; color:#6b8294; }
+.dl-lp .dl-footer a { color:#cfe0ec; text-decoration:underline; }
+
+/* ============== STICKY MOBILE CTA ============== */
+.dl-sticky {
+  position:fixed; left:0; right:0; bottom:0; z-index:9000;
+  background:rgba(255,255,255,.94); backdrop-filter:blur(14px) saturate(160%);
+  border-top:1px solid #e8e8ea; padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex; align-items:center; gap:12px;
+  box-shadow:0 -6px 24px rgba(15,40,70,.12);
+}
+.dl-sticky__txt { flex:0 0 auto; }
+.dl-sticky__txt b { display:block; font-family:"Barlow",sans-serif; font-size:.95rem; font-weight:800; color:#1A1A1A; line-height:1.1; }
+.dl-sticky__txt small { font-family:"Barlow",sans-serif; font-size:.74rem; color:#525253; font-weight:600; }
+.dl-sticky__btn {
+  flex:1 1 auto; display:inline-flex; align-items:center; justify-content:center;
+  background:#078FEA; color:#fff; border:none; border-radius:60px; cursor:pointer;
+  font-family:"Barlow",sans-serif; font-weight:800; font-size:1.02rem; padding:15px 18px;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent; transition:transform .12s ease;
+}
+.dl-sticky__btn:active { transform:scale(.97); }
+
+/* ============== EXIT-INTENT POPUP ============== */
+.dl-pop {
+  position:fixed; inset:0; z-index:9500; display:none;
+  align-items:center; justify-content:center; padding:20px;
+  background:rgba(10,20,30,.6); backdrop-filter:blur(3px);
+}
+.dl-pop.dl-pop--open { display:flex; }
+.dl-pop__card {
+  position:relative; background:#fff; border-radius:18px; max-width:420px; width:100%;
+  padding:34px 28px 30px; text-align:center; box-shadow:0 30px 70px rgba(0,0,0,.4);
+  font-family:"Barlow",sans-serif;
+}
+.dl-pop__close {
+  position:absolute; top:12px; right:14px; width:38px; height:38px; border:none; background:#f1f3f5;
+  border-radius:50%; font-size:1.3rem; color:#525253; cursor:pointer; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+}
+.dl-pop__badge { font-size:2.4rem; font-weight:800; color:#078FEA; line-height:1; }
+.dl-pop__card h3 { font-family:"Barlow",sans-serif; font-size:1.5rem; font-weight:800; color:#1A1A1A; margin:10px 0 8px; line-height:1.15; }
+.dl-pop__card p { color:#525253; font-size:.96rem; margin-bottom:18px; }
+.dl-pop__form { display:flex; flex-direction:column; gap:10px; }
+.dl-pop__form input {
+  font-family:"Barlow",sans-serif; font-size:1rem; padding:14px 16px; border:1.5px solid #d6dadf;
+  border-radius:3px; color:#1A1A1A; width:100%; background:#fff;
+}
+.dl-pop__form button {
+  font-family:"Barlow",sans-serif; font-weight:800; font-size:1.05rem; padding:15px; border:none;
+  background:#078FEA; color:#fff; border-radius:60px; cursor:pointer; transition:transform .12s ease,background .15s ease;
+}
+.dl-pop__form button:hover { background:#0676c0; }
+.dl-pop__form button:active { transform:scale(.97); }
+.dl-pop__fine { font-size:.74rem; color:#90969c; margin-top:12px; }
+.dl-pop__thanks { display:none; font-size:1.05rem; color:#1A1A1A; font-weight:700; padding:14px 0; }
+
+/* ============== RESPONSIVE ============== */
+@media (min-width:760px){
+  .dl-lp .dl-steps { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-versus { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-ladder { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-risk { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-tank { grid-template-columns:auto 1fr; gap:24px; padding:30px 30px; }
+  .dl-lp .dl-tank__icon { width:88px; }
+}
+@media (min-width:980px){
+  .dl-sticky { display:none; }
+  .dl-lp .dl-footer { padding-bottom:48px; }
+  .dl-lp .dl-header__in { height:82px; }
+  .dl-lp .dl-header__logo img { height:60px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .dl-lp *, .dl-sticky *, .dl-pop * { animation:none !important; transition:none !important; }
+}
+
+/* ============== VARIANT_B HOOKS (currently identical to control) ============== */
+/* Scaffold only - a future variant flips these. Empty now = variant_b == control. */
+.dl-lp[data-variant="variant_b"] { /* no overrides yet */ }
+body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
+</style>
+</head>
+<body>
+<div class="dl-lp" id="dl-lp">
+
+  <!-- ============== HEADER ============== -->
+  <header class="dl-header">
+    <div class="dl-wrap dl-wrap--wide dl-header__in">
+      <a class="dl-header__logo" href="https://drawlucy.com" aria-label="The LUCY Drawing Tool home">
+        <img src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool" loading="eager">
+      </a>
+      <a class="dl-btn dl-btn--primary dl-header__cta" data-cart="flex" data-loc="header" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="dl-hero">
+    <div class="dl-wrap">
+      <span class="dl-hero__rate">
+        <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span>4.2 (437 reviews)</span>
+        <span class="dl-rate-sep">|</span>
+        <span class="dl-rate-tank">As Seen on Shark Tank</span>
+      </span>
+      <h1>Finally, the <em>proportions are right.</em></h1>
+      <p class="dl-hero__sub"><strong>It&rsquo;s not your talent &mdash; it&rsquo;s your proportions.</strong> The LUCY puts exact placement on your paper, so the eyes, nose, and jaw land where they should &mdash; every time.</p>
+
+      <div class="dl-hero__cta-row">
+        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+        <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee* &middot; results vary with practice</span>
+      </div>
+
+      <div class="dl-hero__proof">
+        <div class="dl-baproof">
+          <div class="dl-baproof__col">
+            <span class="dl-baproof__tag">Before</span>
+            <img src="https://drawlucy.com/cdn/shop/files/dogBefore2.png?v=1780609374&width=1254" alt="A reference photo, before drawing with the LUCY" loading="eager">
+            <span class="dl-baproof__cap">Your reference &mdash; the proportions you&rsquo;re trying to match</span>
+          </div>
+          <div class="dl-baproof__col">
+            <span class="dl-baproof__tag dl-baproof__tag--after">After &middot; with LUCY</span>
+            <img src="https://drawlucy.com/cdn/shop/files/dogAfter.jpg?v=1780609391&width=537" alt="An accurate hand-drawn portrait traced with the LUCY, proportions matching the reference" loading="eager">
+            <span class="dl-baproof__cap">Hand-drawn with the LUCY &mdash; placement matches, every line your own</span>
+          </div>
+        </div>
+        <p class="dl-baproof__note">A real LUCY before/after. <em>The same exact-placement method works on a face</em> &mdash; the eyes, nose, and jaw land where they should.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== EMPATHY: it's not you, it's your method ============== -->
+  <section class="dl-section dl-empathy">
+    <div class="dl-wrap">
+      <span class="dl-eyebrow">If your faces never quite look like the person&hellip;</span>
+      <h2 style="margin-top:10px;">It&rsquo;s not you &mdash; it&rsquo;s your method.</h2>
+
+      <div class="dl-pullquote">
+        <p>&ldquo;I&rsquo;ll spend hours, step back, and the likeness is just&hellip; off.&rdquo;</p>
+        <cite>&mdash; the feeling we heard over and over from self-taught artists</cite>
+      </div>
+
+      <p>You already draw. You&rsquo;ve put in the hours. But the eye sits a little too high, the jaw comes out too wide, and when you step back, the face you drew isn&rsquo;t the face in front of you. So you quietly conclude the problem is <em>you</em> &mdash; that you just weren&rsquo;t born with the talent.</p>
+      <p>Here&rsquo;s the honest truth: <strong>that conclusion is wrong.</strong> The likeness lives almost entirely in <strong>placement</strong> &mdash; how far apart the eyes are, where the nose ends, how wide the jaw runs. Getting that placement right by eye is a genuinely hard perceptual skill, and it is the single thing that trips up nearly every self-taught artist. It is not a measure of your talent. It&rsquo;s a measure of your method.</p>
+      <p>You&rsquo;ve probably already tried to fix it. You drew freehand and the proportions drifted. You ruled out a grid and it was tedious &mdash; and the lines still wandered. The piece that was missing was never more talent. It was accurate placement.</p>
+
+      <div class="dl-reframe">
+        <span class="dl-reframe__icon">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,176a48,48,0,1,0-48-48A48,48,0,0,0,128,176Z" opacity="0.2"></path><path fill="currentColor" d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+        </span>
+        <div>
+          <h3>The reframe</h3>
+          <p>Great drawing starts with <strong>seeing accurately</strong>, not with raw talent. The LUCY does the seeing &mdash; it lays the exact placement onto your paper &mdash; so you can finally put your effort into the drawing instead of fighting the proportions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== HOW IT WORKS (accuracy focus) ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap">
+      <span class="dl-eyebrow">How it gets the proportions right</span>
+      <h2 style="margin-top:10px;">Exact placement, transferred onto your paper</h2>
+      <p class="dl-lede" style="margin-left:0;text-align:left;">The LUCY uses a real half-silvered mirror to overlay a faint image of your subject directly onto your paper. You see your reference and your pencil tip at the same time &mdash; so every feature lands in exactly the right place.</p>
+
+      <div class="dl-steps">
+        <div class="dl-step">
+          <span class="dl-step__num" aria-hidden="true"></span>
+          <h3>Set your subject</h3>
+          <p>Clamp the LUCY, set a photo or a live subject in front of it, and look down through the glass at your paper.</p>
+        </div>
+        <div class="dl-step">
+          <span class="dl-step__num" aria-hidden="true"></span>
+          <h3>See it land in place</h3>
+          <p>A faint, accurately-sized image of your subject appears right on the paper &mdash; eyes, nose, and jaw already in correct proportion to each other.</p>
+        </div>
+        <div class="dl-step">
+          <span class="dl-step__num" aria-hidden="true"></span>
+          <h3>Draw the placement, then make it yours</h3>
+          <p>Trace the exact placement to lock the likeness, then lift your eyes and render the shading, texture, and character &mdash; all your own hand.</p>
+        </div>
+      </div>
+
+      <figure class="dl-steps__fig">
+        <img src="https://drawlucy.com/cdn/shop/files/2_0cefa663-939d-4ea2-a977-4f223737b797.jpg?v=1780967449&width=1200" alt="An artist drawing a portrait with the LUCY, the reflected image guiding exact placement on the paper" loading="lazy">
+        <figcaption>Look through the glass and the subject is right there on your paper &mdash; in proportion.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== WHY NOT FREEHAND / GRID ============== -->
+  <section class="dl-section">
+    <div class="dl-wrap">
+      <span class="dl-eyebrow">You&rsquo;ve tried the other ways</span>
+      <h2 style="margin-top:10px;">Freehand drifts. The grid is tedious. The LUCY locks placement.</h2>
+      <p class="dl-lede" style="margin-left:0;text-align:left;">If you&rsquo;ve fought with proportions, you&rsquo;ve probably already worked through these. Here&rsquo;s the honest trade-off of each.</p>
+
+      <div class="dl-versus">
+        <div class="dl-vcard">
+          <div class="dl-vcard__head">
+            <span class="dl-vcard__title">Freehand</span>
+            <span class="dl-vcard__tag dl-vcard__tag--problem">Drifts</span>
+          </div>
+          <p>It&rsquo;s the most flexible &mdash; and the hardest. With nothing anchoring placement, a small misjudgment early (an eye a few millimeters too high) compounds, and the likeness slips away by the time you step back.</p>
+        </div>
+        <div class="dl-vcard">
+          <div class="dl-vcard__head">
+            <span class="dl-vcard__title">The grid</span>
+            <span class="dl-vcard__tag dl-vcard__tag--problem">Tedious</span>
+          </div>
+          <p>It can work &mdash; but it&rsquo;s slow. You rule a grid on the reference and the paper, then copy square by square. It&rsquo;s painstaking, and a single mis-plotted square still pulls the proportions off.</p>
+        </div>
+        <div class="dl-vcard dl-vcard--lucy">
+          <div class="dl-vcard__head">
+            <span class="dl-vcard__title">The LUCY</span>
+            <span class="dl-vcard__tag dl-vcard__tag--win">Locks placement</span>
+          </div>
+          <ul class="dl-vcard__list">
+            <li>
+              <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+              <span>Every feature lands in correct proportion &mdash; no drift, no plotting.</span>
+            </li>
+            <li>
+              <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+              <span>You still draw every line &mdash; it guides placement, it doesn&rsquo;t draw for you.</span>
+            </li>
+            <li>
+              <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+              <span>Over time it trains your eye for proportion &mdash; a learning aid, not a crutch.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PROOF / SHARK TANK STRIP ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap dl-center">
+      <span class="dl-eyebrow">What artists say</span>
+      <div class="dl-proof__stat">
+        <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="dl-bignum">4.2</span>
+        <span style="text-align:left;font-weight:700;color:var(--muted);">out of 5<br><span style="font-weight:500;">across 437 reviews</span></span>
+      </div>
+
+      <div class="dl-quote" style="max-width:680px;margin:26px auto 0;text-align:left;">
+        <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;I practise by drawing a portrait from a photo and then I use Lucy and draw over my painting to see where I have gone wrong&hellip; it tells me how to look at a photo and how to improve.&rdquo;</p>
+        <cite>Behzad &middot; <span class="dl-verified">LUCY customer</span></cite>
+      </div>
+      <div class="dl-quote" style="max-width:680px;margin:14px auto 0;text-align:left;">
+        <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;I have gone blind in my left eye over the last 2 years and this helps me so much to be able to transfer to my work surface, thank you for creating the Lucy tool!&rdquo;</p>
+        <cite>Kathy Murray &middot; <span class="dl-verified">LUCY customer</span></cite>
+      </div>
+
+      <div class="dl-tank">
+        <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
+        <div style="text-align:left;">
+          <h3>As Seen on Shark Tank</h3>
+          <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a <span class="dl-tank__deal">$300,000 offer from Daymond John</span>. The same tool the Sharks bet on is the one on this page.</p>
+        </div>
+      </div>
+
+      <div class="dl-press">
+        <p class="dl-press__label">As Seen On</p>
+        <div class="dl-press__row">
+          <span>Shark Tank</span>
+          <span>CNBC</span>
+          <span>Gizmodo</span>
+          <span>BoingBoing</span>
+          <span>Kickstarter</span>
+          <span>NAEA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== OFFER LADDER ============== -->
+  <section class="dl-section">
+    <div class="dl-wrap">
+      <div class="dl-center">
+        <span class="dl-eyebrow">Pick your LUCY</span>
+        <h2 style="margin-top:10px;">Start getting the proportions right</h2>
+        <p class="dl-lede">The three models differ mainly in image size and sturdiness. Most artists start with the flex.</p>
+      </div>
+
+      <div class="dl-ladder">
+        <!-- MINI -->
+        <div class="dl-tier">
+          <span class="dl-tier__flag dl-tier__flag--start">Entry</span>
+          <div class="dl-tier__name">LUCY mini</div>
+          <div class="dl-tier__best">Best for: trying it out &amp; smaller work</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs3.png?v=1780534868&width=1254" alt="LUCY mini drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$69</span><span class="dl-was">$95</span></div>
+          <span class="dl-tier__save">Save $26</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Image up to 12&times;18&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>2+ brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>The low-risk first LUCY</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="mini" data-loc="ladder-mini" href="https://drawlucy.com/products/lucy-mini">Add LUCY mini &mdash; $69</a>
+        </div>
+
+        <!-- FLEX (featured) -->
+        <div class="dl-tier dl-tier--featured">
+          <span class="dl-tier__flag dl-tier__flag--pop">Most Popular</span>
+          <div class="dl-tier__name">LUCY flex</div>
+          <div class="dl-tier__best">Best for: most artists &mdash; the versatile pick</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs2.png?v=1780534869&width=1254" alt="LUCY flex drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$99</span><span class="dl-was">$160</span></div>
+          <span class="dl-tier__save">Save $61</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Bigger image &mdash; up to 19&times;27&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>4+ brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Carries the 4.2&#9733; / 437 reviews</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="flex" data-loc="ladder-flex" href="https://drawlucy.com/products/lucy-drawing-tool">Add LUCY flex &mdash; $99</a>
+        </div>
+
+        <!-- PRO -->
+        <div class="dl-tier">
+          <span class="dl-tier__flag dl-tier__flag--big">Pro</span>
+          <div class="dl-tier__name">LUCY pro</div>
+          <div class="dl-tier__best">Best for: serious &amp; professional work</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs1.jpg?v=1780534868&width=1080" alt="LUCY pro drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$275</span><span class="dl-was">$320</span></div>
+          <span class="dl-tier__save">Save $45</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Largest image &mdash; up to 20&times;37&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Sturdiest, most stable build</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>For serious &amp; pro artists</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="pro" data-loc="ladder-pro" href="https://drawlucy.com/products/lucy-pro">Add LUCY pro &mdash; $275</a>
+        </div>
+      </div>
+      <p class="dl-ladder__fine">Draws from live 3D subjects natively; for drawing from photos, pair with the $22 Photo Enlarger accessory. Any medium, any surface.</p>
+
+      <!-- RISK REVERSAL -->
+      <div class="dl-risk">
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
+          <div><h3>30-Day Money-Back*</h3><p>Draw with it. If it&rsquo;s not for you within 30 days, send it back.</p></div>
+        </div>
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M152,32V80a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V32ZM216,72V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H88V80a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V64h48A8,8,0,0,1,216,72Z" opacity="0.2"></path><path fill="currentColor" d="M179.31,88.08a8,8,0,0,0-10.07,5.16A40,40,0,0,1,88,96V88h64a16,16,0,0,0,16-16V32a16,16,0,0,0-16-16H104A16,16,0,0,0,88,32V72.23A56.08,56.08,0,0,0,184.49,93.4a8,8,0,0,0-5.18-5.32ZM104,32h48V72H104ZM208,80H180.42a72.08,72.08,0,0,1-2.94,16H208V200H48V96H78.52a72.08,72.08,0,0,1-2.94-16H48A16,16,0,0,0,32,96V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"></path></svg>
+          <div><h3>1-Year Warranty</h3><p>Shatterproof optics, aluminum clamp, steel flex arm.</p></div>
+        </div>
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0.2"></path><path fill="currentColor" d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V92H40V56ZM40,200V108H216v92Z"></path></svg>
+          <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
+        </div>
+      </div>
+      <p class="dl-ladder__fine">*30-day money-back guarantee: item must be returned in resalable condition; a 15% restocking fee and return shipping apply.</p>
+    </div>
+  </section>
+
+  <!-- ============== SHORT FAQ ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap dl-center">
+      <span class="dl-eyebrow">Honest answers</span>
+      <h2>Before you decide</h2>
+      <div class="dl-faq">
+        <details data-faq="Isn't using it cheating? Will I still learn?">
+          <summary>Isn&rsquo;t using it cheating? Will I still learn?</summary>
+          <div class="dl-faq__a">No &mdash; it&rsquo;s a recognized learning aid. Optical drawing aids like the camera lucida have been <strong>associated with master artists for centuries</strong>. The LUCY does the <em>seeing</em>; you still draw every stroke yourself. Over time it trains your eye for proportion &mdash; the exact skill that&rsquo;s hardest to build by feel.</div>
+        </details>
+        <details data-faq="I tried the grid and freehand and still can't get it. Why is this different?">
+          <summary>I tried the grid and freehand &mdash; why is this different?</summary>
+          <div class="dl-faq__a">Freehand leaves placement to judgment, so small errors compound. The grid helps but is tedious and a single mis-plotted square still drifts. The LUCY shows the <strong>actual subject in correct proportion right on your paper</strong>, so placement is locked from the first line &mdash; then the artistry is all yours.</div>
+        </details>
+        <details data-faq="Is there a learning curve?">
+          <summary>Is there a learning curve?</summary>
+          <div class="dl-faq__a">A little &mdash; about <strong>30 minutes</strong> to position the mirror, get your eye in the right spot, and dial in the brightness. Give it one short practice session before your &ldquo;real&rdquo; drawing and you&rsquo;ll skip the only frustration people report. Results vary and improve with practice.</div>
+        </details>
+        <details data-faq="I wear glasses or bifocals - will it work?">
+          <summary>I wear glasses or bifocals &mdash; will it work?</summary>
+          <div class="dl-faq__a">Single-vision glasses work normally. Progressive or bifocal lenses can sometimes make the image look doubled &mdash; the easy fix is inexpensive single-vision reading glasses while you draw, or removing your glasses if you can focus at drawing distance without them.</div>
+        </details>
+        <details data-faq="What's the return policy?">
+          <summary>What&rsquo;s the return policy?</summary>
+          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. To qualify, the item must be returned in resalable condition; a <strong>15% restocking fee and return shipping</strong> apply. Every LUCY is also backed by a 1-year limited warranty. See drawlucy.com for the full policy.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FINAL CTA ============== -->
+  <section class="dl-section dl-final">
+    <div class="dl-wrap">
+      <h2>Stop blaming your talent.</h2>
+      <p>The likeness was never about talent &mdash; it was about placement. Get the proportions right from the first line, and put your effort where it belongs. Start with the flex, our most popular model.</p>
+      <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="flex" data-loc="final" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      <div class="dl-final__trust">
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back*</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>1-Year Warranty</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Built in the USA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="dl-footer">
+    <div class="dl-wrap dl-wrap--wide">
+      <img class="dl-footer__logo" src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool">
+      <p>The LUCY Drawing Tool &mdash; the Old Masters&rsquo; secret tool, reinvented. Quality built in the USA.</p>
+      <p class="dl-footer__disc">
+        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
+        *30-day money-back guarantee: the item must be returned in resalable condition, and a 15% restocking fee plus return shipping apply. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        &copy; 2026 The LUCY Drawing Tool. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</div><!-- /.dl-lp -->
+
+<!-- ============== STICKY MOBILE CTA (reparented to body) ============== -->
+<div class="dl-sticky" id="dl-sticky">
+  <div class="dl-sticky__txt"><b>LUCY flex</b><small>$99 &middot; Most Popular</small></div>
+  <a class="dl-sticky__btn" data-cart="flex" data-loc="sticky" href="https://drawlucy.com/products/lucy-drawing-tool">See the models &rarr;</a>
+</div>
+
+<!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
+<div class="dl-pop" id="dl-pop" role="dialog" aria-modal="true" aria-labelledby="dl-pop-title">
+  <div class="dl-pop__card">
+    <button class="dl-pop__close" id="dl-pop-close" aria-label="Close">&times;</button>
+    <div class="dl-pop__badge">10% OFF</div>
+    <h3 id="dl-pop-title">Get 10% off + free drawing tutorials</h3>
+    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus free tutorials on getting proportions right.</p>
+    <form class="dl-pop__form" id="dl-pop-form" novalidate>
+      <input type="email" id="dl-pop-email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address">
+      <button type="submit">Send my 10% off code</button>
+    </form>
+    <div class="dl-pop__thanks" id="dl-pop-thanks">Thanks! Check your inbox for your code &amp; tutorials.</div>
+    <p class="dl-pop__fine">No spam. Unsubscribe anytime. Discount applies to your first order; some exclusions may apply.</p>
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   DRAW LUCY - AVATAR ACCURACY (Frank) - instrumentation + behavior (build v1)
+   - PostHog init (project DrawLucy 486255) + feature flag (default control)
+   - 6-event funnel + experiment_assigned
+   - UTM/attribution bridge: capture -> super-properties -> forward on cart links
+   - Real /cart/add links w/ verified variant ids
+   - sticky CTA + exit-intent popup, reparented to <body>
+   - faq_opened fires on the FAQ accordions
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  /* ---------- 0. Config ---------- */
+  var POSTHOG_KEY = "phc_C3krSt9S8497DpC7XMMJomjuVxkjWvLaLoX3hH6fXjYp";
+  var POSTHOG_API_HOST = "https://us.i.posthog.com";
+  var POSTHOG_UI_HOST = "https://us.posthog.com";
+  var FLAG_KEY = "drawlucy-avatar-accuracy";
+  var EXPERIMENT_ID = 379542;
+  var PAGE_NAME = "avatar-accuracy";
+
+  // Verified variant ids (drawlucy.com/products/{handle}.js on 2026-06-25)
+  var CART = {
+    mini: { variant: "39716899094626", handle: "lucy-mini",         price: 69,  name: "LUCY mini" },
+    flex: { variant: "7150423900217",  handle: "lucy-drawing-tool", price: 99,  name: "LUCY flex" },
+    pro:  { variant: "31675633303650", handle: "lucy-pro",          price: 275, name: "LUCY pro"  }
+  };
+
+  var UTM_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term",
+                  "gclid","fbclid","tw_source","ttclid","msclkid"];
+  var SS_KEY = "dl_attribution";
+
+  /* ---------- 1. Attribution bridge ---------- */
+  function getStoredAttribution() {
+    try { return JSON.parse(sessionStorage.getItem(SS_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function captureAttribution() {
+    var stored = getStoredAttribution();
+    var params = new URLSearchParams(window.location.search);
+    var changed = false;
+    UTM_KEYS.forEach(function (k) {
+      var v = params.get(k);
+      if (v && !stored[k]) { stored[k] = v; changed = true; } // first-touch wins within session
+    });
+    if (changed || !stored.dl_landing) {
+      if (!stored.dl_landing) stored.dl_landing = window.location.pathname;
+      try { sessionStorage.setItem(SS_KEY, JSON.stringify(stored)); } catch (e) {}
+    }
+    return stored;
+  }
+  var ATTR = captureAttribution();
+
+  function appendAttributionToUrl(url) {
+    try {
+      var u = new URL(url, window.location.origin);
+      UTM_KEYS.forEach(function (k) { if (ATTR[k] && !u.searchParams.has(k)) u.searchParams.set(k, ATTR[k]); });
+      return u.toString();
+    } catch (e) { return url; }
+  }
+
+  /* ---------- 2. PostHog init ---------- */
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+  var phReady = false;
+  try {
+    posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_API_HOST,
+      ui_host: POSTHOG_UI_HOST,
+      person_profiles: "always",
+      capture_pageview: true,      // keep $pageview / autocapture on
+      autocapture: true,
+      loaded: function () { phReady = true; }
+    });
+  } catch (e) { /* never block the page on analytics */ }
+
+  // Register attribution + origin_path as super-properties so they ride on EVERY event
+  function registerSuperProps(extra) {
+    var props = { origin_path: window.location.pathname, lp_page: PAGE_NAME };
+    UTM_KEYS.forEach(function (k) { if (ATTR[k]) props[k] = ATTR[k]; });
+    if (extra) for (var k in extra) props[k] = extra[k];
+    try { posthog.register(props); } catch (e) {}
+  }
+  registerSuperProps();
+
+  function cap(event, props) {
+    try { posthog.capture(event, props || {}); } catch (e) {}
+  }
+
+  /* ---------- 3. Feature flag -> variant (DEFAULT control) ---------- */
+  var VARIANT = "control";
+  function applyVariant(v) {
+    VARIANT = (v === "variant_b") ? "variant_b" : "control"; // ANY other value -> control
+    document.body.setAttribute("data-variant", VARIANT);
+    var lp = document.getElementById("dl-lp");
+    if (lp) lp.setAttribute("data-variant", VARIANT);
+    registerSuperProps({ lp_variant: VARIANT });
+  }
+  applyVariant("control"); // render control immediately; flag may upgrade below
+
+  try {
+    posthog.onFeatureFlags(function () {
+      var v;
+      try { v = posthog.getFeatureFlag(FLAG_KEY); } catch (e) { v = null; }
+      applyVariant(v);
+      cap("experiment_assigned", { flag: FLAG_KEY, variant: VARIANT, experiment_id: EXPERIMENT_ID });
+    });
+  } catch (e) { /* flag system down -> stays control */ }
+
+  /* ---------- 4. lp_pageview ---------- */
+  cap("lp_pageview", { page: PAGE_NAME, variant: VARIANT });
+
+  /* ---------- 5. Wire cart / CTA links ---------- */
+  function buildCartUrl(key) {
+    var c = CART[key];
+    if (!c) return null;
+    var base = "https://drawlucy.com/cart/add?id=" + c.variant + "&quantity=1";
+    return appendAttributionToUrl(base);
+  }
+  function fallbackProductUrl(key) {
+    var c = CART[key];
+    return appendAttributionToUrl("https://drawlucy.com/products/" + (c ? c.handle : "lucy-drawing-tool"));
+  }
+
+  function wireCtas() {
+    var nodes = document.querySelectorAll("[data-cart]");
+    Array.prototype.forEach.call(nodes, function (el) {
+      var key = el.getAttribute("data-cart");
+      var loc = el.getAttribute("data-loc") || "unknown";
+      var cartUrl = buildCartUrl(key);
+      // Set real /cart/add href (with attribution); product page stays as the HTML fallback if key unknown
+      if (cartUrl) el.setAttribute("href", cartUrl);
+      else el.setAttribute("href", fallbackProductUrl(key));
+
+      el.addEventListener("click", function () {
+        var c = CART[key] || {};
+        cap("cta_clicked", { location: loc, product: c.name || key, price: c.price || null, variant: VARIANT, page: PAGE_NAME });
+        cap("add_to_cart_clicked", { location: loc, product: c.name || key, price: c.price || null, variant: VARIANT, value: c.price || null, currency: "USD", page: PAGE_NAME });
+      }, { passive: true });
+    });
+  }
+
+  /* ---------- 6. FAQ open tracking ---------- */
+  function wireFaq() {
+    var items = document.querySelectorAll(".dl-faq details");
+    Array.prototype.forEach.call(items, function (d) {
+      d.addEventListener("toggle", function () {
+        if (d.open) cap("faq_opened", { question: d.getAttribute("data-faq") || "", source: "faq", variant: VARIANT });
+      });
+    });
+  }
+
+  /* ---------- 6b. Section-in-view tracking (engagement signal per section) ---------- */
+  function wireSectionViews() {
+    var items = document.querySelectorAll(".dl-section, .dl-hero");
+    if (!("IntersectionObserver" in window) || !items.length) return;
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var h = en.target.querySelector("h1, h2");
+        var label = h ? h.textContent.trim().slice(0, 60) : (en.target.className || "section");
+        if (en.isIntersecting && !seen[label]) {
+          seen[label] = true;
+          cap("section_viewed", { section: label, variant: VARIANT, page: PAGE_NAME });
+        }
+      });
+    }, { threshold: 0.45 });
+    Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+  }
+
+  /* ---------- 7. Reparent fixed els + sticky behavior ---------- */
+  function reparentFixed() {
+    ["#dl-sticky", "#dl-pop"].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (el && el.parentNode !== document.body) document.body.appendChild(el);
+    });
+  }
+
+  /* ---------- 8. Exit-intent popup ---------- */
+  function wirePopup() {
+    var pop = document.getElementById("dl-pop");
+    var closeBtn = document.getElementById("dl-pop-close");
+    var form = document.getElementById("dl-pop-form");
+    var emailInput = document.getElementById("dl-pop-email");
+    var thanks = document.getElementById("dl-pop-thanks");
+    if (!pop) return;
+    var shown = false;
+
+    function openPop() {
+      if (shown) return;
+      shown = true;
+      try { sessionStorage.setItem("dl_pop_shown", "1"); } catch (e) {}
+      pop.classList.add("dl-pop--open");
+      cap("email_popup_shown", { variant: VARIANT });
+    }
+    function closePop() { pop.classList.remove("dl-pop--open"); }
+
+    var already = false;
+    try { already = sessionStorage.getItem("dl_pop_shown") === "1"; } catch (e) {}
+    if (!already) {
+      // Desktop: mouse leaves viewport top. Mobile: fallback timer (45s) since no exit-intent.
+      document.addEventListener("mouseout", function (e) {
+        if (!e.relatedTarget && e.clientY <= 0) openPop();
+      });
+      setTimeout(function () { if (!shown) openPop(); }, 45000);
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closePop);
+    pop.addEventListener("click", function (e) { if (e.target === pop) closePop(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePop(); });
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = (emailInput && emailInput.value || "").trim();
+        if (!email || email.indexOf("@") < 1) { if (emailInput) emailInput.focus(); return; }
+        cap("email_captured", { location: "exit_intent_popup", variant: VARIANT, page: PAGE_NAME });
+        // attach email to the current person without forcing a re-identify (avoids "id not set" error)
+        try { posthog.setPersonProperties({ email: email }); } catch (err) {}
+        if (form) form.style.display = "none";
+        if (thanks) thanks.style.display = "block";
+        setTimeout(closePop, 2600);
+      });
+    }
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    reparentFixed();
+    wireCtas();
+    wireFaq();
+    wireSectionViews();
+    wirePopup();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
+</script>
+</body>
+</html>

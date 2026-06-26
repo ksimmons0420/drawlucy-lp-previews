@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<!--
+  DRAW LUCY - AVATAR LP "Charles" (HERITAGE / CURIOSITY) - VERSION 2026-06-26 - build v1
+  Angle: "The Old Masters' secret tool." Audience: retired engineer, art-history reader; saw Tim's Vermeer,
+         read Hockney's optical theory. Wants to take part in a 400-year-old secret + reassurance it's legitimate.
+  Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
+  CLAIMS - PLAY IT STRAIGHT: NO "free shipping"; money-back ASTERISKED + restocking/return-shipping fine print;
+           only 4.2/437 cited; Shark Tank factual; HERITAGE HEDGED ("associated with" / "the theory suggests",
+           never a flat "Vermeer used a camera lucida").
+  Search this file for "build v1" to confirm the latest paste.
+-->
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Old Masters' Secret Tool - The LUCY Drawing Tool</title>
+<meta name="description" content="The optical secret associated with Vermeer and the Old Masters - on your desk. The LUCY is a modern camera lucida: real half-silvered-mirror optics, USA-made, As Seen on Shark Tank. 4.2&#9733; / 437 reviews. From $69.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="https://drawlucy.com/cdn/shop/files/favicons.png?v=1614333164&width=96">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- viewport guard: ensure mobile width even if a host/preview lacks the meta -->
+<script>(function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();</script>
+
+<style>
+/* ============================================================
+   DRAW LUCY - AVATAR HERITAGE - all styles scoped to .dl-lp
+   Tokens: action #078FEA / CTA amber #EFBF65 (text #525253)
+           accent coral #DA4F49 / bg #FFFFFF / text #1A1A1A / muted #525253
+   ============================================================ */
+.dl-lp, .dl-lp * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reparented-to-<body> els (popup, sticky) live OUTSIDE .dl-lp, so re-apply box-sizing here, or width:100%+padding overflows. */
+.dl-pop, .dl-pop *, .dl-sticky, .dl-sticky * { box-sizing: border-box; }
+.dl-lp {
+  --blue:#078FEA; --blue-dk:#0676c0; --amber:#EFBF65; --amber-dk:#e3ad44;
+  --coral:#DA4F49; --ink:#1A1A1A; --muted:#525253; --bg:#FFFFFF;
+  --line:#e8e8ea; --soft:#f5f7fa; --soft-blue:#e9f5fe;
+  --parch:#f4ecdc; --parch-dk:#e7d9bd; --parch-ink:#5a4a2e;
+  --radius:3px; --pill:60px;
+  --maxw:880px; --gap:clamp(20px,4vw,40px);
+  font-family:"Barlow", system-ui, -apple-system, sans-serif;
+  color:var(--ink); background:var(--bg);
+  line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+.dl-lp img { max-width:100%; display:block; }
+.dl-lp a { color:inherit; text-decoration:none; }
+.dl-lp strong { font-weight:800; }
+.dl-lp .dl-wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+.dl-lp .dl-wrap--wide { max-width:1080px; }
+.dl-lp h1,.dl-lp h2,.dl-lp h3 { line-height:1.14; letter-spacing:-0.01em; font-weight:800; }
+.dl-lp h2 { font-size:clamp(1.5rem,4.6vw,2.2rem); }
+.dl-lp .dl-eyebrow {
+  font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted);
+}
+.dl-lp .dl-section { padding:clamp(40px,6vw,64px) 0; }
+.dl-lp .dl-section--soft { background:var(--soft); }
+.dl-lp .dl-center { text-align:center; }
+.dl-lp .dl-lede { color:var(--muted); font-size:clamp(1rem,2.4vw,1.13rem); max-width:660px; margin:14px auto 0; }
+.dl-lp p { font-size:1.05rem; }
+
+/* ---- buttons ---- */
+.dl-lp .dl-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:inherit; font-weight:800; font-size:1.04rem; line-height:1.15;
+  border:none; cursor:pointer; text-align:center;
+  padding:16px 28px; transition:transform .12s ease, background .15s ease, box-shadow .15s ease;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.dl-lp .dl-btn:active { transform:scale(.97); }
+.dl-lp .dl-btn--primary { background:var(--blue); color:#fff; border-radius:var(--pill); }
+.dl-lp .dl-btn--primary:hover { background:var(--blue-dk); box-shadow:0 8px 24px rgba(7,143,234,.28); }
+.dl-lp .dl-btn--amber { background:var(--amber); color:#525253; border-radius:var(--radius); }
+.dl-lp .dl-btn--amber:hover { background:var(--amber-dk); }
+.dl-lp .dl-btn--ghost { background:#fff; color:var(--ink); border:2px solid var(--line); border-radius:var(--pill); }
+.dl-lp .dl-btn--ghost:hover { border-color:var(--blue); color:var(--blue); }
+.dl-lp .dl-btn--lg { padding:18px 36px; font-size:1.12rem; }
+.dl-lp .dl-btn--block { width:100%; }
+.dl-lp .dl-btn-note { display:block; text-align:center; font-size:.84rem; color:var(--muted); margin-top:10px; }
+
+/* focus-visible a11y */
+.dl-lp a:focus-visible, .dl-lp button:focus-visible, .dl-lp input:focus-visible, .dl-lp summary:focus-visible {
+  outline:3px solid var(--blue); outline-offset:3px; border-radius:6px;
+}
+
+/* ---- Phosphor duotone icons ---- */
+.dl-lp .ph { display:inline-block; vertical-align:middle; flex:0 0 auto; }
+.dl-lp .ph-duo { color:var(--blue); }
+.dl-lp .ph-duo path[opacity] { opacity:1; fill:var(--amber); }
+.dl-lp .ph-duo-b { color:var(--blue); }
+.dl-lp .ph-duo-b path[opacity] { opacity:.18; fill:var(--blue); }
+.dl-lp .ph-duo-coral { color:var(--coral); }
+.dl-lp .ph-duo-coral path[opacity] { opacity:.18; fill:var(--coral); }
+.dl-lp .ph-duo-amber { color:var(--amber-dk); }
+.dl-lp .ph-duo-amber path[opacity] { opacity:.22; fill:var(--amber); }
+.dl-lp .ph-check { color:var(--blue); }
+
+/* ============== HEADER ============== */
+.dl-lp .dl-header {
+  position:sticky; top:0; z-index:60; background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px) saturate(150%); border-bottom:1px solid var(--line);
+}
+.dl-lp .dl-header__in { display:flex; align-items:center; justify-content:space-between; height:62px; }
+.dl-lp .dl-header__logo img { height:42px; width:auto; }
+.dl-lp .dl-header__cta { font-size:.95rem; padding:11px 22px; }
+
+/* ============== HERO ============== */
+.dl-lp .dl-hero { background:linear-gradient(180deg,#fbf8f0 0%, #eef6fd 100%); padding:clamp(26px,5vw,52px) 0 clamp(34px,5vw,56px); }
+.dl-lp .dl-hero__eyebrow {
+  display:inline-flex; align-items:center; gap:8px; margin-bottom:14px;
+  background:var(--parch); border:1px solid var(--parch-dk); border-radius:var(--pill);
+  padding:6px 14px; font-size:.8rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--parch-ink);
+}
+.dl-lp .dl-hero h1 { font-size:clamp(2.05rem,6.4vw,3.1rem); margin:4px 0 0; }
+.dl-lp .dl-hero h1 em { font-style:normal; color:var(--blue); }
+.dl-lp .dl-hero__sub { color:var(--muted); font-size:clamp(1.06rem,2.7vw,1.22rem); margin:16px 0 0; max-width:660px; }
+.dl-lp .dl-hero__figure {
+  margin:26px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--parch-dk);
+  box-shadow:0 16px 44px rgba(60,45,20,.18); background:#efe6d2; position:relative;
+}
+.dl-lp .dl-hero__figure img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center; }
+.dl-lp .dl-hero__figcap {
+  position:absolute; left:0; right:0; bottom:0; padding:11px 14px;
+  background:linear-gradient(0deg,rgba(40,30,10,.74) 0%, rgba(40,30,10,0) 100%);
+  color:#fff; font-size:.82rem; font-weight:600;
+}
+.dl-lp .dl-hero__cta-row { margin-top:24px; }
+
+/* ---- trust microbar ---- */
+.dl-lp .dl-trustbar {
+  display:flex; flex-wrap:wrap; align-items:center; gap:9px 8px; margin-top:20px;
+}
+.dl-lp .dl-trust {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#fff; border:1px solid var(--line); border-radius:var(--pill);
+  padding:7px 13px; font-size:.82rem; font-weight:700; color:var(--ink);
+  box-shadow:0 2px 10px rgba(7,143,234,.07);
+}
+.dl-lp .dl-trust .dl-stars { color:var(--amber-dk); letter-spacing:1px; }
+.dl-lp .dl-trust--tank { color:var(--coral); }
+.dl-lp .dl-trust .ph { color:var(--blue); }
+
+/* ============== SECTION INTRO ============== */
+.dl-lp .dl-sec-head { max-width:680px; }
+.dl-lp .dl-sec-head--center { margin:0 auto; text-align:center; }
+.dl-lp .dl-sec-head .dl-eyebrow { display:block; margin-bottom:10px; }
+.dl-lp .dl-sec-head p { color:var(--muted); margin-top:14px; font-size:clamp(1rem,2.4vw,1.12rem); }
+
+/* ============== SHADED CARD (the chassis section card style) ============== */
+.dl-lp .dl-card {
+  background:var(--soft); border:1px solid var(--line); border-left:5px solid var(--blue);
+  border-radius:18px; padding:clamp(24px,4.5vw,40px); box-shadow:0 6px 24px rgba(15,40,70,.05);
+}
+.dl-lp .dl-card + .dl-card { margin-top:18px; }
+.dl-lp .dl-card--amber { border-left-color:var(--amber-dk); }
+.dl-lp .dl-card--coral { border-left-color:var(--coral); }
+.dl-lp .dl-card__icon { margin-bottom:12px; }
+.dl-lp .dl-card h3 { font-size:clamp(1.2rem,3.4vw,1.5rem); }
+.dl-lp .dl-card__body { margin-top:14px; }
+.dl-lp .dl-card__body p { color:var(--ink); line-height:1.7; }
+.dl-lp .dl-card__body p + p { margin-top:14px; }
+
+/* ============== HERITAGE / LINEAGE ============== */
+.dl-lp .dl-lineage { margin-top:24px; display:grid; grid-template-columns:1fr; gap:14px; }
+.dl-lp .dl-lin {
+  background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 20px;
+  box-shadow:0 5px 18px rgba(15,40,70,.05); position:relative;
+}
+.dl-lp .dl-lin__era { font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--amber-dk); }
+.dl-lp .dl-lin h4 { font-size:1.1rem; font-weight:800; margin:5px 0 7px; }
+.dl-lp .dl-lin p { font-size:.97rem; color:var(--muted); line-height:1.6; }
+.dl-lp .dl-lin__icon { position:absolute; top:18px; right:18px; opacity:.9; }
+
+/* ---- hedge / source note ---- */
+.dl-lp .dl-note {
+  margin-top:18px; padding:15px 18px; background:#fff8ec; border-left:4px solid var(--amber);
+  border-radius:0 10px 10px 0;
+}
+.dl-lp .dl-note b { display:block; font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; color:var(--amber-dk); margin-bottom:5px; }
+.dl-lp .dl-note p { font-size:.96rem; color:var(--ink); margin:0; line-height:1.6; }
+
+/* ---- pull quote (cultural references) ---- */
+.dl-lp .dl-pull {
+  margin-top:20px; padding:22px 24px; background:#0a2540; color:#eaf2fb; border-radius:16px;
+}
+.dl-lp .dl-pull p { font-size:clamp(1.05rem,2.7vw,1.22rem); line-height:1.5; font-weight:600; }
+.dl-lp .dl-pull p em { color:var(--amber); font-style:italic; }
+.dl-lp .dl-pull cite { display:block; margin-top:12px; font-size:.86rem; font-style:normal; color:#9fc1e0; font-weight:600; }
+
+/* ============== "IS IT CHEATING" REFRAME ============== */
+.dl-lp .dl-reframe { display:grid; grid-template-columns:1fr; gap:16px; margin-top:24px; }
+.dl-lp .dl-reframe__col {
+  background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 22px;
+  box-shadow:0 5px 18px rgba(15,40,70,.05);
+}
+.dl-lp .dl-reframe__col--myth { border-top:5px solid var(--coral); }
+.dl-lp .dl-reframe__col--truth { border-top:5px solid #2fae5e; }
+.dl-lp .dl-reframe__tag { display:inline-flex; align-items:center; gap:8px; font-size:.8rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+.dl-lp .dl-reframe__col--myth .dl-reframe__tag { color:var(--coral); }
+.dl-lp .dl-reframe__col--truth .dl-reframe__tag { color:#1c7a3e; }
+.dl-lp .dl-reframe__col h3 { font-size:1.16rem; margin:10px 0 8px; }
+.dl-lp .dl-reframe__col p { font-size:1rem; color:var(--ink); line-height:1.65; }
+.dl-lp .dl-checklist { list-style:none; margin:14px 0 0; display:flex; flex-direction:column; gap:10px; }
+.dl-lp .dl-checklist li { display:flex; align-items:flex-start; gap:10px; font-size:1rem; color:var(--ink); line-height:1.5; }
+.dl-lp .dl-checklist li .ph { margin-top:2px; }
+
+/* ============== "REAL TOOL NOT GIMMICK" SPEC SPINE ============== */
+.dl-lp .dl-specs { display:grid; grid-template-columns:1fr; gap:14px; margin-top:24px; }
+.dl-lp .dl-spec {
+  display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line);
+  border-radius:14px; padding:20px; box-shadow:0 5px 18px rgba(15,40,70,.05);
+}
+.dl-lp .dl-spec__icon { flex:0 0 auto; }
+.dl-lp .dl-spec h4 { font-size:1.06rem; font-weight:800; }
+.dl-lp .dl-spec p { font-size:.96rem; color:var(--muted); margin-top:4px; line-height:1.55; }
+.dl-lp .dl-spec__fig { margin-top:22px; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 8px 26px rgba(15,40,70,.08); }
+.dl-lp .dl-spec__fig img { width:100%; object-fit:cover; }
+.dl-lp .dl-spec__figcap { font-size:.84rem; color:var(--muted); text-align:center; padding:10px 14px; background:var(--soft); }
+
+/* ============== HOW IT WORKS ============== */
+.dl-lp .dl-steps { display:grid; grid-template-columns:1fr; gap:16px; margin-top:26px; counter-reset:dlstep; }
+.dl-lp .dl-step {
+  background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px 22px;
+  box-shadow:0 6px 22px rgba(15,40,70,.06); position:relative;
+}
+.dl-lp .dl-step__num {
+  counter-increment:dlstep; width:42px; height:42px; border-radius:12px; background:var(--blue); color:#fff;
+  font-weight:800; font-size:1.2rem; display:inline-flex; align-items:center; justify-content:center;
+  margin-bottom:13px; font-variant-numeric:tabular-nums;
+}
+.dl-lp .dl-step:nth-child(2) .dl-step__num { background:var(--amber-dk); }
+.dl-lp .dl-step:nth-child(3) .dl-step__num { background:var(--coral); }
+.dl-lp .dl-step__num::before { content:counter(dlstep); }
+.dl-lp .dl-step h4 { font-size:1.14rem; font-weight:800; }
+.dl-lp .dl-step p { font-size:.98rem; color:var(--muted); margin-top:7px; line-height:1.6; }
+
+/* ============== OFFER LADDER ============== */
+.dl-lp .dl-ladder { display:grid; grid-template-columns:1fr; gap:18px; margin-top:30px; align-items:stretch; }
+.dl-lp .dl-tier {
+  position:relative; background:#fff; border:2px solid var(--line); border-radius:16px; padding:26px 22px 24px;
+  display:flex; flex-direction:column; box-shadow:0 6px 22px rgba(15,40,70,.07);
+  transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+.dl-lp .dl-tier:hover { transform:translateY(-4px); box-shadow:0 16px 38px rgba(15,40,70,.13); }
+.dl-lp .dl-tier--featured { border-color:var(--blue); box-shadow:0 14px 40px rgba(7,143,234,.18); }
+.dl-lp .dl-tier__flag {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  font-size:.74rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  padding:6px 16px; border-radius:var(--pill); white-space:nowrap;
+}
+.dl-lp .dl-tier__flag--start { background:var(--amber); color:#525253; }
+.dl-lp .dl-tier__flag--pop { background:var(--blue); color:#fff; }
+.dl-lp .dl-tier__flag--big { background:var(--coral); color:#fff; }
+.dl-lp .dl-tier__name { font-size:1.3rem; font-weight:800; }
+.dl-lp .dl-tier__best { font-size:.86rem; color:var(--muted); font-weight:700; margin-top:3px; }
+.dl-lp .dl-tier__img { width:100%; aspect-ratio:5/3; object-fit:contain; background:var(--soft); border-radius:10px; margin:14px 0; padding:8px; }
+.dl-lp .dl-tier__price { display:flex; align-items:baseline; gap:10px; }
+.dl-lp .dl-tier__price .dl-now { font-size:2.1rem; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums; }
+.dl-lp .dl-tier__price .dl-was { font-size:1.05rem; color:var(--muted); text-decoration:line-through; }
+.dl-lp .dl-tier__save { display:inline-block; margin-top:6px; font-size:.82rem; font-weight:800; color:var(--coral); }
+.dl-lp .dl-tier__affirm { font-size:.84rem; color:var(--muted); margin-top:8px; }
+.dl-lp .dl-tier__list { list-style:none; margin:16px 0 20px; display:flex; flex-direction:column; gap:9px; }
+.dl-lp .dl-tier__list li { display:flex; align-items:flex-start; gap:9px; font-size:.94rem; color:var(--ink); }
+.dl-lp .dl-tier__list li .ph { margin-top:1px; }
+.dl-lp .dl-tier__cta { margin-top:auto; }
+
+/* ============== RISK REVERSAL ============== */
+.dl-lp .dl-risk { display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px; }
+.dl-lp .dl-risk__card {
+  display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--line);
+  border-radius:12px; padding:20px; box-shadow:0 5px 18px rgba(15,40,70,.06);
+}
+.dl-lp .dl-risk__card h3 { font-size:1.05rem; }
+.dl-lp .dl-risk__card p { color:var(--muted); font-size:.9rem; margin-top:3px; }
+.dl-lp .dl-fineprint { font-size:.84rem; color:var(--muted); margin-top:14px; text-align:center; }
+
+/* ============== PROOF / TANK STRIP ============== */
+.dl-lp .dl-proof__stat { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:8px; }
+.dl-lp .dl-proof__stat .dl-bignum { font-size:clamp(2.2rem,6vw,3rem); font-weight:800; color:var(--blue); font-variant-numeric:tabular-nums; }
+.dl-lp .dl-proof__stat .dl-stars { color:var(--amber-dk); font-size:1.4rem; letter-spacing:2px; }
+.dl-lp .dl-quote {
+  padding:18px 20px; background:#fff; border:1px solid var(--line);
+  border-radius:12px; box-shadow:0 5px 18px rgba(15,40,70,.06);
+}
+.dl-lp .dl-quote .dl-q-stars { color:var(--amber-dk); letter-spacing:2px; font-size:.95rem; margin-bottom:8px; }
+.dl-lp .dl-quote p { font-size:1.02rem; line-height:1.55; font-style:italic; color:var(--ink); }
+.dl-lp .dl-quote cite { display:block; margin-top:10px; font-weight:700; font-size:.9rem; font-style:normal; color:var(--muted); }
+.dl-lp .dl-quote cite .dl-verified { color:var(--blue); }
+.dl-lp .dl-tank {
+  display:grid; grid-template-columns:1fr; gap:16px; align-items:center; margin-top:26px;
+  background:linear-gradient(135deg,#0a2540 0%, #103a5e 100%); color:#fff; border-radius:16px; padding:26px 22px;
+}
+.dl-lp .dl-tank h3 { color:#fff; font-size:clamp(1.25rem,3.4vw,1.6rem); }
+.dl-lp .dl-tank p { color:#cfe2f3; margin-top:10px; font-size:1rem; }
+.dl-lp .dl-tank .dl-tank__deal { color:var(--amber); font-weight:800; }
+.dl-lp .dl-press { margin-top:30px; text-align:center; }
+.dl-lp .dl-press__label { font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.dl-lp .dl-press__row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 26px; margin-top:16px; }
+.dl-lp .dl-press__row span { font-weight:800; font-size:1rem; color:var(--muted); opacity:.85; }
+
+/* ============== FAQ ============== */
+.dl-lp .dl-faq { max-width:760px; margin:28px auto 0; }
+.dl-lp .dl-faq details {
+  background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:12px; overflow:hidden;
+  box-shadow:0 4px 14px rgba(15,40,70,.05);
+}
+.dl-lp .dl-faq summary {
+  list-style:none; cursor:pointer; padding:18px 50px 18px 20px; font-weight:700; font-size:1.04rem; position:relative;
+}
+.dl-lp .dl-faq summary::-webkit-details-marker { display:none; }
+.dl-lp .dl-faq summary::after {
+  content:"+"; position:absolute; right:20px; top:50%; transform:translateY(-50%);
+  font-size:1.5rem; font-weight:700; color:var(--blue); transition:transform .2s ease;
+}
+.dl-lp .dl-faq details[open] summary::after { content:"\2212"; }
+.dl-lp .dl-faq .dl-faq__a { padding:0 20px 20px; color:var(--muted); font-size:.98rem; line-height:1.6; }
+.dl-lp .dl-faq .dl-faq__a strong { color:var(--ink); }
+
+/* ============== FINAL CTA ============== */
+.dl-lp .dl-final { background:linear-gradient(135deg,#078FEA 0%, #0676c0 100%); color:#fff; text-align:center; }
+.dl-lp .dl-final h2 { color:#fff; }
+.dl-lp .dl-final p { color:#e3f1fc; margin:14px auto 0; max-width:580px; font-size:1.08rem; }
+.dl-lp .dl-final .dl-btn--amber { margin-top:24px; }
+.dl-lp .dl-final__trust { margin-top:18px; font-size:.9rem; color:#cfe6fa; display:flex; gap:8px 18px; flex-wrap:wrap; justify-content:center; }
+.dl-lp .dl-final__trust span { display:inline-flex; align-items:center; gap:6px; }
+
+/* ============== FOOTER ============== */
+.dl-lp .dl-footer { background:#0d1b26; color:#9fb3c2; padding:40px 0 120px; font-size:.86rem; }
+.dl-lp .dl-footer__logo { height:26px; opacity:.9; margin-bottom:16px; filter:brightness(0) invert(1); }
+.dl-lp .dl-footer p { margin-bottom:10px; line-height:1.6; font-size:.86rem; }
+.dl-lp .dl-footer__disc { font-size:.78rem; color:#6b8294; }
+.dl-lp .dl-footer a { color:#cfe0ec; text-decoration:underline; }
+
+/* ============== STICKY MOBILE CTA ============== */
+.dl-sticky {
+  position:fixed; left:0; right:0; bottom:0; z-index:9000;
+  background:rgba(255,255,255,.94); backdrop-filter:blur(14px) saturate(160%);
+  border-top:1px solid #e8e8ea; padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex; align-items:center; gap:12px;
+  box-shadow:0 -6px 24px rgba(15,40,70,.12);
+}
+.dl-sticky__txt { flex:0 0 auto; }
+.dl-sticky__txt b { display:block; font-family:"Barlow",sans-serif; font-size:.95rem; font-weight:800; color:#1A1A1A; line-height:1.1; }
+.dl-sticky__txt small { font-family:"Barlow",sans-serif; font-size:.74rem; color:#525253; font-weight:600; }
+.dl-sticky__btn {
+  flex:1 1 auto; display:inline-flex; align-items:center; justify-content:center;
+  background:#078FEA; color:#fff; border:none; border-radius:60px; cursor:pointer;
+  font-family:"Barlow",sans-serif; font-weight:800; font-size:1.02rem; padding:15px 18px;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent; transition:transform .12s ease;
+}
+.dl-sticky__btn:active { transform:scale(.97); }
+
+/* ============== EXIT-INTENT POPUP ============== */
+.dl-pop {
+  position:fixed; inset:0; z-index:9500; display:none;
+  align-items:center; justify-content:center; padding:20px;
+  background:rgba(10,20,30,.6); backdrop-filter:blur(3px);
+}
+.dl-pop.dl-pop--open { display:flex; }
+.dl-pop__card {
+  position:relative; background:#fff; border-radius:18px; max-width:430px; width:100%;
+  padding:34px 28px 30px; text-align:center; box-shadow:0 30px 70px rgba(0,0,0,.4);
+  font-family:"Barlow",sans-serif;
+}
+.dl-pop__close {
+  position:absolute; top:12px; right:14px; width:38px; height:38px; border:none; background:#f1f3f5;
+  border-radius:50%; font-size:1.3rem; color:#525253; cursor:pointer; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+}
+.dl-pop__badge { font-size:2.4rem; font-weight:800; color:#078FEA; line-height:1; }
+.dl-pop__card h3 { font-family:"Barlow",sans-serif; font-size:1.5rem; font-weight:800; color:#1A1A1A; margin:10px 0 8px; line-height:1.15; }
+.dl-pop__card p { color:#525253; font-size:.96rem; margin-bottom:18px; }
+.dl-pop__form { display:flex; flex-direction:column; gap:10px; }
+.dl-pop__form input {
+  font-family:"Barlow",sans-serif; font-size:1rem; padding:14px 16px; border:1.5px solid #d6dadf;
+  border-radius:3px; color:#1A1A1A; width:100%; background:#fff;
+}
+.dl-pop__form button {
+  font-family:"Barlow",sans-serif; font-weight:800; font-size:1.05rem; padding:15px; border:none;
+  background:#078FEA; color:#fff; border-radius:60px; cursor:pointer; transition:transform .12s ease,background .15s ease;
+}
+.dl-pop__form button:hover { background:#0676c0; }
+.dl-pop__form button:active { transform:scale(.97); }
+.dl-pop__fine { font-size:.74rem; color:#90969c; margin-top:12px; }
+.dl-pop__thanks { display:none; font-size:1.05rem; color:#1A1A1A; font-weight:700; padding:14px 0; }
+
+/* ============== RESPONSIVE ============== */
+@media (min-width:760px){
+  .dl-lp .dl-lineage { grid-template-columns:1fr 1fr; }
+  .dl-lp .dl-reframe { grid-template-columns:1fr 1fr; }
+  .dl-lp .dl-specs { grid-template-columns:1fr 1fr; }
+  .dl-lp .dl-steps { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-ladder { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-risk { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-tank { grid-template-columns:auto 1fr; gap:24px; padding:30px 30px; }
+  .dl-lp .dl-tank__icon { width:88px; }
+}
+@media (min-width:980px){
+  .dl-sticky { display:none; }
+  .dl-lp .dl-footer { padding-bottom:48px; }
+  .dl-lp .dl-header__in { height:82px; }
+  .dl-lp .dl-header__logo img { height:60px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .dl-lp *, .dl-sticky *, .dl-pop * { animation:none !important; transition:none !important; }
+}
+
+/* ============== VARIANT_B HOOKS (currently identical to control) ============== */
+/* Scaffold only - a future variant flips these. Empty now = variant_b == control. */
+.dl-lp[data-variant="variant_b"] { /* no overrides yet */ }
+body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
+</style>
+</head>
+<body>
+<div class="dl-lp" id="dl-lp">
+
+  <!-- ============== HEADER ============== -->
+  <header class="dl-header">
+    <div class="dl-wrap dl-wrap--wide dl-header__in">
+      <a class="dl-header__logo" href="https://drawlucy.com" aria-label="The LUCY Drawing Tool home">
+        <img src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool" loading="eager">
+      </a>
+      <a class="dl-btn dl-btn--primary dl-header__cta" data-cart="flex" data-loc="header" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="dl-hero">
+    <div class="dl-wrap">
+      <span class="dl-hero__eyebrow">
+        <svg class="ph" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+        A 400-year-old technique
+      </span>
+      <h1>The Old Masters&rsquo; <em>secret tool.</em></h1>
+      <p class="dl-hero__sub">The optical secret associated with Vermeer and the Old Masters &mdash; reinvented, and sitting on your desk. The LUCY is a modern camera lucida: you look through it, see your subject on the paper, and draw what&rsquo;s really there.</p>
+      <figure class="dl-hero__figure">
+        <img src="https://drawlucy.com/cdn/shop/files/Da_Vinci.png?v=1780614156&width=1448" alt="A Renaissance-style codex of optical drawing instruments - camera obscura and camera lucida diagrams beside a Leonardo-style portrait study" loading="eager">
+        <figcaption class="dl-hero__figcap">The camera obscura and camera lucida &mdash; optical aids studied for centuries, now on your desk.</figcaption>
+      </figure>
+      <div class="dl-hero__cta-row">
+        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+        <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee* &middot; results vary with practice</span>
+      </div>
+      <div class="dl-trustbar" aria-label="Trust signals">
+        <span class="dl-trust"><span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>4.2 (437 reviews)</span>
+        <span class="dl-trust dl-trust--tank">As Seen on Shark Tank</span>
+        <span class="dl-trust">
+          <svg class="ph" width="15" height="15" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0"></path><path fill="currentColor" d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200Z"></path></svg>
+          Built in the USA
+        </span>
+        <span class="dl-trust">
+          <svg class="ph" width="15" height="15" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm-34.34,69.66-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L120,140.69l42.34-42.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+          30-day money-back*
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== THE 400-YEAR-OLD SECRET ============== -->
+  <section class="dl-section">
+    <div class="dl-wrap">
+      <div class="dl-sec-head">
+        <span class="dl-eyebrow">The 400-year-old secret</span>
+        <h2>You weren&rsquo;t the first to suspect there was a trick to it.</h2>
+        <p>For centuries, the uncanny accuracy of certain masterworks raised a quiet question: were the great realists working from the eye alone &mdash; or with help from optics? The historical record points to a family of tools that bend and reflect light so an artist can trace exactly what&rsquo;s in front of them.</p>
+      </div>
+
+      <div class="dl-lineage">
+        <div class="dl-lin">
+          <svg class="dl-lin__icon ph ph-duo-amber" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><path d="M216,56V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H208A8,8,0,0,1,216,56Z" opacity="0.2"></path><path fill="currentColor" d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L48,149.37V56ZM48,172l52-52,80,80H48Zm160,28H202.63l-36-36,20-20L208,181.38V200Zm-72-100a12,12,0,1,1,12,12A12,12,0,0,1,136,100Z"></path></svg>
+          <div class="dl-lin__era">~1000 - present</div>
+          <h4>The camera obscura</h4>
+          <p>A darkened room or box projects the scene outside through a small aperture &mdash; the oldest optical drawing aid. Studied by Alhazen, da Vinci, and countless artists since.</p>
+        </div>
+        <div class="dl-lin">
+          <svg class="dl-lin__icon ph ph-duo-amber" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><path d="M168,128a40,40,0,1,1-40-40A40,40,0,0,1,168,128Z" opacity="0.2"></path><path fill="currentColor" d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-104H188.42L177.93,42.78A16,16,0,0,0,165,36H91a16,16,0,0,0-12.91,6.78L67.58,56H40A24,24,0,0,0,16,80V192a24,24,0,0,0,24,24H216a24,24,0,0,0,24-24V80A24,24,0,0,0,216,56Zm8,136a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H71.58a16,16,0,0,0,12.91-6.78L95,52h66l10.49,13.22A16,16,0,0,0,184.42,72H216a8,8,0,0,1,8,8Z"></path></svg>
+          <div class="dl-lin__era">1807, patented by W.H. Wollaston</div>
+          <h4>The camera lucida</h4>
+          <p>A prism (and later, a mirror) lays a faint image of your subject right onto the paper. You see the scene and your pencil at once &mdash; and trace. The LUCY is a modern take on this exact instrument.</p>
+        </div>
+      </div>
+
+      <div class="dl-pull">
+        <p>The artist David Hockney&rsquo;s <em>Secret Knowledge</em> argued that optical aids were in use far earlier and more widely than art history had admitted. The documentary <em>Tim&rsquo;s Vermeer</em> followed one inventor as he reconstructed how a mirror-based setup <em>could</em> produce a Vermeer-like image.</p>
+        <cite>Hockney, &ldquo;Secret Knowledge&rdquo; (2001) &middot; &ldquo;Tim&rsquo;s Vermeer&rdquo; (2013) &mdash; cited as cultural touchstones for the debate.</cite>
+      </div>
+
+      <div class="dl-note">
+        <b>An honest note on the history</b>
+        <p>This is a genuinely debated subject, so we put it straight: optical aids have been <strong>associated with</strong> the Old Masters &mdash; Vermeer, Rembrandt, Ingres, and others &mdash; and the theory suggests their precision may have leaned on them. Scholars still disagree on who used what. What isn&rsquo;t in doubt is that the camera lucida is a real, documented instrument with a 200-plus-year pedigree &mdash; and the LUCY is its modern descendant.</p>
+      </div>
+
+      <div class="dl-hero__cta-row" style="margin-top:22px;">
+        <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="secret" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== "IS IT CHEATING?" REFRAME ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap">
+      <div class="dl-sec-head">
+        <span class="dl-eyebrow">The question every thoughtful artist asks</span>
+        <h2>&ldquo;Isn&rsquo;t that cheating?&rdquo;</h2>
+        <p>It&rsquo;s the fair, honest hesitation &mdash; and the answer is worth thinking through, because it changes how you&rsquo;ll feel every time you sit down with it.</p>
+      </div>
+
+      <div class="dl-reframe">
+        <div class="dl-reframe__col dl-reframe__col--myth">
+          <span class="dl-reframe__tag">
+            <svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+            The worry
+          </span>
+          <h3>&ldquo;A tool means it doesn&rsquo;t really count.&rdquo;</h3>
+          <p>The fear is that the device does the art for you &mdash; that you haven&rsquo;t earned the result, and you won&rsquo;t actually learn anything.</p>
+        </div>
+        <div class="dl-reframe__col dl-reframe__col--truth">
+          <span class="dl-reframe__tag">
+            <svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+            The reality
+          </span>
+          <h3>It&rsquo;s a learning aid &mdash; you still draw every stroke.</h3>
+          <p>The LUCY does the <em>seeing</em>. Your hand makes every line, every shadow, every choice. It trains the one skill self-taught artists fight hardest: seeing proportion accurately.</p>
+        </div>
+      </div>
+
+      <div class="dl-card" style="margin-top:18px;">
+        <div class="dl-card__icon">
+          <svg class="ph ph-duo" width="38" height="38" viewBox="0 0 256 256" aria-hidden="true"><path d="M120,40V216a96,96,0,0,1,0-176Zm104,88a8,8,0,0,0-8-8H136v96a96,96,0,0,0,96-88Z" opacity="0.2"></path><path fill="currentColor" d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path></svg>
+        </div>
+        <h3>The masters didn&rsquo;t apologize for their tools &mdash; neither should you.</h3>
+        <div class="dl-card__body">
+          <p>Brushes, grids, lenses, mirrors, the rules of perspective &mdash; every era&rsquo;s artists used the best instruments available to get the truth of a subject onto a surface. The camera lucida was one of them. Using a recognized optical aid doesn&rsquo;t place you outside that tradition; it places you squarely inside it.</p>
+          <ul class="dl-checklist">
+            <li>
+              <svg class="ph ph-check" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+              <span>You compose, you draw, you shade &mdash; the artistry is entirely yours.</span>
+            </li>
+            <li>
+              <svg class="ph ph-check" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+              <span>Many artists use it as a feedback loop &mdash; draw, compare, learn &mdash; and lean on it less as their eye sharpens.</span>
+            </li>
+            <li>
+              <svg class="ph ph-check" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+              <span>It trains your eye for proportion and perspective &mdash; results vary with practice.</span>
+            </li>
+          </ul>
+          <div class="dl-quote" style="margin-top:18px;">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;I practise by drawing a portrait from a photo and then I use Lucy and draw over my painting to see where I have gone wrong&hellip; it tells me how to look at a photo and how to improve.&rdquo;</p>
+            <cite>Behzad &middot; <span class="dl-verified">LUCY customer</span></cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== A REAL TOOL, NOT A GIMMICK ============== -->
+  <section class="dl-section">
+    <div class="dl-wrap">
+      <div class="dl-sec-head">
+        <span class="dl-eyebrow">A real tool, not a gimmick</span>
+        <h2>The part of you that asks &ldquo;is this legitimate?&rdquo; deserves a straight answer.</h2>
+        <p>Here&rsquo;s exactly what the LUCY is, and why it isn&rsquo;t a novelty: it&rsquo;s real optics, built to last, with a track record you can check.</p>
+      </div>
+
+      <div class="dl-specs">
+        <div class="dl-spec">
+          <span class="dl-spec__icon">
+            <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,56C48,56,16,128,16,128s32,72,112,72,112-72,112-72S208,56,128,56Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z" opacity="0.2"></path><path fill="currentColor" d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+          </span>
+          <div>
+            <h4>Real half-silvered-mirror optics</h4>
+            <p>Not a screen, not a projector. A semi-transparent mirror overlays a faint reflection of your subject onto the paper &mdash; the same optical principle behind the historical camera lucida.</p>
+          </div>
+        </div>
+        <div class="dl-spec">
+          <span class="dl-spec__icon">
+            <svg class="ph ph-duo-coral" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32Zm-50,174.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
+          </span>
+          <div>
+            <h4>As Seen on Shark Tank</h4>
+            <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a $300,000 offer from Daymond John. A real product the Sharks bet on, not a passing gadget.</p>
+          </div>
+        </div>
+        <div class="dl-spec">
+          <span class="dl-spec__icon">
+            <svg class="ph ph-duo-amber" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24,32,72V128c0,52.92,40.34,86.6,87.16,103.93a14,14,0,0,0,17.68,0C183.66,214.6,224,180.92,224,128V72Z" opacity="0.2"></path><path fill="currentColor" d="M223.45,40.07a8,8,0,0,0-7.52,1.49L128,107.93,40.07,41.56A8,8,0,0,0,27.55,48V128c0,29.05,9.84,53.91,29.25,73.91,15.46,15.94,37.13,29,64.39,38.84a15.8,15.8,0,0,0,13.62,0c27.26-9.79,48.93-22.9,64.39-38.84C218.16,181.91,228,157.05,228,128V48A8,8,0,0,0,223.45,40.07ZM212,128c0,50.57-37.43,79.62-79.13,94.65a.32.32,0,0,1-.28,0C90.89,207.62,53.55,178.57,53.55,128V62.39L128,118.5l74.45-56.11Z"></path></svg>
+          </span>
+          <div>
+            <h4>USA-made, 1-year warranty</h4>
+            <p>Fiberglass-infused polycarbonate, shatterproof optics, an aluminum clamp and a steel flex arm. Built in America and backed for a full year.</p>
+          </div>
+        </div>
+        <div class="dl-spec">
+          <span class="dl-spec__icon">
+            <svg class="ph ph-duo-b" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81a15.95,15.95,0,0,0-29.44,0L90.07,81.17l-59.46,5.15a16,16,0,0,0-9.11,28.06l45.11,39.36L53.19,212a16,16,0,0,0,23.84,17.34l51-31,51,31A16,16,0,0,0,202.81,212l-13.46-58.36,45.11-39.36A16,16,0,0,0,239.2,97.29Z" opacity="0.2"></path><path fill="currentColor" d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34l13.49-58.54-45.1-39.36a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+          </span>
+          <div>
+            <h4>4.2 stars across 437 reviews</h4>
+            <p>The flagship LUCY flex carries a 4.2-star rating from 437 verified reviews on drawlucy.com &mdash; including the honest middling ones, kept on the page.</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="dl-spec__fig">
+        <img src="https://drawlucy.com/cdn/shop/files/LUCY_flex_Les10.jpg?v=1758218419&width=2000" alt="The LUCY flex drawing tool set up on a desk, ready to use" loading="lazy">
+        <figcaption class="dl-spec__figcap">The LUCY flex &mdash; clamps to your desk, folds away, no power required.</figcaption>
+      </figure>
+
+      <div class="dl-hero__cta-row" style="margin-top:22px;">
+        <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="legit" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== HOW IT WORKS ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap">
+      <div class="dl-sec-head dl-sec-head--center">
+        <span class="dl-eyebrow">How it works</span>
+        <h2>Look. See. Draw.</h2>
+        <p>The same three moves an artist made with a camera lucida two hundred years ago &mdash; just easier.</p>
+      </div>
+      <div class="dl-steps">
+        <div class="dl-step">
+          <span class="dl-step__num" aria-hidden="true"></span>
+          <h4>Clamp it and look</h4>
+          <p>Fix the LUCY to your desk or easel and look down through the optic at your paper. Setup takes under a minute.</p>
+        </div>
+        <div class="dl-step">
+          <span class="dl-step__num" aria-hidden="true"></span>
+          <h4>See your subject on the page</h4>
+          <p>A faint image of whatever you point it at &mdash; a portrait sitter, a still life, a photo &mdash; appears right on the paper, correctly placed.</p>
+        </div>
+        <div class="dl-step">
+          <span class="dl-step__num" aria-hidden="true"></span>
+          <h4>Draw what you see</h4>
+          <p>Trace the proportions you see, then lift your eyes and finish freehand. The accuracy is locked in; the artistry is all yours.</p>
+        </div>
+      </div>
+      <div class="dl-note" style="max-width:760px;margin-left:auto;margin-right:auto;">
+        <b>What to expect</b>
+        <p>There&rsquo;s a brief learning curve &mdash; about 30 minutes to position the optic, find your eye line, and dial in the brightness before it &ldquo;clicks.&rdquo; Because it shows a reflection rather than a projected beam, lighting matters: light your subject well and keep the paper a touch dimmer. The flex and pro include multiple brightness levels for this.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== OFFER LADDER ============== -->
+  <section class="dl-section" id="models">
+    <div class="dl-wrap">
+      <div class="dl-sec-head dl-sec-head--center">
+        <span class="dl-eyebrow">Take part in the tradition</span>
+        <h2>Three LUCY models. Start with the flex.</h2>
+        <p>They differ mainly in image size and sturdiness. The flex is the versatile pick most artists choose.</p>
+      </div>
+
+      <div class="dl-ladder">
+        <!-- MINI -->
+        <div class="dl-tier">
+          <span class="dl-tier__flag dl-tier__flag--start">Entry</span>
+          <div class="dl-tier__name">LUCY mini</div>
+          <div class="dl-tier__best">Best for: trying it out &amp; smaller work</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs3.png?v=1780534868&width=1254" alt="LUCY mini drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$69</span><span class="dl-was">$95</span></div>
+          <span class="dl-tier__save">Save $26</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Image up to 12&times;18&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>2+ brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>The low-risk first LUCY</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="mini" data-loc="ladder-mini" href="https://drawlucy.com/products/lucy-mini">Add LUCY mini &mdash; $69</a>
+        </div>
+
+        <!-- FLEX (featured) -->
+        <div class="dl-tier dl-tier--featured">
+          <span class="dl-tier__flag dl-tier__flag--pop">Most Popular</span>
+          <div class="dl-tier__name">LUCY flex</div>
+          <div class="dl-tier__best">Best for: most artists &mdash; the versatile pick</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs2.png?v=1780534869&width=1254" alt="LUCY flex drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$99</span><span class="dl-was">$160</span></div>
+          <span class="dl-tier__save">Save $61</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Bigger image &mdash; up to 19&times;27&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>4+ brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Carries the 4.2&#9733; / 437 reviews</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="flex" data-loc="ladder-flex" href="https://drawlucy.com/products/lucy-drawing-tool">Add LUCY flex &mdash; $99</a>
+        </div>
+
+        <!-- PRO -->
+        <div class="dl-tier">
+          <span class="dl-tier__flag dl-tier__flag--big">Pro</span>
+          <div class="dl-tier__name">LUCY pro</div>
+          <div class="dl-tier__best">Best for: serious &amp; professional work</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs1.jpg?v=1780534868&width=1080" alt="LUCY pro drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$275</span><span class="dl-was">$320</span></div>
+          <span class="dl-tier__save">Save $45</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Largest image &mdash; up to 20&times;37&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Sturdiest, most stable build</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>For serious &amp; pro artists</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="pro" data-loc="ladder-pro" href="https://drawlucy.com/products/lucy-pro">Add LUCY pro &mdash; $275</a>
+        </div>
+      </div>
+
+      <!-- RISK REVERSAL -->
+      <div class="dl-risk">
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
+          <div><h3>30-Day Money-Back*</h3><p>Draw with it. If it&rsquo;s not for you within 30 days, send it back.</p></div>
+        </div>
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M152,32V80a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V32ZM216,72V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H88V80a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V64h48A8,8,0,0,1,216,72Z" opacity="0.2"></path><path fill="currentColor" d="M179.31,88.08a8,8,0,0,0-10.07,5.16A40,40,0,0,1,88,96V88h64a16,16,0,0,0,16-16V32a16,16,0,0,0-16-16H104A16,16,0,0,0,88,32V72.23A56.08,56.08,0,0,0,184.49,93.4a8,8,0,0,0-5.18-5.32ZM104,32h48V72H104ZM208,80H180.42a72.08,72.08,0,0,1-2.94,16H208V200H48V96H78.52a72.08,72.08,0,0,1-2.94-16H48A16,16,0,0,0,32,96V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"></path></svg>
+          <div><h3>1-Year Warranty</h3><p>Shatterproof optics, aluminum clamp, steel flex arm.</p></div>
+        </div>
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0.2"></path><path fill="currentColor" d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V92H40V56ZM40,200V108H216v92Z"></path></svg>
+          <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
+        </div>
+      </div>
+      <p class="dl-fineprint">*30-day money-back guarantee: item must be returned in resalable condition; a 15% restocking fee and return shipping apply.</p>
+    </div>
+  </section>
+
+  <!-- ============== PROOF / SHARK TANK STRIP ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap dl-center">
+      <span class="dl-eyebrow">What buyers say</span>
+      <div class="dl-proof__stat">
+        <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="dl-bignum">4.2</span>
+        <span style="text-align:left;font-weight:700;color:var(--muted);">out of 5<br><span style="font-weight:500;">across 437 reviews</span></span>
+      </div>
+
+      <div class="dl-quote" style="max-width:680px;margin:26px auto 0;text-align:left;">
+        <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;It is a method. It is a time saver in a busy world&hellip; And you can learn from all of them.&rdquo;</p>
+        <cite>Comoco &middot; <span class="dl-verified">LUCY customer</span></cite>
+      </div>
+      <div class="dl-quote" style="max-width:680px;margin:14px auto 0;text-align:left;">
+        <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;I have gone blind in my left eye over the last 2 years and this helps me so much to be able to transfer to my work surface, thank you for creating the Lucy tool!&rdquo;</p>
+        <cite>Kathy Murray &middot; <span class="dl-verified">LUCY customer</span></cite>
+      </div>
+
+      <div class="dl-tank">
+        <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
+        <div style="text-align:left;">
+          <h3>As Seen on Shark Tank</h3>
+          <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a <span class="dl-tank__deal">$300,000 offer from Daymond John</span>. The same tool the Sharks bet on is the one on your desk.</p>
+        </div>
+      </div>
+
+      <div class="dl-press">
+        <p class="dl-press__label">As Seen On</p>
+        <div class="dl-press__row">
+          <span>Shark Tank</span>
+          <span>CNBC</span>
+          <span>Gizmodo</span>
+          <span>BoingBoing</span>
+          <span>Kickstarter</span>
+          <span>NAEA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SHORT FAQ ============== -->
+  <section class="dl-section">
+    <div class="dl-wrap dl-center">
+      <span class="dl-eyebrow">Quick answers</span>
+      <h2>The questions a careful buyer asks</h2>
+      <div class="dl-faq">
+        <details data-faq="Is it really the same tool the Old Masters used?">
+          <summary>Is it really the same tool the Old Masters used?</summary>
+          <div class="dl-faq__a">It&rsquo;s the same <strong>family</strong> of optical instrument &mdash; the camera lucida, a documented tool patented in 1807 and part of a lineage of optical aids that have been <strong>associated with</strong> master artists. Historians still debate exactly who used what. The LUCY is a modern, mirror-based take on that instrument; we don&rsquo;t claim a specific master used this specific device.</div>
+        </details>
+        <details data-faq="Is using it cheating?">
+          <summary>Is using it cheating?</summary>
+          <div class="dl-faq__a">No &mdash; it&rsquo;s a recognized <strong>learning aid</strong>. The LUCY does the seeing; you draw every stroke yourself, and over time it trains your eye for proportion. Using a recognized optical tool puts you inside the tradition of artists who used the best instruments of their day, not outside it.</div>
+        </details>
+        <details data-faq="Will it work in normal room light?">
+          <summary>Will it work in normal room light?</summary>
+          <div class="dl-faq__a">Yes, at an ordinary well-lit desk &mdash; but because it shows a <strong>reflection</strong> (not a projected beam), lighting matters. Light your subject well and keep your paper a touch dimmer. The flex and pro include multiple brightness levels to dial it in. You don&rsquo;t need a dark room.</div>
+        </details>
+        <details data-faq="I wear glasses - is that a problem?">
+          <summary>I wear glasses &mdash; is that a problem?</summary>
+          <div class="dl-faq__a">Single-vision glasses are fine. <strong>Progressives or bifocals</strong> can sometimes make the image appear doubled, because you&rsquo;re looking at two focal distances at once. The easy fix: wear inexpensive single-vision readers while you draw, or remove your glasses if you can focus at drawing distance.</div>
+        </details>
+        <details data-faq="What's the return policy?">
+          <summary>What&rsquo;s the return policy?</summary>
+          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. To qualify, the item must be returned in resalable condition; a <strong>15% restocking fee and return shipping</strong> apply. Every LUCY also carries a 1-year limited warranty. See drawlucy.com for full details.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FINAL CTA ============== -->
+  <section class="dl-section dl-final">
+    <div class="dl-wrap">
+      <h2>Take your place in a 400-year-old tradition.</h2>
+      <p>The optical secret associated with the Old Masters, reinvented and built in the USA &mdash; on your desk, with a 30-day money-back guarantee.* Start with the flex, our most popular model.</p>
+      <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="flex" data-loc="final" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      <div class="dl-final__trust">
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back*</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>1-Year Warranty</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Built in the USA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="dl-footer">
+    <div class="dl-wrap dl-wrap--wide">
+      <img class="dl-footer__logo" src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool">
+      <p>The LUCY Drawing Tool &mdash; the Old Masters&rsquo; secret tool, reinvented. A modern camera lucida, quality built in the USA.</p>
+      <p class="dl-footer__disc">
+        Historical note: optical drawing aids such as the camera obscura and camera lucida have been associated with master artists, and the theory that some leaned on them is supported by figures including David Hockney (&ldquo;Secret Knowledge&rdquo;) and explored in the documentary &ldquo;Tim&rsquo;s Vermeer.&rdquo; This remains a debated subject among art historians; references here are cultural and illustrative, and no claim is made that a specific artist used this specific device.
+        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
+        *30-day money-back guarantee: the item must be returned in resalable condition, and a 15% restocking fee plus return shipping apply. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        &copy; 2026 The LUCY Drawing Tool. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</div><!-- /.dl-lp -->
+
+<!-- ============== STICKY MOBILE CTA (reparented to body) ============== -->
+<div class="dl-sticky" id="dl-sticky">
+  <div class="dl-sticky__txt"><b>LUCY flex</b><small>$99 &middot; Most Popular</small></div>
+  <a class="dl-sticky__btn" data-cart="flex" data-loc="sticky" href="https://drawlucy.com/products/lucy-drawing-tool">See the models &rarr;</a>
+</div>
+
+<!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
+<div class="dl-pop" id="dl-pop" role="dialog" aria-modal="true" aria-labelledby="dl-pop-title">
+  <div class="dl-pop__card">
+    <button class="dl-pop__close" id="dl-pop-close" aria-label="Close">&times;</button>
+    <div class="dl-pop__badge">10% OFF</div>
+    <h3 id="dl-pop-title">Get 10% off your first LUCY</h3>
+    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus a short guide to the camera lucida and how artists have used it.</p>
+    <form class="dl-pop__form" id="dl-pop-form" novalidate>
+      <input type="email" id="dl-pop-email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address">
+      <button type="submit">Send my 10% off code</button>
+    </form>
+    <div class="dl-pop__thanks" id="dl-pop-thanks">Thanks! Check your inbox for your code &amp; guide.</div>
+    <p class="dl-pop__fine">No spam. Unsubscribe anytime. Discount applies to your first order; some exclusions may apply.</p>
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   DRAW LUCY - AVATAR HERITAGE - instrumentation + behavior (build v1)
+   - PostHog init (project DrawLucy 486255) + feature flag (default control)
+   - 6-event funnel + experiment_assigned
+   - UTM/attribution bridge: capture -> super-properties -> forward on cart links
+   - Real /cart/add links w/ verified variant ids
+   - sticky CTA + exit-intent popup, reparented to <body>
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  /* ---------- 0. Config ---------- */
+  var POSTHOG_KEY = "phc_C3krSt9S8497DpC7XMMJomjuVxkjWvLaLoX3hH6fXjYp";
+  var POSTHOG_API_HOST = "https://us.i.posthog.com";
+  var POSTHOG_UI_HOST = "https://us.posthog.com";
+  var FLAG_KEY = "drawlucy-avatar-heritage";
+  var EXPERIMENT_ID = 379554;
+  var PAGE_NAME = "avatar-heritage";
+
+  // Verified variant ids (drawlucy.com/products/{handle}.js on 2026-06-25)
+  var CART = {
+    mini: { variant: "39716899094626", handle: "lucy-mini",         price: 69,  name: "LUCY mini" },
+    flex: { variant: "7150423900217",  handle: "lucy-drawing-tool", price: 99,  name: "LUCY flex" },
+    pro:  { variant: "31675633303650", handle: "lucy-pro",          price: 275, name: "LUCY pro"  }
+  };
+
+  var UTM_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term",
+                  "gclid","fbclid","tw_source","ttclid","msclkid"];
+  var SS_KEY = "dl_attribution";
+
+  /* ---------- 1. Attribution bridge ---------- */
+  function getStoredAttribution() {
+    try { return JSON.parse(sessionStorage.getItem(SS_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function captureAttribution() {
+    var stored = getStoredAttribution();
+    var params = new URLSearchParams(window.location.search);
+    var changed = false;
+    UTM_KEYS.forEach(function (k) {
+      var v = params.get(k);
+      if (v && !stored[k]) { stored[k] = v; changed = true; } // first-touch wins within session
+    });
+    if (changed || !stored.dl_landing) {
+      if (!stored.dl_landing) stored.dl_landing = window.location.pathname;
+      try { sessionStorage.setItem(SS_KEY, JSON.stringify(stored)); } catch (e) {}
+    }
+    return stored;
+  }
+  var ATTR = captureAttribution();
+
+  function appendAttributionToUrl(url) {
+    try {
+      var u = new URL(url, window.location.origin);
+      UTM_KEYS.forEach(function (k) { if (ATTR[k] && !u.searchParams.has(k)) u.searchParams.set(k, ATTR[k]); });
+      return u.toString();
+    } catch (e) { return url; }
+  }
+
+  /* ---------- 2. PostHog init ---------- */
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+  var phReady = false;
+  try {
+    posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_API_HOST,
+      ui_host: POSTHOG_UI_HOST,
+      person_profiles: "always",
+      capture_pageview: true,      // keep $pageview / autocapture on
+      autocapture: true,
+      loaded: function () { phReady = true; }
+    });
+  } catch (e) { /* never block the page on analytics */ }
+
+  // Register attribution + origin_path as super-properties so they ride on EVERY event
+  function registerSuperProps(extra) {
+    var props = { origin_path: window.location.pathname, lp_page: PAGE_NAME };
+    UTM_KEYS.forEach(function (k) { if (ATTR[k]) props[k] = ATTR[k]; });
+    if (extra) for (var k in extra) props[k] = extra[k];
+    try { posthog.register(props); } catch (e) {}
+  }
+  registerSuperProps();
+
+  function cap(event, props) {
+    try { posthog.capture(event, props || {}); } catch (e) {}
+  }
+
+  /* ---------- 3. Feature flag -> variant (DEFAULT control) ---------- */
+  var VARIANT = "control";
+  function applyVariant(v) {
+    VARIANT = (v === "variant_b") ? "variant_b" : "control"; // ANY other value -> control
+    document.body.setAttribute("data-variant", VARIANT);
+    var lp = document.getElementById("dl-lp");
+    if (lp) lp.setAttribute("data-variant", VARIANT);
+    registerSuperProps({ lp_variant: VARIANT });
+  }
+  applyVariant("control"); // render control immediately; flag may upgrade below
+
+  try {
+    posthog.onFeatureFlags(function () {
+      var v;
+      try { v = posthog.getFeatureFlag(FLAG_KEY); } catch (e) { v = null; }
+      applyVariant(v);
+      cap("experiment_assigned", { flag: FLAG_KEY, variant: VARIANT, experiment_id: EXPERIMENT_ID });
+    });
+  } catch (e) { /* flag system down -> stays control */ }
+
+  /* ---------- 4. lp_pageview ---------- */
+  cap("lp_pageview", { page: PAGE_NAME, variant: VARIANT });
+
+  /* ---------- 5. Wire cart / CTA links ---------- */
+  function buildCartUrl(key) {
+    var c = CART[key];
+    if (!c) return null;
+    var base = "https://drawlucy.com/cart/add?id=" + c.variant + "&quantity=1";
+    return appendAttributionToUrl(base);
+  }
+  function fallbackProductUrl(key) {
+    var c = CART[key];
+    return appendAttributionToUrl("https://drawlucy.com/products/" + (c ? c.handle : "lucy-drawing-tool"));
+  }
+
+  function wireCtas() {
+    var nodes = document.querySelectorAll("[data-cart]");
+    Array.prototype.forEach.call(nodes, function (el) {
+      var key = el.getAttribute("data-cart");
+      var loc = el.getAttribute("data-loc") || "unknown";
+      var cartUrl = buildCartUrl(key);
+      // Set real /cart/add href (with attribution); product page stays as the HTML fallback if key unknown
+      if (cartUrl) el.setAttribute("href", cartUrl);
+      else el.setAttribute("href", fallbackProductUrl(key));
+
+      el.addEventListener("click", function () {
+        var c = CART[key] || {};
+        cap("cta_clicked", { location: loc, product: c.name || key, price: c.price || null, variant: VARIANT, page: PAGE_NAME });
+        cap("add_to_cart_clicked", { location: loc, product: c.name || key, price: c.price || null, variant: VARIANT, value: c.price || null, currency: "USD", page: PAGE_NAME });
+      }, { passive: true });
+    });
+  }
+
+  /* ---------- 6. FAQ open tracking ---------- */
+  function wireFaq() {
+    var items = document.querySelectorAll(".dl-faq details");
+    Array.prototype.forEach.call(items, function (d) {
+      d.addEventListener("toggle", function () {
+        if (d.open) cap("faq_opened", { question: d.getAttribute("data-faq") || "", source: "faq", variant: VARIANT });
+      });
+    });
+  }
+
+  /* ---------- 6b. Section-in-view tracking (engagement depth signal) ---------- */
+  function wireSectionViews() {
+    var secs = document.querySelectorAll(".dl-lp section[class*='dl-']");
+    if (!("IntersectionObserver" in window) || !secs.length) return;
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var id = en.target.getAttribute("id") || en.target.className;
+        if (en.isIntersecting && !seen[id]) {
+          seen[id] = true;
+          var h = en.target.querySelector("h1, h2");
+          cap("section_viewed", { section: id, heading: h ? h.textContent.trim().slice(0,80) : "", variant: VARIANT });
+        }
+      });
+    }, { threshold: 0.4 });
+    Array.prototype.forEach.call(secs, function (el) { io.observe(el); });
+  }
+
+  /* ---------- 7. Reparent fixed els + sticky behavior ---------- */
+  function reparentFixed() {
+    ["#dl-sticky", "#dl-pop"].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (el && el.parentNode !== document.body) document.body.appendChild(el);
+    });
+  }
+
+  /* ---------- 8. Exit-intent popup ---------- */
+  function wirePopup() {
+    var pop = document.getElementById("dl-pop");
+    var closeBtn = document.getElementById("dl-pop-close");
+    var form = document.getElementById("dl-pop-form");
+    var emailInput = document.getElementById("dl-pop-email");
+    var thanks = document.getElementById("dl-pop-thanks");
+    if (!pop) return;
+    var shown = false;
+
+    function openPop() {
+      if (shown) return;
+      shown = true;
+      try { sessionStorage.setItem("dl_pop_shown", "1"); } catch (e) {}
+      pop.classList.add("dl-pop--open");
+      cap("email_popup_shown", { variant: VARIANT });
+    }
+    function closePop() { pop.classList.remove("dl-pop--open"); }
+
+    var already = false;
+    try { already = sessionStorage.getItem("dl_pop_shown") === "1"; } catch (e) {}
+    if (!already) {
+      // Desktop: mouse leaves viewport top. Mobile: fallback timer (45s) since no exit-intent.
+      document.addEventListener("mouseout", function (e) {
+        if (!e.relatedTarget && e.clientY <= 0) openPop();
+      });
+      setTimeout(function () { if (!shown) openPop(); }, 45000);
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closePop);
+    pop.addEventListener("click", function (e) { if (e.target === pop) closePop(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePop(); });
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = (emailInput && emailInput.value || "").trim();
+        if (!email || email.indexOf("@") < 1) { if (emailInput) emailInput.focus(); return; }
+        cap("email_captured", { location: "exit_intent_popup", variant: VARIANT, page: PAGE_NAME });
+        // attach email to the current person without forcing a re-identify (avoids "id not set" error)
+        try { posthog.setPersonProperties({ email: email }); } catch (err) {}
+        if (form) form.style.display = "none";
+        if (thanks) thanks.style.display = "block";
+        setTimeout(closePop, 2600);
+      });
+    }
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    reparentFixed();
+    wireCtas();
+    wireFaq();
+    wireSectionViews();
+    wirePopup();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
+</script>
+</body>
+</html>
