@@ -2,12 +2,14 @@
 <!--
   DRAW LUCY - AVATAR LP "Frank / ACCURACY" - VERSION 2026-06-26 - build v1
   Avatar: Frank, 45, self-taught, draws family portraits, "stuck improver", skill 5.1, 89% from photos.
+  build v2 (2026-06-29): owner (Les) feedback applied - American English, reviews linked, Shark Tank softened,
+  returns simplified + policy link, reframe line, "reflected"/"ghost" wording, + YouTube Short o1szcisWX2k embed.
   Angle: "Finally, the proportions are right." Tone: empathetic, validating - "it's not your fault, it's your method."
   Lead = ACCURACY / proportions (NOT "learn to draw"). This buyer already draws but is STUCK.
   Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
-  Claims: PLAY IT STRAIGHT - no "free shipping"; money-back ASTERISKED w/ restocking fine print; only 4.2/437 cited.
+  Claims: PLAY IT STRAIGHT - no shipping claim; 30-day money-back guarantee linked to policy (no fee/return-ship line); only 4.2/437 cited + linked.
   PostHog: project 486255 / flag drawlucy-avatar-accuracy / experiment 379542 (DRAFT -> default control; variant_b == control).
-  Search this file for "build v1" to confirm the latest paste.
+  Search this file for "build v2" to confirm the latest paste.
   ASSET GAP (flagged to client): a real FACE before/after (wonky freehand vs LUCY-accurate portrait) is the ideal hero
   proof for this avatar. INTERIM we use the brand dog before/after as the proportion proof, labeled before/after.
 -->
@@ -117,6 +119,8 @@
   box-shadow:0 2px 10px rgba(7,143,234,.08); margin-bottom:16px;
 }
 .dl-lp .dl-hero__rate .dl-stars { color:var(--amber-dk); letter-spacing:1px; }
+.dl-lp .dl-hero__rate .dl-rate-link { color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+.dl-lp .dl-hero__rate .dl-rate-link:hover { color:var(--blue); }
 .dl-lp .dl-hero__rate .dl-rate-sep { color:var(--line); }
 .dl-lp .dl-hero__rate .dl-rate-tank { color:var(--coral); font-weight:800; }
 .dl-lp .dl-hero h1 { font-size:clamp(2rem,6.2vw,3.1rem); margin:4px 0 0; }
@@ -190,6 +194,28 @@
   position:absolute; left:0; right:0; bottom:0; padding:14px; color:#fff; font-size:.84rem; font-weight:700;
   background:linear-gradient(0deg,rgba(0,0,0,.66) 0%, rgba(0,0,0,0) 100%);
 }
+
+/* ---- click-to-play video facade (9:16 Short) ---- */
+.dl-lp .dl-video { margin:30px auto 0; max-width:360px; }
+.dl-lp .dl-video__frame {
+  position:relative; width:100%; aspect-ratio:9/16; border-radius:16px; overflow:hidden;
+  border:1px solid var(--line); box-shadow:0 14px 40px rgba(15,40,70,.18); background:#000;
+}
+.dl-lp .dl-video__facade {
+  position:absolute; inset:0; width:100%; height:100%; padding:0; border:none; cursor:pointer;
+  background:#000; display:block; touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+}
+.dl-lp .dl-video__facade img { width:100%; height:100%; object-fit:cover; display:block; }
+.dl-lp .dl-video__play {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:72px; height:72px; border-radius:50%; background:rgba(7,143,234,.92);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,.4);
+  transition:transform .14s ease, background .14s ease; pointer-events:none;
+}
+.dl-lp .dl-video__facade:hover .dl-video__play { transform:translate(-50%,-50%) scale(1.07); background:var(--blue); }
+.dl-lp .dl-video__play svg { margin-left:4px; }
+.dl-lp .dl-video__frame iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+.dl-lp .dl-video__cap { text-align:center; font-size:.86rem; color:var(--muted); margin-top:12px; }
 
 /* ============== FREEHAND vs GRID vs LUCY ============== */
 .dl-lp .dl-versus { display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px; }
@@ -402,7 +428,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     <div class="dl-wrap">
       <span class="dl-hero__rate">
         <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-        <span>4.2 (437 reviews)</span>
+        <a class="dl-rate-link" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener">4.2&#9733; from 437 reviews on drawlucy.com</a>
         <span class="dl-rate-sep">|</span>
         <span class="dl-rate-tank">As Seen on Shark Tank</span>
       </span>
@@ -453,7 +479,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </span>
         <div>
           <h3>The reframe</h3>
-          <p>Great drawing starts with <strong>seeing accurately</strong>, not with raw talent. The LUCY does the seeing &mdash; it lays the exact placement onto your paper &mdash; so you can finally put your effort into the drawing instead of fighting the proportions.</p>
+          <p>Great drawing starts with <strong>seeing accurately</strong>, not with raw talent. <strong>It helps you see. You still draw every single stroke yourself.</strong> So you can finally put your effort into the drawing instead of fighting the proportions.</p>
         </div>
       </div>
     </div>
@@ -463,8 +489,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section dl-section--soft">
     <div class="dl-wrap">
       <span class="dl-eyebrow">How it gets the proportions right</span>
-      <h2 style="margin-top:10px;">Exact placement, transferred onto your paper</h2>
-      <p class="dl-lede" style="margin-left:0;text-align:left;">The LUCY uses a real half-silvered mirror to overlay a faint image of your subject directly onto your paper. You see your reference and your pencil tip at the same time &mdash; so every feature lands in exactly the right place.</p>
+      <h2 style="margin-top:10px;">Exact placement, reflected onto your paper</h2>
+      <p class="dl-lede" style="margin-left:0;text-align:left;">The LUCY uses a real half-silvered mirror to overlay a ghost image of your subject directly onto your paper. You see your reference and your pencil tip at the same time &mdash; so every feature lands in exactly the right place.</p>
 
       <div class="dl-steps">
         <div class="dl-step">
@@ -475,7 +501,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <div class="dl-step">
           <span class="dl-step__num" aria-hidden="true"></span>
           <h3>See it land in place</h3>
-          <p>A faint, accurately-sized image of your subject appears right on the paper &mdash; eyes, nose, and jaw already in correct proportion to each other.</p>
+          <p>A ghost, accurately-sized image of your subject appears right on the paper &mdash; eyes, nose, and jaw already in correct proportion to each other.</p>
         </div>
         <div class="dl-step">
           <span class="dl-step__num" aria-hidden="true"></span>
@@ -488,6 +514,22 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <img src="https://drawlucy.com/cdn/shop/files/2_0cefa663-939d-4ea2-a977-4f223737b797.jpg?v=1780967449&width=1200" alt="An artist drawing a portrait with the LUCY, the reflected image guiding exact placement on the paper" loading="lazy">
         <figcaption>Look through the glass and the subject is right there on your paper &mdash; in proportion.</figcaption>
       </figure>
+
+      <!-- See it in action: YouTube Short (click-to-play facade, no autoload) -->
+      <div class="dl-center" style="margin-top:34px;">
+        <span class="dl-eyebrow">See it in action</span>
+      </div>
+      <div class="dl-video">
+        <div class="dl-video__frame" id="dl-video-frame">
+          <button class="dl-video__facade" id="dl-video-facade" type="button" aria-label="Play video: see the LUCY in action">
+            <img src="https://i.ytimg.com/vi/o1szcisWX2k/hqdefault.jpg" alt="Watch the LUCY drawing tool in action" loading="lazy">
+            <span class="dl-video__play" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 256 256"><path fill="#fff" d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A8,8,0,0,1,228.23,134.69Z"></path></svg>
+            </span>
+          </button>
+        </div>
+        <p class="dl-video__cap">Watch how the reflected image lands the proportions on your paper.</p>
+      </div>
     </div>
   </section>
 
@@ -541,11 +583,12 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section dl-section--soft">
     <div class="dl-wrap dl-center">
       <span class="dl-eyebrow">What artists say</span>
-      <div class="dl-proof__stat">
+      <a class="dl-proof__stat" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener" style="text-decoration:none;">
         <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
         <span class="dl-bignum">4.2</span>
         <span style="text-align:left;font-weight:700;color:var(--muted);">out of 5<br><span style="font-weight:500;">across 437 reviews</span></span>
-      </div>
+      </a>
+      <p style="margin-top:10px;"><a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;font-weight:700;font-size:.92rem;">Read all 437 reviews on drawlucy.com &rarr;</a></p>
 
       <div class="dl-quote" style="max-width:680px;margin:26px auto 0;text-align:left;">
         <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -562,7 +605,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
         <div style="text-align:left;">
           <h3>As Seen on Shark Tank</h3>
-          <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a <span class="dl-tank__deal">$300,000 offer from Daymond John</span>. The same tool the Sharks bet on is the one on this page.</p>
+          <p>The LUCY is the <span class="dl-tank__deal">same tool that was on Shark Tank</span> &mdash; the camera lucida, reinvented for everyday artists. It&rsquo;s the same tool you can put on your paper today.</p>
         </div>
       </div>
 
@@ -658,7 +701,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
         </div>
       </div>
-      <p class="dl-ladder__fine">*30-day money-back guarantee: item must be returned in resalable condition; a 15% restocking fee and return shipping apply.</p>
+      <p class="dl-ladder__fine">*30-day money-back guarantee. See our <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">refund policy</a> for full details.</p>
     </div>
   </section>
 
@@ -686,7 +729,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </details>
         <details data-faq="What's the return policy?">
           <summary>What&rsquo;s the return policy?</summary>
-          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. To qualify, the item must be returned in resalable condition; a <strong>15% restocking fee and return shipping</strong> apply. Every LUCY is also backed by a 1-year limited warranty. See drawlucy.com for the full policy.</div>
+          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. Every LUCY is also backed by a 1-year limited warranty. See our full <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener"><strong>refund policy</strong></a> for the details.</div>
         </details>
       </div>
     </div>
@@ -713,7 +756,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <p>The LUCY Drawing Tool &mdash; the Old Masters&rsquo; secret tool, reinvented. Quality built in the USA.</p>
       <p class="dl-footer__disc">
         &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
-        *30-day money-back guarantee: the item must be returned in resalable condition, and a 15% restocking fee plus return shipping apply. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        *30-day money-back guarantee &mdash; see our <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener">refund policy</a> for full details. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
         &copy; 2026 The LUCY Drawing Tool. All rights reserved.
       </p>
     </div>
@@ -895,6 +938,23 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     });
   }
 
+  /* ---------- 6a. Click-to-play video facade (YouTube Short) ---------- */
+  function wireVideo() {
+    var facade = document.getElementById("dl-video-facade");
+    var frame = document.getElementById("dl-video-frame");
+    if (!facade || !frame) return;
+    facade.addEventListener("click", function () {
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", "https://www.youtube.com/embed/o1szcisWX2k?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1");
+      iframe.setAttribute("title", "The LUCY drawing tool in action");
+      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframe.setAttribute("allowfullscreen", "");
+      facade.remove();
+      frame.appendChild(iframe);
+      cap("video_play", { video: "o1szcisWX2k", location: "how_it_works", variant: VARIANT, page: PAGE_NAME });
+    });
+  }
+
   /* ---------- 6b. Section-in-view tracking (engagement signal per section) ---------- */
   function wireSectionViews() {
     var items = document.querySelectorAll(".dl-section, .dl-hero");
@@ -974,6 +1034,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     reparentFixed();
     wireCtas();
     wireFaq();
+    wireVideo();
     wireSectionViews();
     wirePopup();
   }

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <!--
-  DRAW LUCY - AVATAR LP: SUSAN (from photos / gifting) - VERSION 2026-06-26 - build v1
+  DRAW LUCY - AVATAR LP: SUSAN (from photos / gifting) - VERSION 2026-06-29 - build v2 (Les feedback)
   Angle: "Turn your photos into art." Audience: Susan, 54 - draws her pets & grandkids,
   gives the results as gifts; already has the photo; afraid she'll "ruin" the memory with a bad likeness.
   Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
-  Claims: PLAY IT STRAIGHT - NO "free shipping"; money-back ASTERISKED w/ restocking fine print; only 4.2/437 cited;
-          likeness/skill claims HEDGED ("results vary with practice"); Shark Tank factual;
-          photos require the $22 Photo Enlarger accessory (stated clearly).
+  SINGLE-PRODUCT page (Les, 2026-06-27): advertise ONE bundle only - "LUCY flex + Photo Enlarger & Bag" at $121,
+          cart id=7105667006521 (handle lucy-w-photo-projector-and-bag). No three-tier ladder, no separately-priced Photo Enlarger.
+  Claims: no money claim w/o confirm; 30-day money-back with no return-fee fine print, links to refund policy;
+          only 4.2/437 cited + CLICKABLE to drawlucy.com reviews; likeness/skill HEDGED ("results vary with practice");
+          Shark Tank = soft "the same tool that was on Shark Tank" ONLY (no shark name, no offer figure, no deal language).
   Flag: drawlucy-avatar-photos (id 733980) / experiment 379555 (DRAFT) -> default control; variant_b == control scaffold.
-  Search this file for "build v1" to confirm the latest paste.
+  TODO: swap hero before/after to client's boat photo + boat painting when the Drive asset is provided (currently dog placeholder).
+  Search this file for "build v2" to confirm the latest paste.
 -->
 <html lang="en">
 <head>
@@ -16,7 +19,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Turn Your Photos Into Art | The LUCY Drawing Tool</title>
-<meta name="description" content="Turn the photos you love - the pet who passed, the new grandbaby, the trip - into drawings that actually look like them. The LUCY Drawing Tool. As Seen on Shark Tank. 4.2&#9733; / 437 reviews. From $69. 30-day money-back guarantee.">
+<meta name="description" content="Turn the photos you love - the pet who passed, the new grandbaby, the trip - into drawings that actually look like them. The LUCY flex + Photo Enlarger & Bag - the same tool that was on Shark Tank. 4.2&#9733; from 437 reviews. $121. 30-day money-back guarantee.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="https://drawlucy.com/cdn/shop/files/favicons.png?v=1614333164&width=96">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -267,7 +270,12 @@
 .dl-lp .dl-tier__list li .ph { margin-top:1px; }
 .dl-lp .dl-tier__cta { margin-top:auto; }
 
-/* add-on row (Photo Enlarger) */
+/* single bundle offer - center one tier card, capped width */
+.dl-lp .dl-bundle { display:flex; justify-content:center; margin-top:30px; }
+.dl-lp .dl-bundle__card { width:100%; max-width:440px; text-align:left; }
+.dl-lp .dl-bundle__card .dl-tier__price { justify-content:flex-start; }
+
+/* add-on row (Photo Enlarger) [legacy: no longer rendered on single-product page] */
 .dl-lp .dl-addon {
   display:flex; align-items:center; gap:16px; margin-top:22px; background:var(--warm);
   border:1px solid #ecdfca; border-radius:16px; padding:18px 20px;
@@ -413,7 +421,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <a class="dl-header__logo" href="https://drawlucy.com" aria-label="The LUCY Drawing Tool home">
         <img src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool" loading="eager">
       </a>
-      <a class="dl-btn dl-btn--primary dl-header__cta" data-cart="flex" data-loc="header" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      <a class="dl-btn dl-btn--primary dl-header__cta" data-cart="bundle" data-loc="header" href="https://drawlucy.com/products/lucy-w-photo-projector-and-bag">Get the bundle &mdash; $121</a>
     </div>
   </header>
 
@@ -422,13 +430,14 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     <div class="dl-wrap">
       <span class="dl-hero__rate">
         <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-        <span>4.2 (437 reviews)</span>
+        <a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">4.2&#9733; from 437 reviews on drawlucy.com</a>
         <span class="dl-rate-sep">|</span>
         <span class="dl-rate-tank">As Seen on Shark Tank</span>
       </span>
       <h1>Turn your photos into <em>art</em>.</h1>
       <p class="dl-hero__sub">Turn the photos you love into drawings that actually look like them &mdash; the pet who passed, the new grandbaby, the trip you&rsquo;ll never forget.</p>
 
+      <!-- TODO: swap in client's boat photo (before) + boat painting (after) when asset is provided (Drive access pending). 1-line src swap on the two <img> below. -->
       <div class="dl-hero__proof">
         <div class="dl-hero__ba">
           <figure class="dl-hero__cell">
@@ -445,18 +454,18 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             </div>
           </figure>
         </div>
-        <p class="dl-hero__cap">You draw it by hand. The LUCY just helps you get the likeness right.</p>
+        <p class="dl-hero__cap">It helps you see. You still draw every single stroke yourself.</p>
       </div>
 
       <div class="dl-hero__cta-row">
-        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
-        <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee* &middot; results vary with practice</span>
+        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="bundle" data-loc="hero" href="https://drawlucy.com/products/lucy-w-photo-projector-and-bag">Get the LUCY flex + Photo Enlarger &mdash; $121</a>
+        <span class="dl-btn-note">$121 &middot; everything you need to draw from a photo &middot; 30-day money-back guarantee &middot; results vary with practice</span>
       </div>
 
       <div class="dl-trustbar">
         <span>
           <svg class="ph ph-duo-b" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
-          4.2&#9733; / 437 reviews
+          <a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">4.2&#9733; from 437 reviews on drawlucy.com</a>
         </span>
         <span>
           <svg class="ph ph-duo-coral" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
@@ -468,7 +477,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </span>
         <span>
           <svg class="ph ph-duo-b" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
-          30-day money-back*
+          30-day money-back
         </span>
       </div>
     </div>
@@ -513,7 +522,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <div class="dl-step" style="text-align:left;">
           <span class="dl-step__num" aria-hidden="true"></span>
           <h3>Set up your photo</h3>
-          <p>Working from a printed photo? Pop it in the $22 Photo Enlarger accessory, which enlarges it to drawing size. Drawing a live subject &mdash; your dog on the couch, flowers on the table &mdash; needs no accessory at all.</p>
+          <p>Working from a printed photo? Pop it in the Photo Enlarger &mdash; included in your bundle &mdash; which enlarges it to drawing size. Drawing a live subject &mdash; your dog on the couch, flowers on the table &mdash; needs nothing extra at all.</p>
         </div>
         <div class="dl-step" style="text-align:left;">
           <span class="dl-step__num" aria-hidden="true"></span>
@@ -532,9 +541,9 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <svg class="ph ph-duo" width="38" height="38" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,56H180.28L165.16,33.34A8,8,0,0,0,158.5,29.4l-61,0a8,8,0,0,0-6.66,3.94L75.72,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56ZM128,176a36,36,0,1,1,36-36A36,36,0,0,1,128,176Z" opacity="0.2"></path><path fill="currentColor" d="M208,48H180.43l-13.72-20.57A16,16,0,0,0,153.42,20H102.58A16,16,0,0,0,89.29,27.43L75.57,48H48A24,24,0,0,0,24,72V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V72A24,24,0,0,0,208,48Zm8,144a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H79.85a8,8,0,0,0,6.66-3.57L102.58,36h50.84l16.07,24.43A8,8,0,0,0,176.15,64H208a8,8,0,0,1,8,8ZM128,84a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,84Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,164Z"></path></svg>
         </span>
         <div style="text-align:left;">
-          <h3>Honest note: working from a printed photo</h3>
-          <p>The LUCY reflects whatever is in front of it &mdash; so it draws <strong>live subjects</strong> (people, pets, flowers, scenes) right out of the box. To draw from a <strong>printed photo</strong>, you pair it with the inexpensive <strong>Photo Enlarger accessory ($22)</strong>, which magnifies the photo 2.5&ndash;4&times; to a comfortable drawing size.</p>
-          <p>We mention it up front so there are no surprises &mdash; you can <a href="https://drawlucy.com/products/photo-projector-with-bag" data-cart="enlarger" data-loc="photonote">add the Photo Enlarger</a> alongside any LUCY below.</p>
+          <h3>Working from a printed photo? You&rsquo;re covered.</h3>
+          <p>The LUCY reflects whatever is in front of it &mdash; so it draws <strong>live subjects</strong> (people, pets, flowers, scenes) right out of the box. To draw from a <strong>printed photo</strong>, you use the <strong>Photo Enlarger</strong>, which magnifies the photo 2.5&ndash;4&times; to a comfortable drawing size.</p>
+          <p>The good news: the <strong>Photo Enlarger &amp; Bag is included</strong> in the bundle on this page &mdash; so you can work from printed photos from day one, with nothing else to buy.</p>
         </div>
       </div>
     </div>
@@ -597,7 +606,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
         <div>
           <h3>As Seen on Shark Tank</h3>
-          <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a <span class="dl-tank__deal">$300,000 offer from Daymond John</span>. The same tool the Sharks bet on is the one on this page.</p>
+          <p>The same tool that was on Shark Tank is the one on this page &mdash; the LUCY flex, now bundled with the Photo Enlarger &amp; Bag so you can draw from your printed photos.</p>
         </div>
       </div>
     </div>
@@ -633,88 +642,40 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </div>
       </div>
       <div style="margin-top:30px;">
-        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="gifting" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="bundle" data-loc="gifting" href="https://drawlucy.com/products/lucy-w-photo-projector-and-bag">Get the LUCY flex + Photo Enlarger &mdash; $121</a>
       </div>
     </div>
   </section>
 
-  <!-- ============== OFFER LADDER ============== -->
+  <!-- ============== OFFER (single bundle) ============== -->
   <section class="dl-section">
     <div class="dl-wrap dl-center">
-      <span class="dl-eyebrow">Choose your LUCY</span>
-      <h2>Pick the size that fits your photos</h2>
-      <p class="dl-lede">All three reflect a photo or a live subject onto your paper. They differ mainly in how large you can draw and how sturdy the build is. Most people start with the flex.</p>
+      <span class="dl-eyebrow">The bundle</span>
+      <h2>Everything you need to draw from a photo</h2>
+      <p class="dl-lede">One simple bundle &mdash; the <strong>LUCY flex</strong> plus the <strong>Photo Enlarger &amp; Bag</strong> &mdash; so you can draw from your printed photos and your live subjects from the very first day.</p>
 
-      <div class="dl-ladder">
-        <!-- MINI -->
-        <div class="dl-tier">
-          <span class="dl-tier__flag dl-tier__flag--start">Entry</span>
-          <div class="dl-tier__name">LUCY mini</div>
-          <div class="dl-tier__best">Best for: smaller portraits &amp; trying it out</div>
-          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs3.png?v=1780534868&width=1254" alt="LUCY mini drawing tool" loading="lazy">
-          <div class="dl-tier__price"><span class="dl-now">$69</span><span class="dl-was">$95</span></div>
-          <span class="dl-tier__save">Save $26</span>
-          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+      <div class="dl-bundle">
+        <div class="dl-tier dl-tier--featured dl-bundle__card">
+          <span class="dl-tier__flag dl-tier__flag--pop">The complete photo kit</span>
+          <div class="dl-tier__name">LUCY flex + Photo Enlarger &amp; Bag</div>
+          <div class="dl-tier__best">Draw from printed photos &amp; live subjects &mdash; nothing else to buy</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs2.png?v=1780534869&width=1254" alt="The LUCY flex drawing tool with the Photo Enlarger and carrying bag" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$121</span></div>
+          <p class="dl-tier__affirm">or Pay in 4 interest-free installments with Affirm (subject to eligibility)</p>
           <ul class="dl-tier__list">
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Image up to 12&times;18&Prime;</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>2+ brightness levels</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>The low-risk first LUCY</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>The LUCY flex &mdash; draw up to 19&times;27&Prime;, 4 brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Photo Enlarger &mdash; magnifies a printed photo 2.5&ndash;4&times; to drawing size</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Carrying bag to store and travel with it</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>The same tool that was on Shark Tank</li>
           </ul>
-          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="mini" data-loc="ladder-mini" href="https://drawlucy.com/products/lucy-mini">Add LUCY mini &mdash; $69</a>
-        </div>
-
-        <!-- FLEX (featured) -->
-        <div class="dl-tier dl-tier--featured">
-          <span class="dl-tier__flag dl-tier__flag--pop">Most Popular</span>
-          <div class="dl-tier__name">LUCY flex</div>
-          <div class="dl-tier__best">Best for: most people &mdash; the versatile pick</div>
-          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs2.png?v=1780534869&width=1254" alt="LUCY flex drawing tool" loading="lazy">
-          <div class="dl-tier__price"><span class="dl-now">$99</span><span class="dl-was">$160</span></div>
-          <span class="dl-tier__save">Save $61</span>
-          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
-          <ul class="dl-tier__list">
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Bigger image &mdash; up to 19&times;27&Prime;</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>4+ brightness levels</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Carries the 4.2&#9733; / 437 reviews</li>
-          </ul>
-          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="flex" data-loc="ladder-flex" href="https://drawlucy.com/products/lucy-drawing-tool">Add LUCY flex &mdash; $99</a>
-        </div>
-
-        <!-- PRO -->
-        <div class="dl-tier">
-          <span class="dl-tier__flag dl-tier__flag--big">Pro</span>
-          <div class="dl-tier__name">LUCY pro</div>
-          <div class="dl-tier__best">Best for: large pieces &amp; serious work</div>
-          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs1.jpg?v=1780534868&width=1080" alt="LUCY pro drawing tool" loading="lazy">
-          <div class="dl-tier__price"><span class="dl-now">$275</span><span class="dl-was">$320</span></div>
-          <span class="dl-tier__save">Save $45</span>
-          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
-          <ul class="dl-tier__list">
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Largest image &mdash; up to 20&times;37&Prime;</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Sturdiest, most stable build</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>For large pieces &amp; pros</li>
-          </ul>
-          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="pro" data-loc="ladder-pro" href="https://drawlucy.com/products/lucy-pro">Add LUCY pro &mdash; $275</a>
-        </div>
-      </div>
-
-      <!-- Photo Enlarger add-on -->
-      <div class="dl-addon">
-        <img class="dl-addon__img" src="https://drawlucy.com/cdn/shop/files/Specs2.png?v=1780534869&width=1254" alt="Photo Enlarger accessory and bag" loading="lazy">
-        <div class="dl-addon__body">
-          <h3>Drawing from printed photos? Add the Photo Enlarger</h3>
-          <p>Enlarges a printed photo 2.5&ndash;4&times; to drawing size. Needed for printed photos; not needed for live subjects.</p>
-        </div>
-        <div class="dl-addon__act">
-          <div class="dl-addon__price">$22<span class="dl-was">$35</span></div>
-          <a class="dl-btn dl-btn--amber dl-addon__btn" data-cart="enlarger" data-loc="addon" href="https://drawlucy.com/products/photo-projector-with-bag">Add &mdash; $22</a>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta dl-btn--lg" data-cart="bundle" data-loc="offer" href="https://drawlucy.com/products/lucy-w-photo-projector-and-bag">Get the bundle &mdash; $121</a>
         </div>
       </div>
 
       <div class="dl-risk">
         <div class="dl-risk__card">
           <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
-          <div><h3>30-Day Money-Back*</h3><p>Draw with it. If it&rsquo;s not for you within 30 days, send it back.</p></div>
+          <div><h3>30-Day Money-Back</h3><p>Draw with it. If it&rsquo;s not for you within 30 days, send it back. <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:underline;">See policy</a>.</p></div>
         </div>
         <div class="dl-risk__card">
           <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M152,32V80a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V32ZM216,72V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H88V80a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V64h48A8,8,0,0,1,216,72Z" opacity="0.2"></path><path fill="currentColor" d="M179.31,88.08a8,8,0,0,0-10.07,5.16A40,40,0,0,1,88,96V88h64a16,16,0,0,0,16-16V32a16,16,0,0,0-16-16H104A16,16,0,0,0,88,32V72.23A56.08,56.08,0,0,0,184.49,93.4a8,8,0,0,0-5.18-5.32ZM104,32h48V72H104ZM208,80H180.42a72.08,72.08,0,0,1-2.94,16H208V200H48V96H78.52a72.08,72.08,0,0,1-2.94-16H48A16,16,0,0,0,32,96V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"></path></svg>
@@ -725,7 +686,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
         </div>
       </div>
-      <p class="dl-finehint">*30-day money-back guarantee: item must be returned in resalable condition; a 15% restocking fee and return shipping apply.</p>
+      <p class="dl-finehint">30-day money-back guarantee &mdash; see the full <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:underline;">return policy</a>. Results vary and improve with practice.</p>
     </div>
   </section>
 
@@ -735,9 +696,9 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <span class="dl-eyebrow">Quick answers</span>
       <h2>Questions before you start</h2>
       <div class="dl-faq">
-        <details data-faq="Do I need the Photo Enlarger to draw from photos?">
-          <summary>Do I need the Photo Enlarger to draw from photos?</summary>
-          <div class="dl-faq__a">For a <strong>printed photo</strong>, yes &mdash; the LUCY reflects whatever is in front of it, so you pair it with the <strong>Photo Enlarger accessory ($22)</strong> to magnify the photo 2.5&ndash;4&times; to drawing size. For a <strong>live subject</strong> right in front of you &mdash; your dog, a vase of flowers, a person sitting for a portrait &mdash; you don&rsquo;t need any accessory. We list the Photo Enlarger right next to the models above so it&rsquo;s easy to add.</div>
+        <details data-faq="Does the bundle let me draw from printed photos?">
+          <summary>Does the bundle let me draw from printed photos?</summary>
+          <div class="dl-faq__a">Yes &mdash; the bundle on this page <strong>includes the Photo Enlarger &amp; Bag</strong>, so you can work from printed photos right away. The Photo Enlarger magnifies a printed photo 2.5&ndash;4&times; to drawing size. For a <strong>live subject</strong> right in front of you &mdash; your dog, a vase of flowers, a person sitting for a portrait &mdash; you don&rsquo;t need it at all. Either way, there&rsquo;s nothing extra to buy.</div>
         </details>
         <details data-faq="Will my drawing actually look like the photo?">
           <summary>Will my drawing actually look like the photo?</summary>
@@ -753,7 +714,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </details>
         <details data-faq="What's the return policy?">
           <summary>What&rsquo;s the return policy?</summary>
-          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. To qualify, the item must be returned in resalable condition; a <strong>15% restocking fee and return shipping</strong> apply. Every LUCY is also backed by a <strong>1-year limited warranty</strong>. See drawlucy.com for full details.</div>
+          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong> &mdash; draw with it, and if it&rsquo;s not for you, send it back within 30 days. Every LUCY is also backed by a <strong>1-year limited warranty</strong>. See the full <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:underline;">return policy</a> for details.</div>
         </details>
         <details data-faq="Will it be ready in time for a gift?">
           <summary>Will it be ready in time for a gift?</summary>
@@ -767,10 +728,10 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section dl-final">
     <div class="dl-wrap">
       <h2>The photo&rsquo;s already yours. Make it something to keep.</h2>
-      <p>Turn the people and pets you love into drawings that actually look like them &mdash; to frame, or to give. Start with the flex, our most popular model.</p>
-      <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="flex" data-loc="final" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      <p>Turn the people and pets you love into drawings that actually look like them &mdash; to frame, or to give. The LUCY flex + Photo Enlarger &amp; Bag has everything you need to draw from a photo.</p>
+      <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="bundle" data-loc="final" href="https://drawlucy.com/products/lucy-w-photo-projector-and-bag">Get the bundle &mdash; $121</a>
       <div class="dl-final__trust">
-        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back*</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back</span>
         <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>1-Year Warranty</span>
         <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Built in the USA</span>
       </div>
@@ -783,8 +744,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <img class="dl-footer__logo" src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool">
       <p>The LUCY Drawing Tool &mdash; the Old Masters&rsquo; secret tool, reinvented. Turn the photos you love into drawings that actually look like them. Quality built in the USA.</p>
       <p class="dl-footer__disc">
-        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or likeness. The LUCY reflects live subjects directly; drawing from a printed photo requires the Photo Enlarger accessory (sold separately).
-        *30-day money-back guarantee: the item must be returned in resalable condition, and a 15% restocking fee plus return shipping apply. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on <a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener">drawlucy.com</a>. Individual results vary and improve with practice; the LUCY is a drawing aid and does not guarantee any particular skill level or likeness. The LUCY reflects live subjects directly; the bundle on this page includes the Photo Enlarger so you can also draw from printed photos.
+        30-day money-back guarantee &mdash; see the full <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener">return policy</a>. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
         &copy; 2026 The LUCY Drawing Tool. All rights reserved.
       </p>
     </div>
@@ -794,8 +755,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
 <!-- ============== STICKY MOBILE CTA (reparented to body) ============== -->
 <div class="dl-sticky" id="dl-sticky">
-  <div class="dl-sticky__txt"><b>LUCY flex</b><small>$99 &middot; Most Popular</small></div>
-  <a class="dl-sticky__btn" data-cart="flex" data-loc="sticky" href="https://drawlucy.com/products/lucy-drawing-tool">See the models &rarr;</a>
+  <div class="dl-sticky__txt"><b>LUCY flex + Enlarger</b><small>$121 &middot; complete photo kit</small></div>
+  <a class="dl-sticky__btn" data-cart="bundle" data-loc="sticky" href="https://drawlucy.com/products/lucy-w-photo-projector-and-bag">Get the bundle &rarr;</a>
 </div>
 
 <!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
@@ -816,11 +777,11 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
 <script>
 /* =========================================================================
-   DRAW LUCY - SUSAN avatar (from photos / gifting) - instrumentation + behavior (build v1)
+   DRAW LUCY - SUSAN avatar (from photos / gifting) - instrumentation + behavior (build v2)
    - PostHog init (project DrawLucy 486255) + feature flag (default control)
    - 6-event funnel + experiment_assigned
    - UTM/attribution bridge: capture -> super-properties -> forward on cart links
-   - Real /cart/add links w/ verified variant ids (incl. $22 Photo Enlarger add-on)
+   - Real /cart/add links w/ verified variant id for the single bundle (LUCY flex + Photo Enlarger & Bag)
    - sticky CTA + exit-intent popup, reparented to <body>
    ========================================================================= */
 (function () {
@@ -834,12 +795,10 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   var EXPERIMENT_ID = 379555;
   var PAGE_NAME = "avatar-photos";
 
-  // Verified variant ids (drawlucy.com/products/{handle}.js on 2026-06-26)
+  // SINGLE-PRODUCT page (Les, 2026-06-27): the only offer is the bundle below.
+  // Bundle variant id 7105667006521, handle lucy-w-photo-projector-and-bag, $121.
   var CART = {
-    mini:     { variant: "39716899094626", handle: "lucy-mini",              price: 69,  name: "LUCY mini" },
-    flex:     { variant: "7150423900217",  handle: "lucy-drawing-tool",      price: 99,  name: "LUCY flex" },
-    pro:      { variant: "31675633303650", handle: "lucy-pro",               price: 275, name: "LUCY pro"  },
-    enlarger: { variant: "7218200051769",  handle: "photo-projector-with-bag", price: 22,  name: "Photo Enlarger & Bag" }
+    bundle: { variant: "7105667006521", handle: "lucy-w-photo-projector-and-bag", price: 121, name: "LUCY flex + Photo Enlarger & Bag" }
   };
 
   var UTM_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term",

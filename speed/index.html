@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--
-  DRAW LUCY AVATAR LP A - "MARGARET (speed)" - VERSION 2026-06-26 - build v1
+  DRAW LUCY AVATAR LP A - "MARGARET (speed)" - VERSION 2026-06-29 - build v2 (Les feedback applied)
   Angle: "Minutes, not hours." Audience: experienced painter, dreads the hour of measuring/re-sketching.
   Peer-to-peer (she ALREADY paints). Lead = SPEED + getting to the painting. NOT "learn to draw".
   Self-contained. Scoped class prefix "dl-". Chassis cloned from listicle-faq (LP#2). No theme deps.
-  Claims: PLAY IT STRAIGHT - NO "free shipping"; money-back ASTERISKED w/ restocking fine print; only 4.2/437 cited.
-  Search this file for "build v1" to confirm the latest paste.
-  ASSET GAP: the literal 3-min blank->layin->paint time-lapse video does not exist yet (interim = brand demo
-  video facade + a 3-thumb blank->layin->paint sequence). Flagged to request from client.
+  Claims: PLAY IT STRAIGHT - no shipping promise; 30-day money-back guarantee linked to policy; only 4.2/437 cited (clickable); Shark Tank soft mention only.
+  Search this file for "build v2" to confirm the latest paste.
+  ASSET GAP: the literal 3-min blank->underdrawing->paint time-lapse video does not exist yet (interim = brand demo
+  video facade + a 3-thumb blank->underdrawing->paint sequence). Flagged to request from client.
 -->
 <html lang="en">
 <head>
@@ -47,6 +47,8 @@
 }
 .dl-lp img { max-width:100%; display:block; }
 .dl-lp a { color:inherit; text-decoration:none; }
+.dl-lp a.dl-rev-link { color:var(--blue); font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.dl-lp a.dl-rev-link:hover { color:var(--blue-dk); }
 .dl-lp strong { font-weight:800; }
 .dl-lp .dl-wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px; }
 .dl-lp .dl-wrap--wide { max-width:1080px; }
@@ -116,6 +118,8 @@
   box-shadow:0 2px 10px rgba(7,143,234,.08);
 }
 .dl-lp .dl-hero__rate .dl-stars { color:var(--amber-dk); letter-spacing:1px; }
+.dl-lp .dl-hero__rate .dl-rate-link { color:var(--blue); font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.dl-lp .dl-hero__rate .dl-rate-link:hover { color:var(--blue-dk); }
 .dl-lp .dl-hero__rate .dl-rate-sep { color:var(--line); }
 .dl-lp .dl-hero__rate .dl-rate-tank { color:var(--coral); font-weight:800; }
 .dl-lp .dl-hero h1 { font-size:clamp(2.1rem,7vw,3.4rem); margin:16px 0 0; }
@@ -141,7 +145,7 @@
 }
 .dl-lp .dl-microbar span { display:inline-flex; align-items:center; gap:7px; }
 
-/* ---- 3-step time-lapse strip (blank -> layin -> painting) ---- */
+/* ---- 3-step time-lapse strip (blank -> underdrawing -> painting) ---- */
 .dl-lp .dl-strip { margin-top:22px; }
 .dl-lp .dl-strip__label { font-size:.8rem; font-weight:700; letter-spacing:.04em; color:var(--muted); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
 .dl-lp .dl-strip__grid { display:grid; grid-template-columns:1fr; gap:10px; }
@@ -423,7 +427,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <div class="dl-hero__copy">
           <span class="dl-hero__rate">
             <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-            <span>4.2 (437 reviews)</span>
+            <a class="dl-rate-link" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener">4.2&#9733; from 437 reviews on drawlucy.com</a>
             <span class="dl-rate-sep">|</span>
             <span class="dl-rate-tank">As Seen on Shark Tank</span>
           </span>
@@ -431,13 +435,13 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <p class="dl-hero__sub">You already know how to paint. Spend your afternoon on the part you love &mdash; not the hour of measuring and re-sketching. The LUCY lays any photo onto your paper or canvas, accurately, in minutes.</p>
           <div class="dl-hero__cta-row">
             <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
-            <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee* &middot; results vary with practice</span>
+            <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee &middot; results vary with practice</span>
           </div>
           <div class="dl-microbar">
-            <span><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm49.53,85.79-58.66,56a8,8,0,0,1-11.06,0l-29.34-28a8,8,0,1,1,11.06-11.58L113.34,148l53.13-50.71a8,8,0,0,1,11.06,11.5Z"></path></svg>4.2&#9733; / 437 reviews</span>
+            <span><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm49.53,85.79-58.66,56a8,8,0,0,1-11.06,0l-29.34-28a8,8,0,1,1,11.06-11.58L113.34,148l53.13-50.71a8,8,0,0,1,11.06,11.5Z"></path></svg><a class="dl-rev-link" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener">4.2&#9733; from 437 reviews on drawlucy.com</a></span>
             <span><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>As Seen on Shark Tank</span>
             <span><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0.2"></path><path fill="currentColor" d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path></svg>USA-Made</span>
-            <span><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>30-day money-back*</span>
+            <span><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>30-day money-back</span>
           </div>
         </div>
         <div class="dl-hero__visual">
@@ -447,7 +451,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
               src="https://www.youtube.com/embed/O9Ql8phbRz8?autoplay=1&mute=1&loop=1&playlist=O9Ql8phbRz8&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
               title="The LUCY Drawing Tool - demo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="eager"></iframe>
           </div>
-          <!-- 3-step time-lapse strip: blank paper -> accurate layin -> painting -->
+          <!-- 3-step time-lapse strip: blank paper -> accurate underdrawing -> painting -->
           <div class="dl-strip">
             <div class="dl-strip__label">
               <svg class="ph ph-duo-b" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path></svg>
@@ -466,12 +470,12 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
                   <span class="dl-strip__n">2</span>
                   <img src="https://drawlucy.com/cdn/shop/files/KatPEIMG_2035Ghost.jpg?v=1780515269&width=821" alt="The composition laid onto the paper accurately, traced through the LUCY in minutes" loading="lazy">
                 </div>
-                <span class="dl-strip__cap">Accurate layin<small>Minutes, not hours</small></span>
+                <span class="dl-strip__cap">Accurate underdrawing<small>Minutes, not hours</small></span>
               </div>
               <div class="dl-strip__step">
                 <div class="dl-strip__fig">
                   <span class="dl-strip__n">3</span>
-                  <img src="https://drawlucy.com/cdn/shop/files/dogAfter.jpg?v=1780609391&width=537" alt="The finished painting - your colour and brushwork on an accurate foundation" loading="lazy">
+                  <img src="https://drawlucy.com/cdn/shop/files/dogAfter.jpg?v=1780609391&width=537" alt="The finished painting - your color and brushwork on an accurate foundation" loading="lazy">
                 </div>
                 <span class="dl-strip__cap">Your painting<small>The part you love</small></span>
               </div>
@@ -486,8 +490,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section">
     <div class="dl-wrap dl-center">
       <span class="dl-eyebrow">Get to the good part</span>
-      <h2>The painting is the reward. <br>The layin shouldn&rsquo;t eat the afternoon.</h2>
-      <p class="dl-lede">You know the feeling: by the time the drawing is finally laid in correctly &mdash; measured, gridded, re-sketched, erased &mdash; the whole afternoon is gone, and the painting hasn&rsquo;t even started. The LUCY collapses that hour into minutes, so your studio time goes where it belongs.</p>
+      <h2>The painting is the reward. <br>The underdrawing shouldn&rsquo;t eat the afternoon.</h2>
+      <p class="dl-lede">You know the feeling: by the time the drawing is finally placed correctly &mdash; measured, gridded, re-sketched, erased &mdash; the whole afternoon is gone, and the painting hasn&rsquo;t even started. The LUCY helps turn that setup time into minutes, so your studio time goes where it belongs.</p>
 
       <div class="dl-reframe__split">
         <div class="dl-reframe__card dl-reframe__card--old">
@@ -510,7 +514,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <ul class="dl-reframe__list">
             <li><svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg><span>Lay the composition straight onto canvas</span></li>
             <li><svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg><span>Proportions land right the first time &mdash; no grid</span></li>
-            <li><svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg><span>Spend the afternoon on colour and brushwork</span></li>
+            <li><svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg><span>Spend the afternoon on color and brushwork</span></li>
           </ul>
           <div class="dl-reframe__time">Painting within minutes</div>
         </div>
@@ -527,7 +531,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section dl-section--soft">
     <div class="dl-wrap dl-center">
       <span class="dl-eyebrow">How it works</span>
-      <h2>Three quick steps to an accurate layin</h2>
+      <h2>Three quick steps to an accurate underdrawing</h2>
       <p class="dl-lede">No measuring. No grid. No projector to set up in a dark room. Clamp it, look through it, and trace what you see &mdash; in your own hand.</p>
       <div class="dl-steps">
         <div class="dl-step">
@@ -542,14 +546,14 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             <svg class="ph ph-duo" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,56C48,56,8,128,8,128s40,72,120,72,120-72,120-72S208,56,128,56Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z" opacity="0.2"></path><path fill="currentColor" d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
           </div>
           <h3>Look &amp; trace</h3>
-          <p>Look through the optic and your reference appears right on the paper. <strong>Trace the layin in minutes</strong> &mdash; placement is exact.</p>
+          <p>Look through the optic and your reference appears right on the paper. <strong>Trace the underdrawing in minutes</strong> &mdash; placement is exact.</p>
         </div>
         <div class="dl-step">
           <div class="dl-step__icon"><span class="dl-step__n">3</span>
             <svg class="ph ph-duo" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true"><path d="M229.66,77.66l-26.34,26.34L152,52.69l26.34-26.35a8,8,0,0,1,11.32,0l40,40A8,8,0,0,1,229.66,77.66Z" opacity="0.2"></path><path fill="currentColor" d="M235.32,72,184,20.68a16,16,0,0,0-22.63,0L36.69,145.36A15.86,15.86,0,0,0,32,156.69V208a16,16,0,0,0,16,16H99.31a15.86,15.86,0,0,0,11.33-4.69L235.32,94.63a16,16,0,0,0,0-22.63ZM99.31,208H48V156.69l84.68-84.69,51.32,51.32ZM195.31,112,144,60.68l28-28L223.31,84Z"></path></svg>
           </div>
           <h3>Paint your way</h3>
-          <p>Lift the LUCY and paint. <strong>Your colour, your brushwork, your style</strong> &mdash; now on a foundation you can trust.</p>
+          <p>Lift the LUCY and paint. <strong>Your color, your brushwork, your style</strong> &mdash; now on a foundation you can trust.</p>
         </div>
       </div>
       <div class="dl-nogrid">
@@ -574,17 +578,17 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             <h3>&ldquo;Doesn&rsquo;t this feel like cheating?&rdquo;</h3>
           </div>
           <p class="dl-knock__a">It&rsquo;s the same idea the Old Masters leaned on. Optical drawing aids &mdash; the camera lucida and camera obscura &mdash; have been <strong>associated with master artists like Vermeer and Rembrandt for centuries</strong>. The LUCY is a modern take on that technique.</p>
-          <p class="dl-knock__a">It does the <em>seeing</em>. <strong>You still paint every single stroke yourself</strong> &mdash; the colour, the values, the brushwork, the life. It just hands you an accurate layin so your skill goes into the painting, not the plotting.</p>
+          <p class="dl-knock__a"><strong>It helps you see. You still paint every single stroke yourself</strong> &mdash; the color, the values, the brushwork, the life. It just hands you an accurate underdrawing so your skill goes into the painting, not the plotting.</p>
           <span class="dl-knock__pill">
             <svg class="ph" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
             A learning aid, not a crutch
           </span>
         </div>
-        <!-- KNOCK 2 - fiddly -->
+        <!-- KNOCK 2 - easy to set up -->
         <div class="dl-knock__card">
           <div class="dl-knock__q">
             <svg class="ph ph-duo" width="34" height="34" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24a96,96,0,1,0,96,96A96,96,0,0,0,128,24Zm0,168a72,72,0,1,1,72-72A72,72,0,0,1,128,192Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm12-88a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm-12-72a8,8,0,0,0-8,8V96a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Z"></path></svg>
-            <h3>&ldquo;Is it fiddly to set up?&rdquo;</h3>
+            <h3>&ldquo;Is it easy to set up?&rdquo;</h3>
           </div>
           <p class="dl-knock__a">Setup is about <strong>30 seconds</strong>: clamp it to your table or easel, aim it, and dial the brightness. From there it stays put for the whole session.</p>
           <p class="dl-knock__a">Honest note: there&rsquo;s a short learning curve the first time &mdash; budget one short practice session to get your eye in the right spot. After that, most artists call it effortless. (It&rsquo;s a reflection, not a projector, so a well-lit desk helps; the flex and pro have multiple brightness levels.)</p>
@@ -606,6 +610,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <span class="dl-bignum">4.2</span>
         <span style="text-align:left;font-weight:700;color:var(--muted);">out of 5<br><span style="font-weight:500;">across 437 reviews</span></span>
       </div>
+      <p style="margin-top:10px;"><a class="dl-rev-link" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener">Read all 437 reviews on drawlucy.com &rarr;</a></p>
 
       <div class="dl-quote">
         <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -622,7 +627,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
         <div>
           <h3>As Seen on Shark Tank</h3>
-          <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a <span class="dl-tank__deal">$300,000 offer from Daymond John</span>. The same tool the Sharks bet on is the one on this page.</p>
+          <p>The LUCY is the same tool that was on Shark Tank &mdash; the modern take on the camera lucida that the Old Masters&rsquo; technique is built on. The very same tool is the one on this page.</p>
         </div>
       </div>
 
@@ -677,7 +682,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <ul class="dl-tier__list">
             <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Bigger image &mdash; up to 19&times;27&Prime;</li>
             <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>4+ brightness levels</li>
-            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Carries the 4.2&#9733; / 437 reviews</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg><a class="dl-rev-link" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener">4.2&#9733; from 437 reviews on drawlucy.com</a></li>
           </ul>
           <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="flex" data-loc="ladder-flex" href="https://drawlucy.com/products/lucy-drawing-tool">Add LUCY flex &mdash; $99</a>
         </div>
@@ -712,7 +717,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <div class="dl-risk">
         <div class="dl-risk__card">
           <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
-          <div><h3>30-Day Money-Back*</h3><p>Lay in a few drawings. If it&rsquo;s not for you within 30 days, send it back.</p></div>
+          <div><h3>30-Day Money-Back</h3><p>Draw with it for a few sessions. If it&rsquo;s not for you within 30 days, send it back.</p></div>
         </div>
         <div class="dl-risk__card">
           <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M152,32V80a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V32ZM216,72V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H88V80a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V64h48A8,8,0,0,1,216,72Z" opacity="0.2"></path><path fill="currentColor" d="M179.31,88.08a8,8,0,0,0-10.07,5.16A40,40,0,0,1,88,96V88h64a16,16,0,0,0,16-16V32a16,16,0,0,0-16-16H104A16,16,0,0,0,88,32V72.23A56.08,56.08,0,0,0,184.49,93.4a8,8,0,0,0-5.18-5.32ZM104,32h48V72H104ZM208,80H180.42a72.08,72.08,0,0,1-2.94,16H208V200H48V96H78.52a72.08,72.08,0,0,1-2.94-16H48A16,16,0,0,0,32,96V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"></path></svg>
@@ -723,7 +728,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
         </div>
       </div>
-      <p class="dl-risk__fine">*30-day money-back guarantee: item must be returned in resalable condition; a 15% restocking fee and return shipping apply.</p>
+      <p class="dl-risk__fine">30-day money-back guarantee &mdash; <a class="dl-rev-link" href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener">see our full return policy</a>.</p>
     </div>
   </section>
 
@@ -733,13 +738,13 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <span class="dl-eyebrow">Quick answers</span>
       <h2>For the working painter</h2>
       <div class="dl-faq">
-        <details data-faq="How fast can I really get a layin down?">
-          <summary>How fast can I really get a layin down?</summary>
-          <div class="dl-faq__a">Once it&rsquo;s set up &mdash; about 30 seconds &mdash; the accurate layin takes <strong>minutes</strong> instead of the hour that measuring and gridding can eat. There&rsquo;s a short learning curve the first time you use it; after that most artists describe it as effortless. Results vary with practice.</div>
+        <details data-faq="How fast can I really get an underdrawing down?">
+          <summary>How fast can I really get an underdrawing down?</summary>
+          <div class="dl-faq__a">Once it&rsquo;s set up &mdash; about 30 seconds &mdash; the accurate underdrawing takes <strong>minutes</strong> instead of the hour that measuring and gridding can eat. There&rsquo;s a short learning curve the first time you use it; after that most artists describe it as effortless. Results vary with practice.</div>
         </details>
-        <details data-faq="Can I paint over the layin?">
-          <summary>Can I paint over the layin, or just draw?</summary>
-          <div class="dl-faq__a">You can use <strong>any medium on virtually any surface</strong> &mdash; pencil, charcoal, pen, marker, and paint on paper or canvas. Lay the composition in accurately, lift the LUCY, and paint your way. Most LUCY buyers are painters and drawers, not beginners.</div>
+        <details data-faq="Can I paint over the image, or is it just for drawing?">
+          <summary>Can I paint over the image, or is it just for drawing?</summary>
+          <div class="dl-faq__a">You can use <strong>almost any medium on almost any surface</strong> &mdash; pencil, charcoal, pen, marker, or paint on paper or canvas. Use the LUCY to accurately place your drawing or painting, then lift it away and paint your way. Most LUCY buyers are painters and artists, not just beginners.</div>
         </details>
         <details data-faq="Does it work from my own photos?">
           <summary>Does it work from my own photos?</summary>
@@ -751,7 +756,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </details>
         <details data-faq="What's the return policy?">
           <summary>What&rsquo;s the return policy?</summary>
-          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. To qualify, the item must be returned in resalable condition; a <strong>15% restocking fee and return shipping</strong> apply. Every LUCY is also backed by a 1-year limited warranty. See drawlucy.com for full details.</div>
+          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. Every LUCY is also backed by a 1-year limited warranty. <a class="dl-rev-link" href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener">See our full return policy</a> for details.</div>
         </details>
       </div>
     </div>
@@ -761,10 +766,10 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section dl-final">
     <div class="dl-wrap">
       <h2>Spend your next afternoon painting.</h2>
-      <p>You already have the skill. Let the LUCY handle the accurate layin in minutes &mdash; and get straight to the colour and brushwork you love. Start with the flex, our most popular model.</p>
+      <p>You already have the skill. Let the LUCY handle the accurate underdrawing in minutes &mdash; and get straight to the color and brushwork you love. Start with the flex, our most popular model.</p>
       <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="flex" data-loc="final" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
       <div class="dl-final__trust">
-        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back*</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back</span>
         <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>1-Year Warranty</span>
         <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Built in the USA</span>
       </div>
@@ -777,8 +782,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <img class="dl-footer__logo" src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool">
       <p>The LUCY Drawing Tool &mdash; the Old Masters&rsquo; secret tool, reinvented. Lay any photo or subject onto your paper or canvas, accurately, in minutes. Quality built in the USA.</p>
       <p class="dl-footer__disc">
-        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
-        *30-day money-back guarantee: the item must be returned in resalable condition, and a 15% restocking fee plus return shipping apply. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on <a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews">drawlucy.com</a>. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
+        30-day money-back guarantee &mdash; see our <a href="https://drawlucy.com/pages/refund-policy">full return policy</a> for details. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
         &copy; 2026 The LUCY Drawing Tool. All rights reserved.
       </p>
     </div>
@@ -798,7 +803,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     <button class="dl-pop__close" id="dl-pop-close" aria-label="Close">&times;</button>
     <div class="dl-pop__badge">10% OFF</div>
     <h3 id="dl-pop-title">Get 10% off your first LUCY</h3>
-    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus a few quick tips for getting a fast, accurate layin.</p>
+    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus a few quick tips for getting a fast, accurate underdrawing.</p>
     <form class="dl-pop__form" id="dl-pop-form" novalidate>
       <input type="email" id="dl-pop-email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address">
       <button type="submit">Send my 10% off code</button>
@@ -810,7 +815,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
 <script>
 /* =========================================================================
-   DRAW LUCY AVATAR LP A (Margaret / speed) - instrumentation + behavior (build v1)
+   DRAW LUCY AVATAR LP A (Margaret / speed) - instrumentation + behavior (build v2)
    - PostHog init (project DrawLucy 486255) + feature flag (default control)
    - 6-event funnel + experiment_assigned (variant_b == control: empty scaffolded hooks)
    - UTM/attribution bridge: capture -> super-properties -> forward on cart links

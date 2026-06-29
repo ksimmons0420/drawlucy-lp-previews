@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <!--
-  DRAW LUCY - AVATAR LP "Charles" (HERITAGE / CURIOSITY) - VERSION 2026-06-26 - build v1
+  DRAW LUCY - AVATAR LP "Charles" (HERITAGE / CURIOSITY) - VERSION 2026-06-29 - build v2
   Angle: "The Old Masters' secret tool." Audience: retired engineer, art-history reader; saw Tim's Vermeer,
          read Hockney's optical theory. Wants to take part in a 400-year-old secret + reassurance it's legitimate.
   Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
-  CLAIMS - PLAY IT STRAIGHT: NO "free shipping"; money-back ASTERISKED + restocking/return-shipping fine print;
-           only 4.2/437 cited; Shark Tank factual; HERITAGE HEDGED ("associated with" / "the theory suggests",
-           never a flat "Vermeer used a camera lucida").
-  Search this file for "build v1" to confirm the latest paste.
+  CLAIMS - PLAY IT STRAIGHT (Les feedback 2026-06-29): NO shipping promise; 30-day money-back guarantee linked to
+           the refund policy (NO fee / return-cost mention); only 4.2/437 cited and CLICKABLE to drawlucy.com reviews;
+           Shark Tank kept LIGHT ("the same tool that was on Shark Tank" - no investor name / dollar figure / deal
+           language); HERITAGE HEDGED ("associated with" / "the theory suggests", never a flat "Vermeer used a camera
+           lucida"); reframe = "It helps you see. You still draw every single stroke yourself."
+  MEDIA: hero is an autoplay-muted-loop YouTube background (jEo3TY4L7hc, no chrome); a lower "See it in action"
+         section uses a click-to-play facade (uq9D0PMGYQc).
+  Search this file for "build v2" to confirm the latest paste.
 -->
 <html lang="en">
 <head>
@@ -129,7 +133,32 @@
   background:linear-gradient(0deg,rgba(40,30,10,.74) 0%, rgba(40,30,10,0) 100%);
   color:#fff; font-size:.82rem; font-weight:600;
 }
+/* hero video (16:9 autoplay-muted-loop, no chrome) */
+.dl-lp .dl-hero__video { aspect-ratio:16/9; background:#0a1722; }
+.dl-lp .dl-hero__video iframe { width:100%; height:100%; border:0; display:block; pointer-events:none; }
 .dl-lp .dl-hero__cta-row { margin-top:24px; }
+
+/* ---- click-to-play video facade (16:9) ---- */
+.dl-lp .dl-video {
+  position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden;
+  border:1px solid var(--line); box-shadow:0 12px 36px rgba(15,40,70,.14);
+  background:#0a1722; cursor:pointer; margin-top:24px;
+}
+.dl-lp .dl-video__poster { width:100%; height:100%; object-fit:cover; display:block; }
+.dl-lp .dl-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.dl-lp .dl-video__play {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(180deg,rgba(10,23,34,.05) 0%, rgba(10,23,34,.45) 100%);
+  transition:background .15s ease;
+}
+.dl-lp .dl-video:hover .dl-video__play { background:linear-gradient(180deg,rgba(10,23,34,.1) 0%, rgba(10,23,34,.5) 100%); }
+.dl-lp .dl-video__btn {
+  width:74px; height:74px; border-radius:50%; background:rgba(7,143,234,.94);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 8px 28px rgba(0,0,0,.35);
+  transition:transform .14s ease;
+}
+.dl-lp .dl-video:hover .dl-video__btn { transform:scale(1.06); }
+.dl-lp .dl-video__btn svg { margin-left:5px; }
 
 /* ---- trust microbar ---- */
 .dl-lp .dl-trustbar {
@@ -297,7 +326,6 @@
 }
 .dl-lp .dl-tank h3 { color:#fff; font-size:clamp(1.25rem,3.4vw,1.6rem); }
 .dl-lp .dl-tank p { color:#cfe2f3; margin-top:10px; font-size:1rem; }
-.dl-lp .dl-tank .dl-tank__deal { color:var(--amber); font-weight:800; }
 .dl-lp .dl-press { margin-top:30px; text-align:center; }
 .dl-lp .dl-press__label { font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
 .dl-lp .dl-press__row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 26px; margin-top:16px; }
@@ -438,16 +466,22 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       </span>
       <h1>The Old Masters&rsquo; <em>secret tool.</em></h1>
       <p class="dl-hero__sub">The optical secret associated with Vermeer and the Old Masters &mdash; reinvented, and sitting on your desk. The LUCY is a modern camera lucida: you look through it, see your subject on the paper, and draw what&rsquo;s really there.</p>
-      <figure class="dl-hero__figure">
-        <img src="https://drawlucy.com/cdn/shop/files/Da_Vinci.png?v=1780614156&width=1448" alt="A Renaissance-style codex of optical drawing instruments - camera obscura and camera lucida diagrams beside a Leonardo-style portrait study" loading="eager">
-        <figcaption class="dl-hero__figcap">The camera obscura and camera lucida &mdash; optical aids studied for centuries, now on your desk.</figcaption>
+      <figure class="dl-hero__figure dl-hero__video">
+        <iframe
+          src="https://www.youtube.com/embed/jEo3TY4L7hc?autoplay=1&mute=1&loop=1&playlist=jEo3TY4L7hc&controls=0&modestbranding=1&rel=0&playsinline=1"
+          title="The LUCY drawing tool in action"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+          loading="eager"
+          tabindex="-1"
+          aria-hidden="true"></iframe>
       </figure>
       <div class="dl-hero__cta-row">
         <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
         <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee* &middot; results vary with practice</span>
       </div>
       <div class="dl-trustbar" aria-label="Trust signals">
-        <span class="dl-trust"><span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>4.2 (437 reviews)</span>
+        <a class="dl-trust" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener"><span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>4.2&#9733; from 437 reviews on drawlucy.com</a>
         <span class="dl-trust dl-trust--tank">As Seen on Shark Tank</span>
         <span class="dl-trust">
           <svg class="ph" width="15" height="15" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0"></path><path fill="currentColor" d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200Z"></path></svg>
@@ -481,7 +515,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <svg class="dl-lin__icon ph ph-duo-amber" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><path d="M168,128a40,40,0,1,1-40-40A40,40,0,0,1,168,128Z" opacity="0.2"></path><path fill="currentColor" d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-104H188.42L177.93,42.78A16,16,0,0,0,165,36H91a16,16,0,0,0-12.91,6.78L67.58,56H40A24,24,0,0,0,16,80V192a24,24,0,0,0,24,24H216a24,24,0,0,0,24-24V80A24,24,0,0,0,216,56Zm8,136a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H71.58a16,16,0,0,0,12.91-6.78L95,52h66l10.49,13.22A16,16,0,0,0,184.42,72H216a8,8,0,0,1,8,8Z"></path></svg>
           <div class="dl-lin__era">1807, patented by W.H. Wollaston</div>
           <h4>The camera lucida</h4>
-          <p>A prism (and later, a mirror) lays a faint image of your subject right onto the paper. You see the scene and your pencil at once &mdash; and trace. The LUCY is a modern take on this exact instrument.</p>
+          <p>A prism (and later, a mirror) lays a ghost image of your subject right onto the paper. You see the scene and your pencil at once &mdash; and trace. The LUCY is a modern take on this exact instrument.</p>
         </div>
       </div>
 
@@ -525,7 +559,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             The reality
           </span>
           <h3>It&rsquo;s a learning aid &mdash; you still draw every stroke.</h3>
-          <p>The LUCY does the <em>seeing</em>. Your hand makes every line, every shadow, every choice. It trains the one skill self-taught artists fight hardest: seeing proportion accurately.</p>
+          <p>It helps you see. You still draw every single stroke yourself &mdash; every line, every shadow, every choice. It trains the one skill self-taught artists fight hardest: seeing proportion accurately.</p>
         </div>
       </div>
 
@@ -576,7 +610,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </span>
           <div>
             <h4>Real half-silvered-mirror optics</h4>
-            <p>Not a screen, not a projector. A semi-transparent mirror overlays a faint reflection of your subject onto the paper &mdash; the same optical principle behind the historical camera lucida.</p>
+            <p>Not a screen, not a projector. A semi-transparent mirror overlays a ghost reflection of your subject onto the paper &mdash; the same optical principle behind the historical camera lucida.</p>
           </div>
         </div>
         <div class="dl-spec">
@@ -585,7 +619,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </span>
           <div>
             <h4>As Seen on Shark Tank</h4>
-            <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a $300,000 offer from Daymond John. A real product the Sharks bet on, not a passing gadget.</p>
+            <p>This is the same tool that was on Shark Tank &mdash; a real product that made it onto the show, not a passing gadget.</p>
           </div>
         </div>
         <div class="dl-spec">
@@ -636,7 +670,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <div class="dl-step">
           <span class="dl-step__num" aria-hidden="true"></span>
           <h4>See your subject on the page</h4>
-          <p>A faint image of whatever you point it at &mdash; a portrait sitter, a still life, a photo &mdash; appears right on the paper, correctly placed.</p>
+          <p>A ghost image of whatever you point it at &mdash; a portrait sitter, a still life, a photo &mdash; appears right on the paper, correctly placed.</p>
         </div>
         <div class="dl-step">
           <span class="dl-step__num" aria-hidden="true"></span>
@@ -647,6 +681,25 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <div class="dl-note" style="max-width:760px;margin-left:auto;margin-right:auto;">
         <b>What to expect</b>
         <p>There&rsquo;s a brief learning curve &mdash; about 30 minutes to position the optic, find your eye line, and dial in the brightness before it &ldquo;clicks.&rdquo; Because it shows a reflection rather than a projected beam, lighting matters: light your subject well and keep the paper a touch dimmer. The flex and pro include multiple brightness levels for this.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SEE IT IN ACTION (video) ============== -->
+  <section class="dl-section">
+    <div class="dl-wrap">
+      <div class="dl-sec-head dl-sec-head--center">
+        <span class="dl-eyebrow">See it in action</span>
+        <h2>Watch the LUCY work.</h2>
+        <p>A quick look at how artists set up the LUCY and draw what they see.</p>
+      </div>
+      <div class="dl-video" id="dl-video" data-yt="uq9D0PMGYQc" role="button" tabindex="0" aria-label="Play video: see the LUCY in action">
+        <img class="dl-video__poster" src="https://i.ytimg.com/vi/uq9D0PMGYQc/hqdefault.jpg" alt="The LUCY drawing tool in action" loading="lazy">
+        <span class="dl-video__play">
+          <span class="dl-video__btn">
+            <svg width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232,128a15.76,15.76,0,0,1-7.83,13.65L73.92,229.56A15.91,15.91,0,0,1,58,229.71,15.74,15.74,0,0,1,50,216.05V39.95a15.74,15.74,0,0,1,8-13.66,15.91,15.91,0,0,1,15.94.15l150.25,87.91A15.76,15.76,0,0,1,232,128Z"></path></svg>
+          </span>
+        </span>
       </div>
     </div>
   </section>
@@ -728,7 +781,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
         </div>
       </div>
-      <p class="dl-fineprint">*30-day money-back guarantee: item must be returned in resalable condition; a 15% restocking fee and return shipping apply.</p>
+      <p class="dl-fineprint">*30-day money-back guarantee: item must be returned in resalable condition. See our <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">refund policy</a> for full details.</p>
     </div>
   </section>
 
@@ -736,11 +789,11 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <section class="dl-section dl-section--soft">
     <div class="dl-wrap dl-center">
       <span class="dl-eyebrow">What buyers say</span>
-      <div class="dl-proof__stat">
+      <a class="dl-proof__stat" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
         <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
         <span class="dl-bignum">4.2</span>
-        <span style="text-align:left;font-weight:700;color:var(--muted);">out of 5<br><span style="font-weight:500;">across 437 reviews</span></span>
-      </div>
+        <span style="text-align:left;font-weight:700;color:var(--muted);">out of 5<br><span style="font-weight:500;">from 437 reviews on drawlucy.com</span></span>
+      </a>
 
       <div class="dl-quote" style="max-width:680px;margin:26px auto 0;text-align:left;">
         <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -757,7 +810,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
         <div style="text-align:left;">
           <h3>As Seen on Shark Tank</h3>
-          <p>The LUCY appeared on Shark Tank and landed a deal &mdash; a <span class="dl-tank__deal">$300,000 offer from Daymond John</span>. The same tool the Sharks bet on is the one on your desk.</p>
+          <p>The same tool that was on Shark Tank is the one that sits on your desk &mdash; a real product that made it onto the show.</p>
         </div>
       </div>
 
@@ -799,7 +852,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         </details>
         <details data-faq="What's the return policy?">
           <summary>What&rsquo;s the return policy?</summary>
-          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong>. To qualify, the item must be returned in resalable condition; a <strong>15% restocking fee and return shipping</strong> apply. Every LUCY also carries a 1-year limited warranty. See drawlucy.com for full details.</div>
+          <div class="dl-faq__a">There&rsquo;s a <strong>30-day money-back guarantee</strong> &mdash; draw with it, and if it&rsquo;s not for you, send it back within 30 days for a refund. Every LUCY also carries a 1-year limited warranty. See our <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener">refund policy</a> for full details.</div>
         </details>
       </div>
     </div>
@@ -827,7 +880,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <p class="dl-footer__disc">
         Historical note: optical drawing aids such as the camera obscura and camera lucida have been associated with master artists, and the theory that some leaned on them is supported by figures including David Hockney (&ldquo;Secret Knowledge&rdquo;) and explored in the documentary &ldquo;Tim&rsquo;s Vermeer.&rdquo; This remains a debated subject among art historians; references here are cultural and illustrative, and no claim is made that a specific artist used this specific device.
         &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
-        *30-day money-back guarantee: the item must be returned in resalable condition, and a 15% restocking fee plus return shipping apply. 1-year limited warranty terms apply &mdash; see drawlucy.com for full details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        *30-day money-back guarantee: the item must be returned in resalable condition. See our <a href="https://drawlucy.com/pages/refund-policy" target="_blank" rel="noopener">refund policy</a> for full details. 1-year limited warranty terms apply &mdash; see drawlucy.com for details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
         &copy; 2026 The LUCY Drawing Tool. All rights reserved.
       </p>
     </div>
@@ -859,7 +912,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
 <script>
 /* =========================================================================
-   DRAW LUCY - AVATAR HERITAGE - instrumentation + behavior (build v1)
+   DRAW LUCY - AVATAR HERITAGE - instrumentation + behavior (build v2)
    - PostHog init (project DrawLucy 486255) + feature flag (default control)
    - 6-event funnel + experiment_assigned
    - UTM/attribution bridge: capture -> super-properties -> forward on cart links
@@ -1008,6 +1061,31 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     });
   }
 
+  /* ---------- 6a2. Click-to-play video facade ---------- */
+  function wireVideo() {
+    var box = document.getElementById("dl-video");
+    if (!box) return;
+    var loaded = false;
+    function play() {
+      if (loaded) return;
+      loaded = true;
+      var id = box.getAttribute("data-yt");
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("src", "https://www.youtube.com/embed/" + id + "?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1");
+      iframe.setAttribute("title", "The LUCY drawing tool in action");
+      iframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
+      iframe.setAttribute("allowfullscreen", "");
+      box.innerHTML = "";
+      box.appendChild(iframe);
+      box.style.cursor = "default";
+      cap("video_played", { video: id, location: "see_it_in_action", variant: VARIANT, page: PAGE_NAME });
+    }
+    box.addEventListener("click", play);
+    box.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); }
+    });
+  }
+
   /* ---------- 6b. Section-in-view tracking (engagement depth signal) ---------- */
   function wireSectionViews() {
     var secs = document.querySelectorAll(".dl-lp section[class*='dl-']");
@@ -1087,6 +1165,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     reparentFixed();
     wireCtas();
     wireFaq();
+    wireVideo();
     wireSectionViews();
     wirePopup();
   }
