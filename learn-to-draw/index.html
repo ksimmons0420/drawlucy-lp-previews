@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<!--
+  DRAW LUCY LP #3 - "Learn to Draw" / Beginner - VERSION 2026-06-30 - build v1
+  Angle: beginner / "always wanted to learn to draw" (large latent market). Owner's verbatim copy laid out on the listicle-faq chassis.
+  Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; build is port-clean - all JS lives in this one <script> at the end).
+  Claims: PLAY IT STRAIGHT - no shipping-cost claims; 30-day money-back linked to refund policy (NO restocking-fee mention); only 4.2/437 cited (clickable to drawlucy.com reviews); soft Shark Tank only.
+  "Join over 100,000 artists" = OWNER's own approved copy (allowed here).
+  PostHog: project DrawLucy 486255, flag drawlucy-learn-to-draw, experiment 380262 (DRAFT -> default control; variant_b == control empty scaffold).
+  Search this file for "build v1" to confirm the latest paste.
+-->
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Ultimate Tool to Learn to Draw | The LUCY Drawing Tool</title>
+<meta name="description" content="Always wanted to learn to draw? The LUCY Drawing Tool helps you finally start - by helping you learn visually. Look through the view hole and draw what you see. As seen on Shark Tank. 4.2&#9733; / 437 reviews on drawlucy.com. From $69, 30-day money-back guarantee.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="https://drawlucy.com/cdn/shop/files/favicons.png?v=1614333164&width=96">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- viewport guard: ensure mobile width even if a host/preview lacks the meta -->
+<script>(function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();</script>
+
+<style>
+/* ============================================================
+   DRAW LUCY LP #3 (learn-to-draw) - all styles scoped to .dl-lp
+   Tokens: action #078FEA / CTA amber #EFBF65 (text #525253)
+           accent coral #DA4F49 / bg #FFFFFF / text #1A1A1A / muted #525253
+   ============================================================ */
+.dl-lp, .dl-lp * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reparented-to-<body> els (popup, sticky) live OUTSIDE .dl-lp, so re-apply box-sizing here, or width:100%+padding overflows. */
+.dl-pop, .dl-pop *, .dl-sticky, .dl-sticky * { box-sizing: border-box; }
+.dl-lp {
+  --blue:#078FEA; --blue-dk:#0676c0; --amber:#EFBF65; --amber-dk:#e3ad44;
+  --coral:#DA4F49; --ink:#1A1A1A; --muted:#525253; --bg:#FFFFFF;
+  --line:#e8e8ea; --soft:#f5f7fa; --soft-blue:#e9f5fe;
+  --radius:3px; --pill:60px;
+  --maxw:880px; --gap:clamp(20px,4vw,40px);
+  font-family:"Barlow", system-ui, -apple-system, sans-serif;
+  color:var(--ink); background:var(--bg);
+  line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+.dl-lp img { max-width:100%; display:block; }
+.dl-lp a { color:inherit; text-decoration:none; }
+.dl-lp strong { font-weight:800; }
+.dl-lp .dl-wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+.dl-lp .dl-wrap--wide { max-width:1080px; }
+.dl-lp h1,.dl-lp h2,.dl-lp h3 { line-height:1.14; letter-spacing:-0.01em; font-weight:800; }
+.dl-lp h2 { font-size:clamp(1.45rem,4.4vw,2.1rem); }
+.dl-lp .dl-eyebrow {
+  font-size:.82rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted);
+}
+.dl-lp .dl-section { padding:clamp(40px,6vw,64px) 0; }
+.dl-lp .dl-section--soft { background:var(--soft); }
+.dl-lp .dl-center { text-align:center; }
+.dl-lp .dl-lede { color:var(--muted); font-size:clamp(1rem,2.4vw,1.13rem); max-width:640px; margin:14px auto 0; }
+.dl-lp p { font-size:1.05rem; }
+
+/* ---- buttons ---- */
+.dl-lp .dl-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:inherit; font-weight:800; font-size:1.04rem; line-height:1.15;
+  border:none; cursor:pointer; text-align:center;
+  padding:16px 28px; transition:transform .12s ease, background .15s ease, box-shadow .15s ease;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.dl-lp .dl-btn:active { transform:scale(.97); }
+.dl-lp .dl-btn--primary { background:var(--blue); color:#fff; border-radius:var(--pill); }
+.dl-lp .dl-btn--primary:hover { background:var(--blue-dk); box-shadow:0 8px 24px rgba(7,143,234,.28); }
+.dl-lp .dl-btn--amber { background:var(--amber); color:#525253; border-radius:var(--radius); }
+.dl-lp .dl-btn--amber:hover { background:var(--amber-dk); }
+.dl-lp .dl-btn--ghost { background:#fff; color:var(--ink); border:2px solid var(--line); border-radius:var(--pill); }
+.dl-lp .dl-btn--ghost:hover { border-color:var(--blue); color:var(--blue); }
+.dl-lp .dl-btn--lg { padding:18px 36px; font-size:1.12rem; }
+.dl-lp .dl-btn--block { width:100%; }
+.dl-lp .dl-btn-note { display:block; text-align:center; font-size:.84rem; color:var(--muted); margin-top:10px; }
+
+/* focus-visible a11y */
+.dl-lp a:focus-visible, .dl-lp button:focus-visible, .dl-lp input:focus-visible, .dl-lp summary:focus-visible {
+  outline:3px solid var(--blue); outline-offset:3px; border-radius:6px;
+}
+
+/* ---- Phosphor duotone icons ---- */
+.dl-lp .ph { display:inline-block; vertical-align:middle; flex:0 0 auto; }
+.dl-lp .ph-duo { color:var(--blue); }
+.dl-lp .ph-duo path[opacity] { opacity:1; fill:var(--amber); }
+.dl-lp .ph-duo-b { color:var(--blue); }
+.dl-lp .ph-duo-b path[opacity] { opacity:.18; fill:var(--blue); }
+.dl-lp .ph-duo-coral { color:var(--coral); }
+.dl-lp .ph-duo-coral path[opacity] { opacity:.18; fill:var(--coral); }
+.dl-lp .ph-check { color:var(--blue); }
+
+/* ============== HEADER ============== */
+.dl-lp .dl-header {
+  position:sticky; top:0; z-index:60; background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px) saturate(150%); border-bottom:1px solid var(--line);
+}
+.dl-lp .dl-header__in { display:flex; align-items:center; justify-content:space-between; height:62px; }
+.dl-lp .dl-header__logo img { height:42px; width:auto; }
+.dl-lp .dl-header__cta { font-size:.95rem; padding:11px 22px; }
+
+/* ============== HERO ============== */
+.dl-lp .dl-hero { background:linear-gradient(180deg,#fbfdff 0%, #eef6fd 100%); padding:clamp(26px,5vw,52px) 0 clamp(34px,5vw,56px); }
+.dl-lp .dl-hero__meta {
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin-bottom:16px;
+  font-size:.84rem; font-weight:600; color:var(--muted);
+}
+.dl-lp .dl-hero__rate {
+  display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap;
+  background:#fff; border:1px solid var(--line); border-radius:var(--pill);
+  padding:6px 13px; font-size:.84rem; font-weight:700; color:var(--ink);
+  box-shadow:0 2px 10px rgba(7,143,234,.08);
+}
+.dl-lp .dl-hero__rate .dl-stars { color:var(--amber-dk); letter-spacing:1px; }
+.dl-lp .dl-hero__rate a { text-decoration:none; }
+.dl-lp .dl-hero__rate a:hover { text-decoration:underline; }
+.dl-lp .dl-hero__rate .dl-rate-sep { color:var(--line); }
+.dl-lp .dl-hero__rate .dl-rate-tank { color:var(--coral); font-weight:800; }
+.dl-lp .dl-hero h1 { font-size:clamp(2rem,6vw,3.05rem); margin:6px 0 0; }
+.dl-lp .dl-hero h1 em { font-style:normal; color:var(--blue); }
+.dl-lp .dl-hero__sub { color:var(--ink); font-size:clamp(1.12rem,3vw,1.4rem); font-weight:700; margin:16px 0 0; max-width:680px; }
+.dl-lp .dl-hero__body { color:var(--muted); font-size:clamp(1rem,2.5vw,1.1rem); line-height:1.7; margin:14px 0 0; max-width:680px; }
+.dl-lp .dl-hero__figure {
+  margin:26px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+  box-shadow:0 16px 44px rgba(15,40,70,.16); background:#000; position:relative;
+}
+.dl-lp .dl-hero__figure img { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center; }
+.dl-lp .dl-hero__figcap {
+  position:absolute; left:0; right:0; bottom:0; padding:10px 14px;
+  background:linear-gradient(0deg,rgba(0,0,0,.66) 0%, rgba(0,0,0,0) 100%);
+  color:#fff; font-size:.82rem; font-weight:600;
+}
+.dl-lp .dl-hero__cta-row { margin-top:24px; }
+
+/* ============== PROSE SECTIONS (the owner's verbatim copy) ============== */
+.dl-lp .dl-prose .dl-wrap { max-width:760px; }
+.dl-lp .dl-prose h2 { font-size:clamp(1.5rem,4.4vw,2.05rem); }
+.dl-lp .dl-prose__lede { color:var(--muted); font-size:clamp(1.04rem,2.5vw,1.16rem); line-height:1.7; margin-top:14px; }
+.dl-lp .dl-prose p { color:var(--ink); font-size:clamp(1.04rem,2.4vw,1.12rem); line-height:1.75; margin-top:16px; }
+.dl-lp .dl-prose p:first-of-type { margin-top:18px; }
+.dl-lp .dl-prose strong { color:var(--ink); }
+.dl-lp .dl-prose__fig { margin:24px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 8px 28px rgba(15,40,70,.10); }
+.dl-lp .dl-prose__fig img { width:100%; object-fit:cover; }
+.dl-lp .dl-prose__fig figcaption { font-size:.86rem; color:var(--muted); padding:10px 14px; background:#fbfcfd; text-align:center; }
+
+/* card variant of a prose section (shaded, left-accent - same look as the chassis item cards) */
+.dl-lp .dl-card .dl-wrap { max-width:800px; }
+.dl-lp .dl-card__in {
+  background:var(--soft); border:1px solid var(--line); border-left:5px solid var(--blue);
+  border-radius:18px; padding:clamp(26px,4.5vw,44px); box-shadow:0 6px 24px rgba(15,40,70,.05);
+}
+.dl-lp .dl-card--amber .dl-card__in { border-left-color:var(--amber-dk); }
+.dl-lp .dl-card--coral .dl-card__in { border-left-color:var(--coral); }
+.dl-lp .dl-card--green .dl-card__in { border-left-color:#1C9D50; }
+.dl-lp .dl-card__in h2 { font-size:clamp(1.4rem,3.9vw,1.95rem); }
+.dl-lp .dl-card__in p { color:var(--ink); font-size:clamp(1.02rem,2.4vw,1.1rem); line-height:1.75; margin-top:16px; }
+.dl-lp .dl-card__icon { display:inline-flex; margin-bottom:6px; }
+
+/* ---- "how it works" 3-step strip ---- */
+.dl-lp .dl-steps { display:grid; grid-template-columns:1fr; gap:16px; margin-top:26px; }
+.dl-lp .dl-step {
+  background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 20px;
+  box-shadow:0 5px 18px rgba(15,40,70,.06); position:relative;
+}
+.dl-lp .dl-step__n {
+  display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px;
+  border-radius:11px; background:var(--blue); color:#fff; font-weight:800; font-size:1.08rem; margin-bottom:12px;
+}
+.dl-lp .dl-step:nth-child(2) .dl-step__n { background:var(--amber-dk); }
+.dl-lp .dl-step:nth-child(3) .dl-step__n { background:#1C9D50; }
+.dl-lp .dl-step h3 { font-size:1.1rem; }
+.dl-lp .dl-step p { color:var(--muted); font-size:.98rem; margin-top:7px; line-height:1.6; }
+
+/* ---- founder quote block ---- */
+.dl-lp .dl-founder { display:grid; grid-template-columns:1fr; gap:0; margin-top:8px; }
+.dl-lp .dl-founder__card {
+  background:linear-gradient(135deg,#0a2540 0%, #103a5e 100%); color:#fff;
+  border-radius:18px; padding:clamp(26px,4.5vw,40px); box-shadow:0 14px 40px rgba(10,37,64,.22);
+}
+.dl-lp .dl-founder__card .dl-eyebrow { color:#9fc6e8; }
+.dl-lp .dl-founder__q { font-size:clamp(1.12rem,2.8vw,1.32rem); line-height:1.6; font-weight:600; margin-top:14px; }
+.dl-lp .dl-founder__q em { color:#EFBF65; font-style:italic; }
+.dl-lp .dl-founder__cite { display:flex; align-items:center; gap:12px; margin-top:20px; }
+.dl-lp .dl-founder__cite cite { font-style:normal; font-weight:700; font-size:.98rem; color:#fff; }
+.dl-lp .dl-founder__cite span { display:block; font-weight:500; font-size:.86rem; color:#9fc6e8; }
+.dl-lp .dl-founder__mark {
+  flex:0 0 auto; width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,.12);
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem; color:#EFBF65;
+}
+
+/* ---- uses chip grid ("start creating right away") ---- */
+.dl-lp .dl-uses { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+.dl-lp .dl-uses span {
+  display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--line);
+  border-radius:var(--pill); padding:9px 15px; font-size:.92rem; font-weight:600; color:var(--ink);
+}
+.dl-lp .dl-uses span .ph { color:var(--blue); }
+
+/* ---- inline check list ---- */
+.dl-lp .dl-checklist { list-style:none; margin:18px 0 0; display:flex; flex-direction:column; gap:11px; }
+.dl-lp .dl-checklist li { display:flex; align-items:flex-start; gap:10px; font-size:1.04rem; color:var(--ink); line-height:1.5; }
+.dl-lp .dl-checklist li .ph { margin-top:2px; }
+
+/* ---- soft CTA (Learning Hub) ---- */
+.dl-lp .dl-softcta { margin-top:22px; display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; }
+.dl-lp .dl-softcta__note { font-size:.9rem; color:var(--muted); }
+
+/* ============== TESTIMONIALS ============== */
+.dl-lp .dl-quotes { display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px; }
+.dl-lp .dl-quote {
+  background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 22px;
+  box-shadow:0 5px 18px rgba(15,40,70,.06); text-align:left;
+}
+.dl-lp .dl-quote .dl-q-stars { color:var(--amber-dk); letter-spacing:2px; font-size:.98rem; margin-bottom:9px; }
+.dl-lp .dl-quote p { font-size:1.06rem; line-height:1.6; font-style:italic; color:var(--ink); }
+.dl-lp .dl-quote cite { display:block; margin-top:12px; font-weight:700; font-size:.92rem; font-style:normal; color:var(--muted); }
+.dl-lp .dl-quote cite .dl-verified { color:var(--blue); }
+
+/* ============== PROOF / TANK STRIP ============== */
+.dl-lp .dl-proof__stat { display:inline-flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:10px; }
+.dl-lp .dl-proof__stat .dl-bignum { font-size:clamp(2.2rem,6vw,3rem); font-weight:800; color:var(--blue); font-variant-numeric:tabular-nums; }
+.dl-lp .dl-proof__stat .dl-stars { color:var(--amber-dk); font-size:1.4rem; letter-spacing:2px; }
+.dl-lp .dl-proof__stat:hover { text-decoration:none; }
+.dl-lp .dl-tank {
+  display:grid; grid-template-columns:1fr; gap:16px; align-items:center; margin-top:30px; text-align:left;
+  background:linear-gradient(135deg,#0a2540 0%, #103a5e 100%); color:#fff; border-radius:16px; padding:26px 22px;
+}
+.dl-lp .dl-tank h3 { color:#fff; font-size:clamp(1.25rem,3.4vw,1.6rem); }
+.dl-lp .dl-tank p { color:#cfe2f3; margin-top:10px; font-size:1rem; }
+.dl-lp .dl-press { margin-top:30px; text-align:center; }
+.dl-lp .dl-press__label { font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.dl-lp .dl-press__row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 26px; margin-top:16px; }
+.dl-lp .dl-press__row span { font-weight:800; font-size:1rem; color:var(--muted); opacity:.85; }
+
+/* ============== OFFER LADDER ============== */
+.dl-lp .dl-ladder { display:grid; grid-template-columns:1fr; gap:18px; margin-top:30px; align-items:stretch; }
+.dl-lp .dl-tier {
+  position:relative; background:#fff; border:2px solid var(--line); border-radius:16px; padding:30px 22px 24px;
+  display:flex; flex-direction:column; box-shadow:0 6px 22px rgba(15,40,70,.07);
+  transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+.dl-lp .dl-tier:hover { transform:translateY(-4px); box-shadow:0 16px 38px rgba(15,40,70,.13); }
+.dl-lp .dl-tier--featured { border-color:var(--blue); box-shadow:0 14px 40px rgba(7,143,234,.18); }
+.dl-lp .dl-tier__flag {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  font-size:.74rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  padding:6px 16px; border-radius:var(--pill); white-space:nowrap;
+}
+.dl-lp .dl-tier__flag--start { background:var(--amber); color:#525253; }
+.dl-lp .dl-tier__flag--pop { background:var(--blue); color:#fff; }
+.dl-lp .dl-tier__flag--big { background:var(--coral); color:#fff; }
+.dl-lp .dl-tier__name { font-size:1.3rem; font-weight:800; }
+.dl-lp .dl-tier__best { font-size:.86rem; color:var(--muted); font-weight:700; margin-top:3px; }
+.dl-lp .dl-tier__img { width:100%; aspect-ratio:5/3; object-fit:contain; background:var(--soft); border-radius:10px; margin:14px 0; padding:8px; }
+.dl-lp .dl-tier__price { display:flex; align-items:baseline; gap:10px; }
+.dl-lp .dl-tier__price .dl-now { font-size:2.1rem; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums; }
+.dl-lp .dl-tier__price .dl-was { font-size:1.05rem; color:var(--muted); text-decoration:line-through; }
+.dl-lp .dl-tier__save { display:inline-block; margin-top:6px; font-size:.82rem; font-weight:800; color:var(--coral); }
+.dl-lp .dl-tier__affirm { font-size:.84rem; color:var(--muted); margin-top:8px; }
+.dl-lp .dl-tier__list { list-style:none; margin:16px 0 20px; display:flex; flex-direction:column; gap:9px; }
+.dl-lp .dl-tier__list li { display:flex; align-items:flex-start; gap:9px; font-size:.94rem; color:var(--ink); }
+.dl-lp .dl-tier__list li .ph { margin-top:1px; }
+.dl-lp .dl-tier__list a { text-decoration:underline; }
+.dl-lp .dl-tier__cta { margin-top:auto; }
+.dl-lp .dl-ladder__foot { text-align:center; margin-top:18px; font-size:.92rem; color:var(--muted); }
+.dl-lp .dl-ladder__foot a { text-decoration:underline; }
+
+/* ============== RISK REVERSAL ============== */
+.dl-lp .dl-risk { display:grid; grid-template-columns:1fr; gap:16px; margin-top:28px; }
+.dl-lp .dl-risk__card {
+  display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--line);
+  border-radius:12px; padding:20px; box-shadow:0 5px 18px rgba(15,40,70,.06);
+}
+.dl-lp .dl-risk__card h3 { font-size:1.05rem; }
+.dl-lp .dl-risk__card p { color:var(--muted); font-size:.9rem; margin-top:3px; }
+.dl-lp .dl-risk__card a { text-decoration:underline; }
+
+/* ============== FINAL CTA ============== */
+.dl-lp .dl-final { background:linear-gradient(135deg,#078FEA 0%, #0676c0 100%); color:#fff; text-align:center; }
+.dl-lp .dl-final h2 { color:#fff; }
+.dl-lp .dl-final p { color:#e3f1fc; margin:14px auto 0; max-width:600px; font-size:1.08rem; line-height:1.65; }
+.dl-lp .dl-final .dl-btn--amber { margin-top:24px; }
+.dl-lp .dl-final__trust { margin-top:18px; font-size:.9rem; color:#cfe6fa; display:flex; gap:8px 18px; flex-wrap:wrap; justify-content:center; }
+.dl-lp .dl-final__trust span { display:inline-flex; align-items:center; gap:6px; }
+
+/* ============== FOOTER ============== */
+.dl-lp .dl-footer { background:#0d1b26; color:#9fb3c2; padding:40px 0 120px; font-size:.86rem; }
+.dl-lp .dl-footer__logo { height:26px; opacity:.9; margin-bottom:16px; filter:brightness(0) invert(1); }
+.dl-lp .dl-footer p { margin-bottom:10px; line-height:1.6; font-size:.86rem; }
+.dl-lp .dl-footer__disc { font-size:.78rem; color:#6b8294; }
+.dl-lp .dl-footer a { color:#cfe0ec; text-decoration:underline; }
+
+/* ============== STICKY MOBILE CTA ============== */
+.dl-sticky {
+  position:fixed; left:0; right:0; bottom:0; z-index:9000;
+  background:rgba(255,255,255,.94); backdrop-filter:blur(14px) saturate(160%);
+  border-top:1px solid #e8e8ea; padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex; align-items:center; gap:12px;
+  box-shadow:0 -6px 24px rgba(15,40,70,.12);
+}
+.dl-sticky__txt { flex:0 0 auto; }
+.dl-sticky__txt b { display:block; font-family:"Barlow",sans-serif; font-size:.95rem; font-weight:800; color:#1A1A1A; line-height:1.1; }
+.dl-sticky__txt small { font-family:"Barlow",sans-serif; font-size:.74rem; color:#525253; font-weight:600; }
+.dl-sticky__btn {
+  flex:1 1 auto; display:inline-flex; align-items:center; justify-content:center;
+  background:#078FEA; color:#fff; border:none; border-radius:60px; cursor:pointer;
+  font-family:"Barlow",sans-serif; font-weight:800; font-size:1.02rem; padding:15px 18px;
+  touch-action:manipulation; -webkit-tap-highlight-color:transparent; transition:transform .12s ease;
+}
+.dl-sticky__btn:active { transform:scale(.97); }
+
+/* ============== EXIT-INTENT POPUP ============== */
+.dl-pop {
+  position:fixed; inset:0; z-index:9500; display:none;
+  align-items:center; justify-content:center; padding:20px;
+  background:rgba(10,20,30,.6); backdrop-filter:blur(3px);
+}
+.dl-pop.dl-pop--open { display:flex; }
+.dl-pop__card {
+  position:relative; background:#fff; border-radius:18px; max-width:420px; width:100%;
+  padding:34px 28px 30px; text-align:center; box-shadow:0 30px 70px rgba(0,0,0,.4);
+  font-family:"Barlow",sans-serif;
+}
+.dl-pop__close {
+  position:absolute; top:12px; right:14px; width:38px; height:38px; border:none; background:#f1f3f5;
+  border-radius:50%; font-size:1.3rem; color:#525253; cursor:pointer; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+}
+.dl-pop__badge { font-size:2.4rem; font-weight:800; color:#078FEA; line-height:1; }
+.dl-pop__card h3 { font-family:"Barlow",sans-serif; font-size:1.5rem; font-weight:800; color:#1A1A1A; margin:10px 0 8px; line-height:1.15; }
+.dl-pop__card p { color:#525253; font-size:.96rem; margin-bottom:18px; }
+.dl-pop__form { display:flex; flex-direction:column; gap:10px; }
+.dl-pop__form input {
+  font-family:"Barlow",sans-serif; font-size:1rem; padding:14px 16px; border:1.5px solid #d6dadf;
+  border-radius:3px; color:#1A1A1A; width:100%; background:#fff;
+}
+.dl-pop__form button {
+  font-family:"Barlow",sans-serif; font-weight:800; font-size:1.05rem; padding:15px; border:none;
+  background:#078FEA; color:#fff; border-radius:60px; cursor:pointer; transition:transform .12s ease,background .15s ease;
+}
+.dl-pop__form button:hover { background:#0676c0; }
+.dl-pop__form button:active { transform:scale(.97); }
+.dl-pop__fine { font-size:.74rem; color:#90969c; margin-top:12px; }
+.dl-pop__thanks { display:none; font-size:1.05rem; color:#1A1A1A; font-weight:700; padding:14px 0; }
+
+/* ============== RESPONSIVE ============== */
+@media (min-width:760px){
+  .dl-lp .dl-ladder { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-risk { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-steps { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-quotes { grid-template-columns:repeat(3,1fr); }
+  .dl-lp .dl-tank { grid-template-columns:auto 1fr; gap:24px; padding:30px 30px; }
+  .dl-lp .dl-tank__icon { width:80px; }
+}
+@media (min-width:980px){
+  .dl-sticky { display:none; }
+  .dl-lp .dl-footer { padding-bottom:48px; }
+  .dl-lp .dl-header__in { height:82px; }
+  .dl-lp .dl-header__logo img { height:60px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .dl-lp *, .dl-sticky *, .dl-pop * { animation:none !important; transition:none !important; }
+}
+
+/* ============== VARIANT_B HOOKS (currently identical to control) ============== */
+/* Scaffold only - a future variant flips these. Empty now = variant_b == control. */
+.dl-lp[data-variant="variant_b"] { /* no overrides yet */ }
+body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
+</style>
+</head>
+<body>
+<div class="dl-lp" id="dl-lp">
+
+  <!-- ============== HEADER ============== -->
+  <header class="dl-header">
+    <div class="dl-wrap dl-wrap--wide dl-header__in">
+      <a class="dl-header__logo" href="https://drawlucy.com" aria-label="The LUCY Drawing Tool home">
+        <img src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool" loading="eager">
+      </a>
+      <a class="dl-btn dl-btn--primary dl-header__cta" data-cart="flex" data-loc="header" href="https://drawlucy.com/products/lucy-drawing-tool">Shop the LUCY &rarr;</a>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="dl-hero">
+    <div class="dl-wrap">
+      <div class="dl-hero__meta">
+        <span class="dl-hero__rate">
+          <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          <a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews">4.2 stars from 437 reviews on drawlucy.com</a>
+          <span class="dl-rate-sep">|</span>
+          <span class="dl-rate-tank">As Seen on Shark Tank</span>
+        </span>
+      </div>
+      <h1>The Ultimate Tool to <em>Learn to Draw</em></h1>
+      <p class="dl-hero__sub">Always wanted to learn to draw? The LUCY helps you finally start.</p>
+      <p class="dl-hero__body">The LUCY Drawing Tool is one of the fastest and funnest ways to learn to draw because it helps you learn visually. Instead of only reading about perspective, proportions, foreshortening, and hand-eye coordination, the LUCY lets you experience them directly. The LUCY reflects your subject onto your paper. Then you look through the view hole and draw what you see. That simple process helps you translate three-dimensional objects into two-dimensional sketches, improve hand-eye coordination, understand perspective and foreshortening, and learn to draw what is actually seen instead of what your brain only thinks it sees.</p>
+      <figure class="dl-hero__figure">
+        <img src="https://drawlucy.com/cdn/shop/files/2_0cefa663-939d-4ea2-a977-4f223737b797.jpg?v=1780967449&width=1200" alt="An artist learning to draw with the LUCY Drawing Tool by looking through the view hole and drawing the reflected subject" loading="eager">
+        <figcaption class="dl-hero__figcap">Look through the view hole. Draw what you see. Learn as you create.</figcaption>
+      </figure>
+      <div class="dl-hero__cta-row">
+        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">Shop the LUCY Drawing Tool &rarr;</a>
+        <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee &middot; results vary with practice</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== LEARN TO DRAW BY DRAWING WHAT YOU SEE ============== -->
+  <section class="dl-section dl-prose">
+    <div class="dl-wrap">
+      <span class="dl-card__icon">
+        <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,56C48,56,16,128,16,128s32,72,112,72,112-72,112-72S208,56,128,56Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z" opacity="0.2"></path><path fill="currentColor" d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+      </span>
+      <h2>Learn to Draw by Drawing What You See</h2>
+      <p>Most people struggle with drawing because they are not really drawing what they see. They are drawing what they think an eye looks like, what they think a cup looks like, or what they think a face should look like. The LUCY helps change that. By reflecting your subject onto your drawing surface, the LUCY helps you see shapes, proportions, angles, placement, and perspective more clearly. You still have to draw. You still make decisions. You still make mistakes. But the tool helps train your eyes and hand to work together. The more you draw what you see with your LUCY, the more you begin to understand how drawing works.</p>
+      <figure class="dl-prose__fig">
+        <img src="https://drawlucy.com/cdn/shop/files/KatPEIMG_2035Ghost.jpg?v=1780515269&width=821" alt="Drawing what you see - tracing the reflected ghost image of a subject onto paper with the LUCY" loading="lazy">
+        <figcaption>The LUCY reflects your subject onto the page so you can draw what is actually there.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== LIKE TRAINING WHEELS FOR DRAWING ============== -->
+  <section class="dl-section dl-section--soft dl-card dl-card--amber">
+    <div class="dl-wrap">
+      <div class="dl-card__in">
+        <span class="dl-card__icon">
+          <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M188,184a36,36,0,1,1-36-36A36,36,0,0,1,188,184ZM68,148a36,36,0,1,0,36,36A36,36,0,0,0,68,148Z" opacity="0.2"></path><path fill="currentColor" d="M208,80a8,8,0,0,1-8,8H184.69l16.65,58.26A44,44,0,1,1,152,184a43.53,43.53,0,0,1,6.4-22.86L139.6,112H116.31l8.94,31.27A44,44,0,1,1,68,140a44.91,44.91,0,0,1,7.28.6L65.69,112H32a8,8,0,0,1,0-16H80a8,8,0,0,1,7.69,5.8L98.36,139l13.94-39A8,8,0,0,1,119.86,96h32.28a8,8,0,0,1,7.56,5.39l15.7,49.39A44.2,44.2,0,0,1,184,148h.69L168.31,90.74A8,8,0,0,1,176,80h24A8,8,0,0,1,208,80ZM68,156a28,28,0,1,0,28,28A28,28,0,0,0,68,156Zm84,28a28,28,0,1,0,28-28A28,28,0,0,0,152,184Z"></path></svg>
+        </span>
+        <h2>Like Training Wheels for Drawing</h2>
+        <p>The LUCY Drawing Tool is like training wheels for drawing. Training wheels allow you to have fun on your bike while learning the fundamentals of riding. In the same way, the LUCY helps you start creating amazing art right away while you continue to learn the fundamentals of drawing and grow as an artist. You can have fun and gain confidence while creating beautiful art. At the same time, you are learning hand-eye coordination, perspective, proportions, and other drawing skills without even realizing it. The LUCY does not replace learning. It helps you learn by doing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== A MODERN DRAWING TOOL / CENTURIES + HOW IT WORKS ============== -->
+  <section class="dl-section dl-prose">
+    <div class="dl-wrap">
+      <span class="dl-card__icon">
+        <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,32,32,72l96,40,96-40Z" opacity="0.2"></path><path fill="currentColor" d="M251.05,64.63a8,8,0,0,0-4.51-5.14l-115-48a8,8,0,0,0-7.06,0l-115,48A8,8,0,0,0,8,72v88a8,8,0,0,0,16,0V84l37.51,15.65A60,60,0,0,0,48,136v20a8,8,0,0,0,2.5,5.81C51.27,162.55,69.6,180,128,180s76.73-17.45,77.5-18.19A8,8,0,0,0,208,156V136a60,60,0,0,0-13.51-37.39L246.49,76A8,8,0,0,0,251.05,64.63ZM192,151.81C186.07,156,167.42,164,128,164s-58.07-8-64-12.19V136a44,44,0,0,1,15.52-33.55l45.4,18.92a8,8,0,0,0,6.16,0l45.4-18.92A44,44,0,0,1,192,136ZM128,105.34,42.34,69.66,128,33.94l85.66,35.72Z"></path></svg>
+      </span>
+      <h2>A Modern Drawing Tool Based on Techniques Artists Have Used for Centuries</h2>
+      <p>The LUCY is based on drawing and learning tools used for centuries. It reflects anything onto your paper, canvas, or drawing surface. Then you simply draw over the reflected image to start your sketch in minutes. Copying, tracing, and drawing aids have been used as learning techniques for hundreds of years because practicing accuracy helps train the artist. Practicing perfect makes perfect. When you practice from a more accurate starting point, you begin learning what correct proportions, perspective, and placement actually look like. The LUCY helps you practice seeing correctly.</p>
+
+      <div class="dl-steps">
+        <div class="dl-step">
+          <div class="dl-step__n">1</div>
+          <h3>Reflect</h3>
+          <p>The LUCY reflects your subject &mdash; a person, a pet, a still life, or a photo &mdash; right onto your paper, canvas, or drawing surface.</p>
+        </div>
+        <div class="dl-step">
+          <div class="dl-step__n">2</div>
+          <h3>Look &amp; draw</h3>
+          <p>Look through the view hole and draw over the reflected image to start your sketch in minutes, with better proportions and placement.</p>
+        </div>
+        <div class="dl-step">
+          <div class="dl-step__n">3</div>
+          <h3>Learn as you go</h3>
+          <p>The more you draw what you see, the more your eyes and hand learn to work together &mdash; even when you set the LUCY down.</p>
+        </div>
+      </div>
+
+      <figure class="dl-prose__fig">
+        <img src="https://drawlucy.com/cdn/shop/files/Da_Vinci.png?v=1780614156&width=1448" alt="The Old Masters' optical drawing technique, reinvented in the LUCY Drawing Tool" loading="lazy">
+        <figcaption>Optical drawing aids have been associated with master artists for centuries &mdash; the LUCY is a modern take on the same technique.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== FOUNDER QUOTE: TRAIN YOUR EYES ============== -->
+  <section class="dl-section dl-section--soft">
+    <div class="dl-wrap" style="max-width:800px;">
+      <div class="dl-founder">
+        <div class="dl-founder__card">
+          <span class="dl-eyebrow">The LUCY Helps Train Your Eyes</span>
+          <p class="dl-founder__q">&ldquo;You still make mistakes, but the point is that it helps train your eyes. Over time, it has a similar effect as exercises like blind contour drawing because it helps you see how to translate a 3D world onto 2D paper. I&rsquo;m an artist. My wife is not. It was amazing seeing a light go off in her head after using the LUCY a few times. She started to understand perspective, like how the top of a cup is always a <em>flatter oval than you think</em>. Now she is way better than she was before, even when not using a LUCY. I&rsquo;ve seen this again and again.&rdquo;</p>
+          <div class="dl-founder__cite">
+            <span class="dl-founder__mark" aria-hidden="true">&ldquo;</span>
+            <cite>Les Cookson<span>Inventor of the LUCY Drawing Tool</span></cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== NOT CHEATING. LEARNING. ============== -->
+  <section class="dl-section dl-card dl-card--coral">
+    <div class="dl-wrap">
+      <div class="dl-card__in">
+        <span class="dl-card__icon">
+          <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M168,40a40,40,0,0,0-40,40,40,40,0,0,0-40-40A40,40,0,0,0,48,80c0,40,80,96,80,96s80-56,80-96A40,40,0,0,0,168,40Z" opacity="0.2"></path><path fill="currentColor" d="M232,80H211.43A36,36,0,0,0,180,24a35.4,35.4,0,0,0-19.42,5.77A39.91,39.91,0,0,0,128,46.4,39.91,39.91,0,0,0,95.42,29.74,35.4,35.4,0,0,0,76,24,36,36,0,0,0,44.57,80H24a8,8,0,0,0,0,16H32v8a96.11,96.11,0,0,0,96,96h0a96.11,96.11,0,0,0,96-96V96h8a8,8,0,0,0,0-16ZM180,40a20,20,0,0,1,18.66,28H164a8,8,0,0,1-7.62-10.5A20.06,20.06,0,0,1,180,40ZM76,40a20.06,20.06,0,0,1,19.43,15.16A8.34,8.34,0,0,1,87.62,68H57.34A20,20,0,0,1,76,40ZM208,104a80,80,0,0,1-160,0V96H208Z"></path></svg>
+        </span>
+        <h2>This Is Not About Cheating. It Is About Learning.</h2>
+        <p>Some people misunderstand tools like the LUCY. They think that if a tool helps you draw more accurately, then it must somehow be cheating. But artists have always used tools. Grids, rulers, reference photos, viewfinders, mirrors, projectors, camera obscuras, camera lucidas, and other optical tools have all been used to help artists study, practice, and create. If you have ever used a camera lucida, you know that one still makes mistakes. You still have to observe. You still have to adjust. You still have to draw carefully. That experience is great for honing hand-eye coordination because it helps you connect what your eye sees with what your hand does. Please do not trash the tool just because you do not understand what it is. The LUCY does not make the art for you. It helps you see better so you can draw better.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== START CREATING ART RIGHT AWAY ============== -->
+  <section class="dl-section dl-section--soft dl-prose">
+    <div class="dl-wrap">
+      <span class="dl-card__icon">
+        <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M223.69,42.18a8,8,0,0,0-9.87-9.87C148.81,50.49,98.22,110.55,72.36,145.21l38.43,38.43C145.45,157.78,205.51,107.19,223.69,42.18Z" opacity="0.2"></path><path fill="currentColor" d="M239.4,40.1a16,16,0,0,0-12.3-12.3c-10.41-2.46-58.3-9.94-119.71,51.47A126.91,126.91,0,0,0,87.86,103.5l-43.59,4.85a16,16,0,0,0-9.18,27.31L57.49,158a8,8,0,0,1,1.83,8.49,15.78,15.78,0,0,0,3.43,17.19l9.6,9.6a15.78,15.78,0,0,0,17.19,3.43A8,8,0,0,1,99,198.51l22.36,22.4a16,16,0,0,0,27.31-9.18l4.85-43.59a126.91,126.91,0,0,0,24.23-19.53C239.34,98.4,241.86,50.51,239.4,40.1ZM52,124.16l36-4-23.05,23a1.86,1.86,0,0,1-.2.19L45.55,124Zm79.86,79.9-19.4-19.41,23-23.05-4,36ZM164.72,141a111.45,111.45,0,0,1-21.81,17.31L97.66,113.09A111.45,111.45,0,0,1,115,91.28c25.8-25.79,53.36-37.49,72.7-42.69a153.91,153.91,0,0,1,36.06-5.4C226.27,76.46,205.45,100.26,164.72,141ZM169,80a12,12,0,1,1-12,12A12,12,0,0,1,169,80Z"></path></svg>
+      </span>
+      <h2>Start Creating Art Right Away</h2>
+      <p>One of the most frustrating parts of learning to draw is feeling like you have to practice for years before you can create anything you are excited about. The LUCY helps you start sooner. You can use it for portraits, still life, landscapes, animals, flowers, crafts, painting layouts, signs, cake decorating, and many other creative projects. It helps you get your drawing started with better proportions and placement so you can focus on learning, improving, and enjoying the process. You will have fun and gain confidence while creating beautiful art. And while you are drawing what you see with your LUCY, you will be learning how to see like an artist.</p>
+      <div class="dl-uses">
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Portraits</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Still life</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Landscapes</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Animals</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Flowers</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Crafts</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Painting layouts</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Signs</span>
+        <span><svg class="ph" width="17" height="17" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Cake decorating</span>
+      </div>
+      <figure class="dl-prose__fig">
+        <img src="https://drawlucy.com/cdn/shop/files/LUCY_flex_Les10.jpg?v=1758218419&width=2000" alt="Creating art right away with the LUCY flex drawing tool at a desk" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== LEARN FASTER WITH THE LUCY LEARNING HUB ============== -->
+  <section class="dl-section dl-card dl-card--green">
+    <div class="dl-wrap">
+      <div class="dl-card__in">
+        <span class="dl-card__icon">
+          <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M32,64,128,32l96,32-96,32Z" opacity="0.2"></path><path fill="currentColor" d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"></path></svg>
+        </span>
+        <h2>Learn Faster with the LUCY Learning Hub</h2>
+        <p>For added guidance during the learning process, we offer the LUCY Learning Hub &mdash; everything you need to help you learn how to draw, including the LUCY Drawing Course. The course integrates proven drawing techniques with the LUCY, creating a hands-on learning experience that helps you understand what you are seeing and how to translate it onto the page. The LUCY gives you the visual tool. The LUCY Learning Hub helps walk you through the process. Along with the LUCY Drawing Course, the Learning Hub includes tutorials, lessons, and projects designed to help you grow your skills in drawing, painting, and more &mdash; giving you the guidance you need to become the best artist you can be.</p>
+        <div class="dl-softcta">
+          <a class="dl-btn dl-btn--ghost" data-soft="learning-hub" data-loc="learning-hub" href="https://drawlucy.com/products/lucy-learning-hub-membership">Start the free LUCY Learning Hub course &rarr;</a>
+          <span class="dl-softcta__note">A simple first step for beginners.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TESTIMONIALS ============== -->
+  <section class="dl-section dl-center">
+    <div class="dl-wrap">
+      <span class="dl-eyebrow">What LUCY customers are saying</span>
+      <h2 style="margin-top:8px;">What LUCY Customers Are Saying</h2>
+      <div class="dl-quotes">
+        <div class="dl-quote">
+          <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;This was my first attempt with my LUCY and all I can say is it is a game changer.&rdquo;</p>
+          <cite>Christine &middot; <span class="dl-verified">LUCY customer</span></cite>
+        </div>
+        <div class="dl-quote">
+          <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;The LUCY has already helped tremendously by helping my hand-eye coordination, perspective, stroke technique and speed. The LUCY has improved my confidence. I highly recommend the LUCY!!!&rdquo;</p>
+          <cite>Jamie &middot; <span class="dl-verified">Just started drawing</span></cite>
+        </div>
+        <div class="dl-quote">
+          <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;This is sooooo much fun. I am convinced the LUCY will make me a better artist.&rdquo;</p>
+          <cite>Margaret &middot; <span class="dl-verified">LUCY customer</span></cite>
+        </div>
+      </div>
+
+      <!-- rating + soft Shark Tank -->
+      <a class="dl-proof__stat" href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews" style="margin-top:30px;">
+        <span class="dl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="dl-bignum">4.2</span>
+        <span style="text-align:left;font-weight:700;color:var(--muted);">4.2 stars from 437 reviews<br><span style="font-weight:500;">on drawlucy.com</span></span>
+      </a>
+
+      <div class="dl-tank">
+        <svg class="dl-tank__icon ph ph-duo-coral" width="72" height="72" viewBox="0 0 256 256" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40Z" opacity="0.2"></path><path fill="currentColor" d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path></svg>
+        <div>
+          <h3>As Seen on Shark Tank</h3>
+          <p>The LUCY Drawing Tool is the same tool that was on Shark Tank.</p>
+        </div>
+      </div>
+
+      <div class="dl-press">
+        <p class="dl-press__label">As Seen On</p>
+        <div class="dl-press__row">
+          <span>Shark Tank</span>
+          <span>CNBC</span>
+          <span>Gizmodo</span>
+          <span>BoingBoing</span>
+          <span>Kickstarter</span>
+          <span>NAEA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== OFFER LADDER ============== -->
+  <section class="dl-section dl-section--soft dl-center" id="shop">
+    <div class="dl-wrap dl-wrap--wide">
+      <span class="dl-eyebrow">Choose your LUCY</span>
+      <h2 style="margin-top:8px;">Start Where It Feels Right</h2>
+      <p class="dl-lede">New to drawing? The LUCY mini is the easiest, lowest-cost way to begin. Most artists choose the flex. The pro is the largest and sturdiest.</p>
+
+      <div class="dl-ladder">
+        <!-- MINI - start here / featured for beginners -->
+        <div class="dl-tier dl-tier--featured">
+          <span class="dl-tier__flag dl-tier__flag--start">Start here</span>
+          <div class="dl-tier__name">LUCY mini</div>
+          <div class="dl-tier__best">Best for: learning to draw &amp; smaller work</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs3.png?v=1780534868&width=1254" alt="LUCY mini drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$69</span><span class="dl-was">$95</span></div>
+          <span class="dl-tier__save">Save $26</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Image up to 12&times;18&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>2+ brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>The low-risk first LUCY</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="mini" data-loc="ladder-mini" href="https://drawlucy.com/products/lucy-mini">Add LUCY mini &mdash; $69</a>
+        </div>
+
+        <!-- FLEX - most popular -->
+        <div class="dl-tier">
+          <span class="dl-tier__flag dl-tier__flag--pop">Most Popular</span>
+          <div class="dl-tier__name">LUCY flex</div>
+          <div class="dl-tier__best">Best for: most artists &mdash; the versatile pick</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs2.png?v=1780534869&width=1254" alt="LUCY flex drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$99</span><span class="dl-was">$160</span></div>
+          <span class="dl-tier__save">Save $61</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Bigger image &mdash; up to 19&times;27&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>4+ brightness levels</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg><a href="https://drawlucy.com/products/lucy-drawing-tool#shopify-product-reviews">4.2 stars from 437 reviews on drawlucy.com</a></li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="flex" data-loc="ladder-flex" href="https://drawlucy.com/products/lucy-drawing-tool">Add LUCY flex &mdash; $99</a>
+        </div>
+
+        <!-- PRO -->
+        <div class="dl-tier">
+          <span class="dl-tier__flag dl-tier__flag--big">Pro</span>
+          <div class="dl-tier__name">LUCY pro</div>
+          <div class="dl-tier__best">Best for: serious &amp; professional work</div>
+          <img class="dl-tier__img" src="https://drawlucy.com/cdn/shop/files/Specs1.jpg?v=1780534868&width=1080" alt="LUCY pro drawing tool" loading="lazy">
+          <div class="dl-tier__price"><span class="dl-now">$275</span><span class="dl-was">$320</span></div>
+          <span class="dl-tier__save">Save $45</span>
+          <p class="dl-tier__affirm">or Pay in 4 with Affirm</p>
+          <ul class="dl-tier__list">
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Largest image &mdash; up to 20&times;37&Prime;</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>Sturdiest, most stable build</li>
+            <li><svg class="ph ph-duo-b" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Z" opacity="0.2"></path><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>For serious &amp; pro artists</li>
+          </ul>
+          <a class="dl-btn dl-btn--primary dl-btn--block dl-tier__cta" data-cart="pro" data-loc="ladder-pro" href="https://drawlucy.com/products/lucy-pro">Add LUCY pro &mdash; $275</a>
+        </div>
+      </div>
+      <p class="dl-ladder__foot">All models include a 30-day money-back guarantee &mdash; see our <a href="https://drawlucy.com/pages/refund-policy">full return policy</a>. Pay in 4 interest-free installments with Affirm, subject to eligibility.</p>
+
+      <div class="dl-risk">
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
+          <div><h3>30-Day Money-Back</h3><p>Draw with it. If it&rsquo;s not for you within 30 days, send it back. <a href="https://drawlucy.com/pages/refund-policy">See our full return policy.</a></p></div>
+        </div>
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M152,32V80a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V32ZM216,72V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H88V80a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V64h48A8,8,0,0,1,216,72Z" opacity="0.2"></path><path fill="currentColor" d="M179.31,88.08a8,8,0,0,0-10.07,5.16A40,40,0,0,1,88,96V88h64a16,16,0,0,0,16-16V32a16,16,0,0,0-16-16H104A16,16,0,0,0,88,32V72.23A56.08,56.08,0,0,0,184.49,93.4a8,8,0,0,0-5.18-5.32ZM104,32h48V72H104ZM208,80H180.42a72.08,72.08,0,0,1-2.94,16H208V200H48V96H78.52a72.08,72.08,0,0,1-2.94-16H48A16,16,0,0,0,32,96V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"></path></svg>
+          <div><h3>1-Year Warranty</h3><p>Shatterproof optics, aluminum clamp, steel flex arm.</p></div>
+        </div>
+        <div class="dl-risk__card">
+          <svg class="ph ph-duo" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,56V200a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0.2"></path><path fill="currentColor" d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V92H40V56ZM40,200V108H216v92Z"></path></svg>
+          <div><h3>Built in the USA</h3><p>Made in America by the team that reinvented the camera lucida.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CLOSE: JOIN OVER 100,000 ARTISTS ============== -->
+  <section class="dl-section dl-final">
+    <div class="dl-wrap">
+      <h2>Join Over 100,000 Artists Who Have Used LUCY</h2>
+      <p>Whether you have always wanted to learn to draw, are returning to art after years away, or just want a tool that helps you build confidence faster, the LUCY Drawing Tool gives you a simple way to begin. Look through the view hole. Draw what you see. Learn as you create. Ready to join the over 100,000 artists who have transformed their art with the LUCY Drawing Tool?</p>
+      <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="flex" data-loc="final" href="https://drawlucy.com/products/lucy-drawing-tool">Shop the LUCY &rarr;</a>
+      <div class="dl-final__trust">
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>1-Year Warranty</span>
+        <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>Built in the USA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="dl-footer">
+    <div class="dl-wrap dl-wrap--wide">
+      <img class="dl-footer__logo" src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool">
+      <p>The LUCY Drawing Tool &mdash; a modern drawing tool based on techniques artists have used for centuries. It helps you see better so you can draw better. Quality built in the USA.</p>
+      <p class="dl-footer__disc">
+        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. The 4.2-star rating reflects 437 reviews of the LUCY flex on drawlucy.com. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
+        30-day money-back guarantee and 1-year limited warranty terms apply &mdash; see our <a href="https://drawlucy.com/pages/refund-policy">full return policy</a> for details. Financing through Affirm is subject to eligibility and approval; payment options depend on your purchase amount, and a down payment may be required. Prices and offers subject to change.
+        &copy; 2026 The LUCY Drawing Tool. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</div><!-- /.dl-lp -->
+
+<!-- ============== STICKY MOBILE CTA (reparented to body) ============== -->
+<div class="dl-sticky" id="dl-sticky">
+  <div class="dl-sticky__txt"><b>LUCY mini</b><small>$69 &middot; Start here</small></div>
+  <a class="dl-sticky__btn" data-cart="mini" data-loc="sticky" href="https://drawlucy.com/products/lucy-mini">Shop the LUCY &rarr;</a>
+</div>
+
+<!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
+<div class="dl-pop" id="dl-pop" role="dialog" aria-modal="true" aria-labelledby="dl-pop-title">
+  <div class="dl-pop__card">
+    <button class="dl-pop__close" id="dl-pop-close" aria-label="Close">&times;</button>
+    <div class="dl-pop__badge">10% OFF</div>
+    <h3 id="dl-pop-title">Get 10% off + free drawing tutorials</h3>
+    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus free beginner tutorials to get you drawing fast.</p>
+    <form class="dl-pop__form" id="dl-pop-form" novalidate>
+      <input type="email" id="dl-pop-email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address">
+      <button type="submit">Send my 10% off code</button>
+    </form>
+    <div class="dl-pop__thanks" id="dl-pop-thanks">Thanks! Check your inbox for your code &amp; tutorials.</div>
+    <p class="dl-pop__fine">No spam. Unsubscribe anytime. Discount applies to your first order; some exclusions may apply.</p>
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   DRAW LUCY LP #3 (learn-to-draw) - instrumentation + behavior (build v1)
+   - PostHog init (project DrawLucy 486255) + feature flag (default control)
+   - 6-event funnel + experiment_assigned
+   - UTM/attribution bridge: capture -> super-properties -> forward on cart + soft links
+   - Real /cart/add links w/ verified variant ids
+   - sticky CTA + exit-intent popup, reparented to <body>
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  /* ---------- 0. Config ---------- */
+  var POSTHOG_KEY = "phc_C3krSt9S8497DpC7XMMJomjuVxkjWvLaLoX3hH6fXjYp";
+  var POSTHOG_API_HOST = "https://us.i.posthog.com";
+  var POSTHOG_UI_HOST = "https://us.posthog.com";
+  var FLAG_KEY = "drawlucy-learn-to-draw";
+  var EXPERIMENT_ID = 380262;
+  var PAGE_NAME = "learn-to-draw";
+
+  // Verified variant ids (drawlucy.com/products/{handle}.js on 2026-06-30 - all available:true)
+  var CART = {
+    mini: { variant: "39716899094626", handle: "lucy-mini",         price: 69,  name: "LUCY mini" },
+    flex: { variant: "7150423900217",  handle: "lucy-drawing-tool", price: 99,  name: "LUCY flex" },
+    pro:  { variant: "31675633303650", handle: "lucy-pro",          price: 275, name: "LUCY pro"  }
+  };
+
+  var UTM_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term",
+                  "gclid","fbclid","tw_source","ttclid","msclkid"];
+  var SS_KEY = "dl_attribution";
+
+  /* ---------- 1. Attribution bridge ---------- */
+  function getStoredAttribution() {
+    try { return JSON.parse(sessionStorage.getItem(SS_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function captureAttribution() {
+    var stored = getStoredAttribution();
+    var params = new URLSearchParams(window.location.search);
+    var changed = false;
+    UTM_KEYS.forEach(function (k) {
+      var v = params.get(k);
+      if (v && !stored[k]) { stored[k] = v; changed = true; } // first-touch wins within session
+    });
+    if (changed || !stored.dl_landing) {
+      if (!stored.dl_landing) stored.dl_landing = window.location.pathname;
+      try { sessionStorage.setItem(SS_KEY, JSON.stringify(stored)); } catch (e) {}
+    }
+    return stored;
+  }
+  var ATTR = captureAttribution();
+
+  function appendAttributionToUrl(url) {
+    try {
+      var u = new URL(url, window.location.origin);
+      UTM_KEYS.forEach(function (k) { if (ATTR[k] && !u.searchParams.has(k)) u.searchParams.set(k, ATTR[k]); });
+      return u.toString();
+    } catch (e) { return url; }
+  }
+
+  /* ---------- 2. PostHog init ---------- */
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+  var phReady = false;
+  try {
+    posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_API_HOST,
+      ui_host: POSTHOG_UI_HOST,
+      person_profiles: "always",
+      capture_pageview: true,      // keep $pageview / autocapture on
+      autocapture: true,
+      loaded: function () { phReady = true; }
+    });
+  } catch (e) { /* never block the page on analytics */ }
+
+  // Register attribution + origin_path as super-properties so they ride on EVERY event
+  function registerSuperProps(extra) {
+    var props = { origin_path: window.location.pathname, lp_page: PAGE_NAME };
+    UTM_KEYS.forEach(function (k) { if (ATTR[k]) props[k] = ATTR[k]; });
+    if (extra) for (var k in extra) props[k] = extra[k];
+    try { posthog.register(props); } catch (e) {}
+  }
+  registerSuperProps();
+
+  function cap(event, props) {
+    try { posthog.capture(event, props || {}); } catch (e) {}
+  }
+
+  /* ---------- 3. Feature flag -> variant (DEFAULT control) ---------- */
+  var VARIANT = "control";
+  function applyVariant(v) {
+    VARIANT = (v === "variant_b") ? "variant_b" : "control"; // ANY other value -> control
+    document.body.setAttribute("data-variant", VARIANT);
+    var lp = document.getElementById("dl-lp");
+    if (lp) lp.setAttribute("data-variant", VARIANT);
+    registerSuperProps({ lp_variant: VARIANT });
+  }
+  applyVariant("control"); // render control immediately; flag may upgrade below
+
+  try {
+    posthog.onFeatureFlags(function () {
+      var v;
+      try { v = posthog.getFeatureFlag(FLAG_KEY); } catch (e) { v = null; }
+      applyVariant(v);
+      cap("experiment_assigned", { flag: FLAG_KEY, variant: VARIANT, experiment_id: EXPERIMENT_ID });
+    });
+  } catch (e) { /* flag system down -> stays control */ }
+
+  /* ---------- 4. lp_pageview ---------- */
+  cap("lp_pageview", { page: PAGE_NAME, variant: VARIANT });
+
+  /* ---------- 5. Wire cart / CTA links ---------- */
+  function buildCartUrl(key) {
+    var c = CART[key];
+    if (!c) return null;
+    var base = "https://drawlucy.com/cart/add?id=" + c.variant + "&quantity=1";
+    return appendAttributionToUrl(base);
+  }
+  function fallbackProductUrl(key) {
+    var c = CART[key];
+    return appendAttributionToUrl("https://drawlucy.com/products/" + (c ? c.handle : "lucy-drawing-tool"));
+  }
+
+  function wireCtas() {
+    // Hard-conversion CTAs -> /cart/add with attribution
+    var nodes = document.querySelectorAll("[data-cart]");
+    Array.prototype.forEach.call(nodes, function (el) {
+      var key = el.getAttribute("data-cart");
+      var loc = el.getAttribute("data-loc") || "unknown";
+      var cartUrl = buildCartUrl(key);
+      if (cartUrl) el.setAttribute("href", cartUrl);
+      else el.setAttribute("href", fallbackProductUrl(key));
+
+      el.addEventListener("click", function () {
+        var c = CART[key] || {};
+        cap("cta_clicked", { location: loc, product: c.name || key, price: c.price || null, variant: VARIANT, page: PAGE_NAME });
+        cap("add_to_cart_clicked", { location: loc, product: c.name || key, price: c.price || null, variant: VARIANT, value: c.price || null, currency: "USD", page: PAGE_NAME });
+      }, { passive: true });
+    });
+
+    // Soft-conversion CTAs (Learning Hub) -> forward attribution, fire its own event (beginner-friendly micro-conversion)
+    var softNodes = document.querySelectorAll("[data-soft]");
+    Array.prototype.forEach.call(softNodes, function (el) {
+      var name = el.getAttribute("data-soft");
+      var loc = el.getAttribute("data-loc") || "unknown";
+      el.setAttribute("href", appendAttributionToUrl(el.getAttribute("href")));
+      el.addEventListener("click", function () {
+        cap("cta_clicked", { location: loc, product: name, price: 0, variant: VARIANT, page: PAGE_NAME });
+        cap("soft_cta_clicked", { location: loc, offer: name, variant: VARIANT, page: PAGE_NAME });
+      }, { passive: true });
+    });
+  }
+
+  /* ---------- 6. Section-in-view tracking (engagement on each content section) ---------- */
+  function wireSectionViews() {
+    var items = document.querySelectorAll(".dl-section[class*='dl-prose'], .dl-section.dl-card, .dl-section.dl-final, #shop");
+    if (!("IntersectionObserver" in window) || !items.length) return;
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var h = en.target.querySelector("h2");
+        var id = h ? h.textContent.trim() : (en.target.id || "section");
+        if (en.isIntersecting && !seen[id]) {
+          seen[id] = true;
+          cap("section_viewed", { section: id, variant: VARIANT, page: PAGE_NAME });
+        }
+      });
+    }, { threshold: 0.5 });
+    Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+  }
+
+  /* ---------- 7. Reparent fixed els + sticky behavior ---------- */
+  function reparentFixed() {
+    ["#dl-sticky", "#dl-pop"].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (el && el.parentNode !== document.body) document.body.appendChild(el);
+    });
+  }
+
+  /* ---------- 8. Exit-intent popup ---------- */
+  function wirePopup() {
+    var pop = document.getElementById("dl-pop");
+    var closeBtn = document.getElementById("dl-pop-close");
+    var form = document.getElementById("dl-pop-form");
+    var emailInput = document.getElementById("dl-pop-email");
+    var thanks = document.getElementById("dl-pop-thanks");
+    if (!pop) return;
+    var shown = false;
+
+    function openPop() {
+      if (shown) return;
+      shown = true;
+      try { sessionStorage.setItem("dl_pop_shown", "1"); } catch (e) {}
+      pop.classList.add("dl-pop--open");
+      cap("email_popup_shown", { variant: VARIANT });
+    }
+    function closePop() { pop.classList.remove("dl-pop--open"); }
+
+    var already = false;
+    try { already = sessionStorage.getItem("dl_pop_shown") === "1"; } catch (e) {}
+    if (!already) {
+      // Desktop: mouse leaves viewport top. Mobile: fallback timer (45s) since no exit-intent.
+      document.addEventListener("mouseout", function (e) {
+        if (!e.relatedTarget && e.clientY <= 0) openPop();
+      });
+      setTimeout(function () { if (!shown) openPop(); }, 45000);
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closePop);
+    pop.addEventListener("click", function (e) { if (e.target === pop) closePop(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePop(); });
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = (emailInput && emailInput.value || "").trim();
+        if (!email || email.indexOf("@") < 1) { if (emailInput) emailInput.focus(); return; }
+        cap("email_captured", { location: "exit_intent_popup", variant: VARIANT, page: PAGE_NAME });
+        // attach email to the current person without forcing a re-identify (avoids "id not set" error)
+        try { posthog.setPersonProperties({ email: email }); } catch (err) {}
+        if (form) form.style.display = "none";
+        if (thanks) thanks.style.display = "block";
+        setTimeout(closePop, 2600);
+      });
+    }
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    reparentFixed();
+    wireCtas();
+    wireSectionViews();
+    wirePopup();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
+</script>
+</body>
+</html>
