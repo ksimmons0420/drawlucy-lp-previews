@@ -437,23 +437,11 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <h1>Turn your photos into <em>art</em>.</h1>
       <p class="dl-hero__sub">Turn the photos you love into drawings that actually look like them &mdash; the pet who passed, the new grandbaby, the trip you&rsquo;ll never forget.</p>
 
-      <!-- TODO: swap in client's boat photo (before) + boat painting (after) when asset is provided (Drive access pending). 1-line src swap on the two <img> below. -->
+      <!-- Hero = client's boat side-by-side (Reference Photo -> Finished Painting, Darice Machel McGuire). Hosted on the preview repo; move to client CDN for the Shopify production port. -->
       <div class="dl-hero__proof">
-        <div class="dl-hero__ba">
-          <figure class="dl-hero__cell">
-            <span class="dl-hero__tag">Your photo</span>
-            <img src="https://drawlucy.com/cdn/shop/files/dogBefore2.png?v=1780609374&width=1254" alt="A treasured photo of a dog" loading="eager">
-          </figure>
-          <div class="dl-hero__arrow" aria-hidden="true">
-            <svg class="ph" width="22" height="22" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
-          </div>
-          <figure class="dl-hero__cell dl-hero__cell--frame">
-            <span class="dl-hero__tag dl-hero__tag--after">Your drawing</span>
-            <div class="dl-hero__framewrap">
-              <img src="https://drawlucy.com/cdn/shop/files/dogAfter.jpg?v=1780609391&width=537" alt="A hand-drawn portrait of the same dog, drawn with the LUCY and ready to frame" loading="eager">
-            </div>
-          </figure>
-        </div>
+        <figure class="dl-hero__sidebyside" style="margin:0;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(15,40,70,.18);">
+          <img src="https://ksimmons0420.github.io/drawlucy-lp-previews/assets/boat-photo-to-painting.jpg" alt="A reference photo of a sailboat in Lahaina harbor beside the finished painting drawn with the LUCY" loading="eager" style="display:block;width:100%;height:auto;">
+        </figure>
         <p class="dl-hero__cap">It helps you see. You still draw every single stroke yourself.</p>
       </div>
 
