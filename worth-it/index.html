@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <!--
-  DRAW LUCY LP #2 - "Honest Answers" Listicle FAQ - VERSION 2026-06-25 - build v1
+  DRAW LUCY LP #2 - "Honest Answers" Listicle FAQ - VERSION 2026-06-30 - build v2
   Angle: editorial advertorial listicle ("Is it worth it? 8 honest answers")
   Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
   Claims: PLAY IT STRAIGHT - no shipping-cost claims; 30-day money-back linked to refund policy; only 4.2/437 cited (clickable to drawlucy.com reviews).
-  Search this file for "build v1" to confirm the latest paste.
+  build v2 (Les feedback 2026-06-30): Q1 two-part verdict + Margaret O. Loox review/art; Q2 anti-gimmick + "drawn" not "traced" + Pippa A. Loox review/art;
+    Q3 lighting rewrite (not a projector, light both, use filters); Q4 30-60min expectation + video TODO; Q6 "app or projector"; Q7 "why not the other options" + NeoLucida "Made in China, no warranty" + 2 blog links; Q8 flex-vs-pro guide + YouTube facade (fdy4YDfvuNU).
+  Search this file for "build v2" to confirm the latest paste.
 -->
 <html lang="en">
 <head>
@@ -234,6 +236,28 @@
 .dl-lp .dl-item__quote cite .dl-verified { color:var(--blue); }
 .dl-lp .dl-item__cta { margin-top:22px; }
 .dl-lp .dl-item__cta .dl-btn-note { text-align:left; }
+
+/* ---- video facade (click-to-play YouTube; no iframe until clicked) ---- */
+.dl-lp .dl-video {
+  position:relative; margin-top:18px; border-radius:12px; overflow:hidden; border:1px solid var(--line);
+  box-shadow:0 6px 22px rgba(15,40,70,.08); background:#000; aspect-ratio:16/9; cursor:pointer;
+}
+.dl-lp .dl-video img { width:100%; height:100%; object-fit:cover; display:block; opacity:.9; transition:opacity .15s ease; }
+.dl-lp .dl-video:hover img { opacity:1; }
+.dl-lp .dl-video__play {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:74px; height:74px; border-radius:50%; background:rgba(7,143,234,.94);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 8px 26px rgba(0,0,0,.4);
+  transition:transform .14s ease, background .15s ease; border:none; cursor:pointer;
+}
+.dl-lp .dl-video:hover .dl-video__play { transform:translate(-50%,-50%) scale(1.06); background:var(--blue); }
+.dl-lp .dl-video__play svg { margin-left:4px; }
+.dl-lp .dl-video__cap {
+  position:absolute; left:0; right:0; bottom:0; padding:10px 14px;
+  background:linear-gradient(0deg,rgba(0,0,0,.66) 0%, rgba(0,0,0,0) 100%);
+  color:#fff; font-size:.82rem; font-weight:600; pointer-events:none;
+}
+.dl-lp .dl-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
 
 /* ---- inline check list (used inside items) ---- */
 .dl-lp .dl-checklist { list-style:none; margin:16px 0 0; display:flex; flex-direction:column; gap:10px; }
@@ -479,7 +503,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <p class="dl-hero__sub">We dug through hundreds of customer reviews, forum threads, and the Shark Tank story. Here&rsquo;s the straight version &mdash; including the catches &mdash; so you can decide for yourself.</p>
       <figure class="dl-hero__figure">
         <img src="https://drawlucy.com/cdn/shop/files/2_0cefa663-939d-4ea2-a977-4f223737b797.jpg?v=1780967449&width=1200" alt="An artist using the LUCY Drawing Tool to draw a portrait by tracing a reflected image" loading="eager">
-        <figcaption class="dl-hero__figcap">The LUCY reflects your subject onto the paper &mdash; you trace what you see.</figcaption>
+        <figcaption class="dl-hero__figcap">The LUCY reflects your subject onto the paper &mdash; you draw what you see.</figcaption>
       </figure>
       <div class="dl-hero__cta-row">
         <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
@@ -515,7 +539,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <li><a href="#q4">Is there a learning curve?</a></li>
           <li><a href="#q5">I wear glasses or bifocals &mdash; will it work?</a></li>
           <li><a href="#q6">Can I draw from real life, or only photos?</a></li>
-          <li><a href="#q7">Why not a cheaper projector, app, or NeoLucida?</a></li>
+          <li><a href="#q7">Why not go with one of the other options?</a></li>
           <li><a href="#q8">Which model do I need &mdash; and is it worth it?</a></li>
         </ul>
       </nav>
@@ -532,17 +556,19 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <h2>&ldquo;Isn&rsquo;t using it cheating? Will I still learn to draw?&rdquo;</h2>
         <span class="dl-item__verdict dl-item__verdict--yes">
           <svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
-          Short answer: No &mdash; it&rsquo;s a recognized learning aid
+          Short answer: No &mdash; and yes, you&rsquo;ll still learn.
         </span>
         <div class="dl-item__body">
-          <p>This is the hesitation we saw most, and it&rsquo;s a fair one. Here&rsquo;s the honest history: optical drawing aids aren&rsquo;t a 21st-century shortcut. The camera lucida and camera obscura have been associated with master artists &mdash; Vermeer, Rembrandt, and others &mdash; for <strong>centuries</strong>. The LUCY is a modern take on the same centuries-old technique.</p>
-          <p>Crucially, it helps you see &mdash; you still draw every single stroke yourself. It doesn&rsquo;t produce the line; your hand does. What it trains, over time, is your eye for proportion and perspective, which is exactly the skill most self-taught artists struggle with.</p>
+          <p>This is really two questions, so let&rsquo;s answer both. <strong>First: no, it isn&rsquo;t cheating.</strong> Artists have always reached for optical tools &mdash; the camera lucida and camera obscura have been associated with the Old Masters (Vermeer, Rembrandt, and others) for <strong>centuries</strong>, and the LUCY is a modern take on that same technique. And either way, you still draw every single stroke yourself. It doesn&rsquo;t produce a single line &mdash; your hand does.</p>
+          <p><strong>Second: yes, you still learn to draw &mdash; you actually learn faster.</strong> What the LUCY does is train your eye to <em>see</em>: to judge proportion and perspective accurately, which is exactly the skill most self-taught artists struggle with. Use it as a feedback loop &mdash; draw, compare, correct &mdash; and your eye sharpens over time, so you lean on it less. It&rsquo;s a learning tool, not a crutch.</p>
           <div class="dl-item__quote">
             <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>&ldquo;I practise by drawing a portrait from a photo and then I use Lucy and draw over my painting to see where I have gone wrong&hellip; it tells me how to look at a photo and how to improve.&rdquo;</p>
-            <cite>Behzad &middot; <span class="dl-verified">LUCY customer</span></cite>
+            <p>&ldquo;This is sooooo much fun. Really. For a long time I felt that using the Lucy would be cheating. I like to draw. But after I watched several videos by David Hockney, I really wanted to try it for myself. I am convinced the Lucy will make me a better artist.&rdquo;</p>
+            <cite>Margaret O. &middot; <span class="dl-verified">LUCY flex</span></cite>
           </div>
-          <p>That&rsquo;s the real picture: many artists use it as a feedback loop &mdash; draw, compare, learn &mdash; and lean on it less as their eye sharpens. It&rsquo;s a learning tool, not a crutch.</p>
+          <div class="dl-item__fig">
+            <img src="https://images.loox.io/uploads/2023/2/24/sFb_y_dyA_orig.jpg" alt="Customer artwork drawn with the LUCY" loading="lazy">
+          </div>
         </div>
         <div class="dl-item__cta">
           <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item1" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
@@ -557,10 +583,10 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <h2>&ldquo;Does it actually work, or is it a gimmick?&rdquo;</h2>
         <span class="dl-item__verdict dl-item__verdict--yes">
           <svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
-          Short answer: Yes &mdash; it&rsquo;s real optics, not a screen
+          Short answer: Yes, it works &mdash; it&rsquo;s real optics, not a gimmick
         </span>
         <div class="dl-item__body">
-          <p>It works, and the mechanism is genuinely simple. The LUCY uses a real half-silvered (semi-transparent) mirror that overlays a ghost reflected image of your subject directly onto your paper. Look through it and you see your reference and your pencil tip at the same time &mdash; so you can trace exactly what&rsquo;s there.</p>
+          <p>It genuinely works &mdash; this is not a gimmick, and the mechanism is real, proven physics. The LUCY uses a true half-silvered (semi-transparent) mirror that overlays a ghost reflected image of your subject directly onto your paper. Look through it and you see your reference and your pencil tip at the same time, so your hand goes exactly where it should. It&rsquo;s the same optical principle artists have relied on for generations, and the results speak for themselves.</p>
           <p>What it&rsquo;s great at is the hardest part of any drawing: <strong>proportion and outline</strong>. Getting the eyes the right distance apart, the nose the right length, the whole composition sized correctly &mdash; that&rsquo;s what trips most people up, and that&rsquo;s precisely what the LUCY nails.</p>
           <div class="dl-item__fig dl-item__fig--ba">
             <div>
@@ -568,9 +594,17 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
               <img src="https://drawlucy.com/cdn/shop/files/dogBefore2.png?v=1780609374&width=1254" alt="Reference photo of a dog before drawing" loading="lazy">
             </div>
             <div>
-              <span class="dl-ba__tag dl-ba__tag--after">After &mdash; traced with LUCY</span>
-              <img src="https://drawlucy.com/cdn/shop/files/dogAfter.jpg?v=1780609391&width=537" alt="Realistic hand-drawn portrait of the same dog, traced with the LUCY" loading="lazy">
+              <span class="dl-ba__tag dl-ba__tag--after">After &mdash; drawn with LUCY</span>
+              <img src="https://drawlucy.com/cdn/shop/files/dogAfter.jpg?v=1780609391&width=537" alt="Realistic hand-drawn portrait of the same dog, drawn with the LUCY" loading="lazy">
             </div>
+          </div>
+          <div class="dl-item__quote">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;I really love my Lucida. It&rsquo;s simple yet has really taken my drawing to a new level. Often, the most difficult part of portraiture is sketching the initial proportions, and the Lucida makes that part so easy, it almost feels like cheating. But then I remember the old masters used it too :)&rdquo;</p>
+            <cite>Pippa A. &middot; <span class="dl-verified">LUCY flex</span></cite>
+          </div>
+          <div class="dl-item__fig">
+            <img src="https://images.loox.io/uploads/2022/11/1/VkmSFI5E6_orig.jpg" alt="Customer artwork drawn with the LUCY" loading="lazy">
           </div>
           <div class="dl-item__honest">
             <b>The honest scope</b>
@@ -593,14 +627,14 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           Short answer: No dark room &mdash; but lighting does matter
         </span>
         <div class="dl-item__body">
-          <p>Let&rsquo;s be straight: because the LUCY shows a <em>reflection</em> rather than projecting a beam of light like a projector, the lighting in your space genuinely affects how bright and clear the reflected image looks. This is the thing a few reviewers wished they&rsquo;d understood up front.</p>
+          <p>Here&rsquo;s the straight version: the <strong>LUCY is not a projector</strong>, so you do <em>not</em> need a dark room &mdash; the opposite is true. It works by reflection, and more light is better. What it wants is a normal, <strong>well-lit space with light on both the subject and your drawing surface</strong>, just like any ordinary art studio.</p>
           <div class="dl-item__honest">
-            <b>The catch</b>
-            <p>You can&rsquo;t draw in a pitch-dark room and you can&rsquo;t have your paper brighter than your subject. If your reference looks washed out, lighting is almost always the reason.</p>
+            <b>The catch &mdash; it&rsquo;s about even lighting, not darkness</b>
+            <p>Nearly every lighting complaint comes down to one of two things: <strong>uneven light</strong> &mdash; usually more light falling on the drawing surface than on the subject &mdash; or simply <strong>not enough light overall</strong>. If your reflected image looks washed out or too dim to see, that&rsquo;s the culprit almost every time.</p>
           </div>
           <div class="dl-item__resolve">
-            <b>The fix &mdash; it&rsquo;s a 30-second setup</b>
-            <p>Light your subject well and keep your paper a touch dimmer than the subject. The flex and pro models include multiple brightness levels (filters) to dial the reflection in, so once it&rsquo;s set up, it&rsquo;s set. Most people get a clean image at an ordinary, well-lit desk &mdash; no special studio needed.</p>
+            <b>The fix &mdash; balance the light, then dial it in</b>
+            <p>Light the subject at least as brightly as your paper, and add more light to the whole space if the image is hard to see. Then use the <strong>included optical filters</strong> to make the reflected image brighter or dimmer until it&rsquo;s crisp. Once it&rsquo;s balanced, it stays set &mdash; no special studio or blackout curtains required.</p>
           </div>
         </div>
         <div class="dl-item__cta">
@@ -616,14 +650,15 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <h2>&ldquo;Is there a learning curve?&rdquo;</h2>
         <span class="dl-item__verdict dl-item__verdict--mostly">
           <svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm12,120a12,12,0,0,1-24,0V80a12,12,0,0,1,24,0Z"></path></svg>
-          Short answer: Yes &mdash; about 30 minutes
+          Short answer: About 30&ndash;60 minutes the first time, then simple
         </span>
         <div class="dl-item__body">
-          <p>Yes, and we&rsquo;d be doing you a disservice to pretend otherwise. It&rsquo;s the single most common thing reviewers say they wish they&rsquo;d known: it takes roughly <strong>30 minutes of fiddling</strong> &mdash; positioning the mirror, getting your eye in the right spot, dialing in the brightness &mdash; before it &ldquo;clicks.&rdquo;</p>
+          <p>Yes, and we&rsquo;d be doing you a disservice to pretend otherwise. Plan on about <strong>30 to 60 minutes the first time</strong> &mdash; positioning the mirror, getting your eye in the right spot, and dialing in the brightness &mdash; before it &ldquo;clicks.&rdquo; After that first session, setup is quick and simple every time.</p>
           <p>Here&rsquo;s why that matters: nearly every disappointed review traces back to expecting it to work perfectly in the first two minutes. It doesn&rsquo;t. Once it clicks, though, people describe it as effortless.</p>
+          <!-- TODO: add short 2-min setup demo video here once available (click-to-play facade) -->
           <div class="dl-item__resolve">
             <b>The fix &mdash; set the expectation, beat the disappointment</b>
-            <p>Give it one short practice session before your &ldquo;real&rdquo; drawing. The LUCY ships with a numbered quick-start, and there are included video tutorials and a Learning Hub to walk you through setup. Budget half an hour up front and you&rsquo;ll skip the only frustration people report.</p>
+            <p>Give it one relaxed practice session before your &ldquo;real&rdquo; drawing. The LUCY ships with a numbered quick-start, and there are included video tutorials and a Learning Hub to walk you through setup. Budget that first hour up front and you&rsquo;ll skip the only frustration people report.</p>
           </div>
         </div>
         <div class="dl-item__cta">
@@ -668,7 +703,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           Short answer: Yes &mdash; live 3D subjects are its superpower
         </span>
         <div class="dl-item__body">
-          <p>This is the LUCY&rsquo;s biggest differentiator, and it&rsquo;s the reason a lot of buyers choose it over an app. You can draw from <strong>live, three-dimensional subjects</strong> right in front of you &mdash; a person sitting for a portrait, a vase of flowers, your dog asleep on the couch, a landscape out the window. An app or a tracing screen can&rsquo;t do that; it can only show you a flat photo.</p>
+          <p>This is the LUCY&rsquo;s biggest differentiator, and it&rsquo;s the reason a lot of buyers choose it over an app. You can draw from <strong>live, three-dimensional subjects</strong> right in front of you &mdash; a person sitting for a portrait, a vase of flowers, your dog asleep on the couch, a landscape out the window. An app or projector can&rsquo;t do that; it can only show you a flat photo.</p>
           <ul class="dl-checklist">
             <li>
               <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
@@ -697,13 +732,13 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     <section class="dl-item" id="q7">
       <div class="dl-wrap">
         <span class="dl-item__num" aria-hidden="true"></span>
-        <h2>&ldquo;Why not a cheaper projector, app, or NeoLucida?&rdquo;</h2>
+        <h2>&ldquo;Why not go with one of the other options?&rdquo;</h2>
         <span class="dl-item__verdict dl-item__verdict--yes">
           <svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
           Short answer: It wins on live subjects, no power, and normal light
         </span>
         <div class="dl-item__body">
-          <p>Fair question &mdash; there <em>are</em> cheaper ways to trace. Each has a real trade-off, though. A projector needs power, a dark room, and a flat screen or photo. A phone app shows you a flat image and ties up your screen. The NeoLucida is the closest cousin (it&rsquo;s also a camera lucida) and is cheaper, but reviewers consistently rate it lower, with a smaller and dimmer image. Here&rsquo;s the honest head-to-head:</p>
+          <p>Fair question &mdash; there <em>are</em> other ways to draw from a reference, and each has a real trade-off. An art projector costs about the same or more, and it needs power, a dark room, and a flat screen or photo. A phone app is cheaper, but it shows you a flat image, ties up your screen, and can&rsquo;t handle a live subject &mdash; so price isn&rsquo;t really the point. The NeoLucida is the closest cousin (it&rsquo;s also a camera lucida), but reviewers consistently rate it lower, with a smaller, dimmer image and a lighter build. Here&rsquo;s the honest head-to-head:</p>
 
           <div class="dl-cmp">
             <!-- Desktop / tablet: real table -->
@@ -759,7 +794,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
                   <td class="dl-cmp__lucy"><span class="dl-cmp__yes">USA-made, 1-yr</span></td>
                   <td><span class="dl-cmp__sm">Varies</span></td>
                   <td><span class="dl-cmp__sm">N/A</span></td>
-                  <td><span class="dl-cmp__sm">Lighter build</span></td>
+                  <td><span class="dl-cmp__no">Made in China, no warranty</span></td>
                 </tr>
               </tbody>
             </table>
@@ -807,11 +842,16 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
                   <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__mid">Yes</dd></div>
                   <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__yes">Yes</dd></div>
                   <div class="dl-cmp__row"><dt>Image size</dt><dd class="dl-cmp__no">Small</dd></div>
-                  <div class="dl-cmp__row"><dt>Build &amp; warranty</dt><dd>Lighter build</dd></div>
+                  <div class="dl-cmp__row"><dt>Build &amp; warranty</dt><dd class="dl-cmp__no">Made in China, no warranty</dd></div>
                 </dl>
               </div>
             </div>
-            <p class="dl-cmp__note">The NeoLucida is a worthy budget camera lucida, but its image is smaller and dimmer and it carries lower ratings. The LUCY trades a higher price for a larger, brighter image and a sturdier USA-made build.</p>
+            <p class="dl-cmp__note">The NeoLucida is a camera lucida too, but its image is smaller and dimmer, it&rsquo;s made in China with no warranty, and it carries lower ratings. The LUCY gives you a larger, brighter image and a sturdier USA-made build backed by a 1-year warranty.</p>
+            <p class="dl-cmp__note" style="margin-top:10px;">Want the deep dive? Learn more:
+              <a href="https://drawlucy.com/blogs/news/illuminating-creativity-lucy-drawing-tool-vs-art-projectors" style="text-decoration:underline;">LUCY vs. art projectors</a>
+              &middot;
+              <a href="https://drawlucy.com/blogs/news/why-drawlucy-outperforms-all-other-modern-camera-lucidas-a-comprehensive-analysis" style="text-decoration:underline;">LUCY vs. other camera lucidas</a>
+            </p>
           </div>
         </div>
         <div class="dl-item__cta">
@@ -830,7 +870,34 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           Short answer: Worth it for most &mdash; start with the flex
         </span>
         <div class="dl-item__body">
-          <p>Here&rsquo;s our bottom line after all of the above. If you want to draw realistically and the proportions have always been your wall, the LUCY is worth it &mdash; provided you go in knowing the 30-minute learning curve and the lighting basics. The three models differ mainly in image size and sturdiness:</p>
+          <p>Here&rsquo;s our bottom line after all of the above. If you want to draw realistically and the proportions have always been your wall, the LUCY is worth it &mdash; provided you go in knowing the short learning curve and the lighting basics. All three models use the same reflective optics; they differ mainly in <strong>image size, brightness levels, and how you can position them</strong>. This 2-minute showdown breaks it down:</p>
+
+          <div class="dl-video" id="dl-video-models" data-yt="fdy4YDfvuNU" role="button" tabindex="0" aria-label="Play video: which LUCY model is right for you">
+            <img src="https://img.youtube.com/vi/fdy4YDfvuNU/maxresdefault.jpg" alt="LUCY mini vs. flex vs. pro comparison video" loading="lazy">
+            <span class="dl-video__play" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 256 256"><path fill="#fff" d="M228,128a12,12,0,0,1-5.76,10.27l-144,88A12,12,0,0,1,60,216V40a12,12,0,0,1,18.24-10.27l144,88A12,12,0,0,1,228,128Z"></path></svg>
+            </span>
+            <span class="dl-video__cap">Watch: which LUCY is right for you? (2 min)</span>
+          </div>
+
+          <div class="dl-item__honest" style="background:#e9f5fe;border-left-color:var(--blue);">
+            <b style="color:var(--blue-dk);">Which model is right for you</b>
+            <p style="margin-bottom:10px;">The bigger you want to draw and the sturdier you need it, the higher up the range you go:</p>
+            <ul class="dl-checklist" style="margin-top:0;">
+              <li>
+                <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                <span><strong>mini</strong> &mdash; the most portable and affordable. Images up to 12&times;18&Prime; and 2 brightness levels. Great if you want to draw like magic without the larger size or extra features.</span>
+              </li>
+              <li>
+                <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                <span><strong>flex</strong> &mdash; the most versatile, and most people&rsquo;s pick. Bigger 19&times;27&Prime; image, up to 4 brightness levels, a solid aluminum clamp, and the only model that also works at an easel. Best balance of size and flexibility.</span>
+              </li>
+              <li>
+                <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
+                <span><strong>pro</strong> &mdash; the largest and sturdiest. The biggest 20&times;37&Prime; image, 4 brightness levels, and a lightweight aluminum-alloy body braced with a second cross-support arm. Built for serious and professional work.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="dl-ladder">
@@ -1032,7 +1099,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
 <script>
 /* =========================================================================
-   DRAW LUCY LP #2 (listicle) - instrumentation + behavior (build v1)
+   DRAW LUCY LP #2 (listicle) - instrumentation + behavior (build v2)
    - PostHog init (project DrawLucy 486255) + feature flag (default control)
    - 6-event funnel + experiment_assigned
    - UTM/attribution bridge: capture -> super-properties -> forward on cart links
@@ -1263,12 +1330,37 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     }
   }
 
+  /* ---------- 9. Video facade (click-to-play; no YouTube until clicked) ---------- */
+  function wireVideo() {
+    var nodes = document.querySelectorAll(".dl-video[data-yt]");
+    Array.prototype.forEach.call(nodes, function (el) {
+      function play() {
+        var id = el.getAttribute("data-yt");
+        if (!id || el.getAttribute("data-played") === "1") return;
+        el.setAttribute("data-played", "1");
+        var ifr = document.createElement("iframe");
+        ifr.setAttribute("src", "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0");
+        ifr.setAttribute("title", "LUCY model comparison video");
+        ifr.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+        ifr.setAttribute("allowfullscreen", "");
+        el.innerHTML = "";
+        el.appendChild(ifr);
+        cap("video_play", { video_id: id, location: "item8", variant: VARIANT, page: PAGE_NAME });
+      }
+      el.addEventListener("click", play);
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); }
+      });
+    });
+  }
+
   /* ---------- init ---------- */
   function init() {
     reparentFixed();
     wireCtas();
     wireFaq();
     wireItemViews();
+    wireVideo();
     wirePopup();
   }
   if (document.readyState === "loading") {
