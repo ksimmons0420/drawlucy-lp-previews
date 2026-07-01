@@ -5,8 +5,11 @@
   Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial (deferred; no store access).
   Claims: PLAY IT STRAIGHT - no shipping-cost claims; 30-day money-back linked to refund policy; only 4.2/437 cited (clickable to drawlucy.com reviews).
   build v2 (Les feedback 2026-06-30): Q1 two-part verdict + Margaret O. Loox review/art; Q2 anti-gimmick + "drawn" not "traced" + Pippa A. Loox review/art;
-    Q3 lighting rewrite (not a projector, light both, use filters); Q4 30-60min expectation + video TODO; Q6 "app or projector"; Q7 "why not the other options" + NeoLucida "Made in China, no warranty" + 2 blog links; Q8 flex-vs-pro guide + YouTube facade (fdy4YDfvuNU).
-  Search this file for "build v2" to confirm the latest paste.
+    Q3 lighting rewrite (not a projector, light both, use filters); Q4 30-60min expectation + video TODO; Q6 "app or projector"; Q7 "why not the other options" comparison + 2 blog links; Q8 flex-vs-pro guide + YouTube facade (fdy4YDfvuNU).
+  build v3 (Les round-3 feedback 2026-07-01): matched a real, verbatim review to each question (Les: "tons of reviews").
+    Q1 unchanged (Margaret O.). Q2 sister/Lucy Flex review REPLACES the mis-moved Pippa A. (Pippa removed). Q3 +lighting review. Q4 +Bex B review/art. Q5 +Steve C review. Q6 +life-drawing review. Q7 REWORKED: question is now "How is the LUCY different from how you draw now?"; table columns = LUCY/Freehand/Grid/Projector (obscure-brand + phone-app columns REMOVED); one projector blog link kept; +Dave B review/art. Q8 +AJAX fly-out cart TODO comment.
+    Buttons: all "See the models" CTAs (header, hero, item1-7, final, sticky) now data-browse -> /collections/best-sellers (no add-to-cart); UTMs forwarded via wireBrowse(). Offer-ladder mini/flex/pro buy buttons unchanged (/cart/add).
+  Search this file for "build v3" to confirm the latest paste.
 -->
 <html lang="en">
 <head>
@@ -480,7 +483,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <a class="dl-header__logo" href="https://drawlucy.com" aria-label="The LUCY Drawing Tool home">
         <img src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool" loading="eager">
       </a>
-      <a class="dl-btn dl-btn--primary dl-header__cta" data-cart="flex" data-loc="header" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      <a class="dl-btn dl-btn--primary dl-header__cta" data-browse="best-sellers" data-loc="header" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
     </div>
   </header>
 
@@ -506,7 +509,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
         <figcaption class="dl-hero__figcap">The LUCY reflects your subject onto the paper &mdash; you draw what you see.</figcaption>
       </figure>
       <div class="dl-hero__cta-row">
-        <a class="dl-btn dl-btn--primary dl-btn--lg" data-cart="flex" data-loc="hero" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+        <a class="dl-btn dl-btn--primary dl-btn--lg" data-browse="best-sellers" data-loc="hero" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         <span class="dl-btn-note">From $69 &middot; 30-day money-back guarantee &middot; results vary with practice</span>
       </div>
     </div>
@@ -539,7 +542,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <li><a href="#q4">Is there a learning curve?</a></li>
           <li><a href="#q5">I wear glasses or bifocals &mdash; will it work?</a></li>
           <li><a href="#q6">Can I draw from real life, or only photos?</a></li>
-          <li><a href="#q7">Why not go with one of the other options?</a></li>
+          <li><a href="#q7">How is the LUCY different from how you draw now?</a></li>
           <li><a href="#q8">Which model do I need &mdash; and is it worth it?</a></li>
         </ul>
       </nav>
@@ -571,7 +574,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item1" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item1" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -600,11 +603,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </div>
           <div class="dl-item__quote">
             <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>&ldquo;I really love my Lucida. It&rsquo;s simple yet has really taken my drawing to a new level. Often, the most difficult part of portraiture is sketching the initial proportions, and the Lucida makes that part so easy, it almost feels like cheating. But then I remember the old masters used it too :)&rdquo;</p>
-            <cite>Pippa A. &middot; <span class="dl-verified">LUCY flex</span></cite>
-          </div>
-          <div class="dl-item__fig">
-            <img src="https://images.loox.io/uploads/2022/11/1/VkmSFI5E6_orig.jpg" alt="Customer artwork drawn with the LUCY" loading="lazy">
+            <p>&ldquo;My sister bought the Lucy Flex for me as a surprise. I&rsquo;m an artist and use a grid pattern for drawing my reference photo onto the canvas. She thought it would be much easier and quicker for me to have a drawing tool. It took about 20 minutes to figure out how to position my reference photo and the canvas. Once I figured it out, watch me now! I&rsquo;m in love with the Lucy Flex. It&rsquo;s a very clever design and well-made.&rdquo;</p>
+            <cite>Verified buyer &middot; <span class="dl-verified">LUCY flex</span> &middot; Mar 20, 2024</cite>
           </div>
           <div class="dl-item__honest">
             <b>The honest scope</b>
@@ -612,7 +612,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item2" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item2" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -636,9 +636,14 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             <b>The fix &mdash; balance the light, then dial it in</b>
             <p>Light the subject at least as brightly as your paper, and add more light to the whole space if the image is hard to see. Then use the <strong>included optical filters</strong> to make the reflected image brighter or dimmer until it&rsquo;s crisp. Once it&rsquo;s balanced, it stays set &mdash; no special studio or blackout curtains required.</p>
           </div>
+          <div class="dl-item__quote">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;I just received my LUCY and I&rsquo;m thrilled. My first attempt using it impressed me. It was easy to assemble and set up. Finding the right lighting is the only thing that gets in the way, but the filters that come with it help a lot. I strive to draw realistic portraits and this has given me the ability to up my game! I&rsquo;m so pleased.&rdquo;</p>
+            <cite>Verified buyer &middot; <span class="dl-verified">LUCY flex + Photo Enlarger</span> &middot; Mar 19, 2021</cite>
+          </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item3" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item3" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -660,9 +665,17 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             <b>The fix &mdash; set the expectation, beat the disappointment</b>
             <p>Give it one relaxed practice session before your &ldquo;real&rdquo; drawing. The LUCY ships with a numbered quick-start, and there are included video tutorials and a Learning Hub to walk you through setup. Budget that first hour up front and you&rsquo;ll skip the only frustration people report.</p>
           </div>
+          <div class="dl-item__quote">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;It was a quick but necessary learning curve. I needed to figure out how to light the subject but as it is my first go, I&rsquo;m pretty pleased with the results... My advice: just get it. You will love it, it&rsquo;s sturdy and well made. It helps you get to painting faster. As a professional artist anything that can speed up the process is a good thing.&rdquo;</p>
+            <cite>Bex B &middot; <span class="dl-verified">LUCY flex</span> &middot; Nov 2, 2022</cite>
+          </div>
+          <div class="dl-item__fig">
+            <img src="https://images.loox.io/uploads/2022/11/2/NJ0aawj4a_orig.jpg" alt="Customer artwork drawn with the LUCY" loading="lazy">
+          </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item4" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item4" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -686,9 +699,14 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
             <b>The fix</b>
             <p>Two easy options that reviewers use: wear inexpensive single-vision reading glasses while you draw, or simply remove your glasses if you can focus at drawing distance without them. Either one resolves the doubling.</p>
           </div>
+          <div class="dl-item__quote">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;The Lucy tool takes a bit of practice, especially if you wear bifocals. I&rsquo;m fortunate enough to still be able to see without my glasses, so after taking those off, it became much easier. Nice product that I believe is going to help my drawing skills!&rdquo;</p>
+            <cite>Steve C &middot; <span class="dl-verified">LUCY flex</span> &middot; May 17, 2023</cite>
+          </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item5" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item5" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -721,9 +739,14 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div class="dl-item__fig">
             <img src="https://drawlucy.com/cdn/shop/files/KatPEIMG_2035Ghost.jpg?v=1780515269&width=821" alt="Drawing from a photo using the LUCY" loading="lazy">
           </div>
+          <div class="dl-item__quote">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;I love the LUCY... I use it to quickly get the correct perspective and have used it in life drawing to easily and quickly get the proportions correct. I also use it just to revive my interest in art when I find it flagging a little. It is exciting with endless possibilities. Even the dishes in the sink look exciting and are easy to draw with the LUCY.&rdquo;</p>
+            <cite>Verified buyer &middot; <span class="dl-verified">LUCY flex + Photo Enlarger</span> &middot; Mar 7, 2020</cite>
+          </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item6" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item6" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -732,69 +755,69 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     <section class="dl-item" id="q7">
       <div class="dl-wrap">
         <span class="dl-item__num" aria-hidden="true"></span>
-        <h2>&ldquo;Why not go with one of the other options?&rdquo;</h2>
+        <h2>&ldquo;How is the LUCY different from how you draw now?&rdquo;</h2>
         <span class="dl-item__verdict dl-item__verdict--yes">
           <svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>
-          Short answer: It wins on live subjects, no power, and normal light
+          Short answer: Faster than freehand or the grid, and no dark room like a projector
         </span>
         <div class="dl-item__body">
-          <p>Fair question &mdash; there <em>are</em> other ways to draw from a reference, and each has a real trade-off. An art projector costs about the same or more, and it needs power, a dark room, and a flat screen or photo. A phone app is cheaper, but it shows you a flat image, ties up your screen, and can&rsquo;t handle a live subject &mdash; so price isn&rsquo;t really the point. The NeoLucida is the closest cousin (it&rsquo;s also a camera lucida), but reviewers consistently rate it lower, with a smaller, dimmer image and a lighter build. Here&rsquo;s the honest head-to-head:</p>
+          <p>Fair question &mdash; before the LUCY, most people reach for one of three things: they draw <strong>freehand</strong>, they use the <strong>grid method</strong>, or they set up a <strong>projector</strong>. Each one works, and each has a real trade-off. Freehand is the purest, but nailing proportion by eye is exactly the wall most people hit. The grid is accurate and costs nothing, but it&rsquo;s slow to rule out every square, and it only works from a flat photo. A projector gives you a big image, but it needs power, a dark room, and a flat photo or screen &mdash; no live subjects. Here&rsquo;s the honest head-to-head:</p>
 
           <div class="dl-cmp">
             <!-- Desktop / tablet: real table -->
             <table class="dl-cmp__table">
-              <caption class="dl-cmp__sm" style="caption-side:top;text-align:left;padding:0 0 10px;">How the LUCY compares to the common alternatives</caption>
+              <caption class="dl-cmp__sm" style="caption-side:top;text-align:left;padding:0 0 10px;">How the LUCY compares to how most people draw now</caption>
               <thead>
                 <tr>
                   <th scope="col">&nbsp;</th>
                   <th scope="col" class="dl-cmp__lucy">LUCY</th>
-                  <th scope="col">Art projector</th>
-                  <th scope="col">Phone / tablet app</th>
-                  <th scope="col">NeoLucida</th>
+                  <th scope="col">Freehand</th>
+                  <th scope="col">Grid method</th>
+                  <th scope="col">Projector</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Draws from live 3D subjects</th>
-                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Yes</span></td>
-                  <td><span class="dl-cmp__no">No</span></td>
-                  <td><span class="dl-cmp__no">No</span></td>
-                  <td><span class="dl-cmp__yes">Yes</span></td>
+                  <th scope="row">Draws from live subjects &amp; photos</th>
+                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Both</span></td>
+                  <td><span class="dl-cmp__yes">Both</span></td>
+                  <td><span class="dl-cmp__no">Photos only</span></td>
+                  <td><span class="dl-cmp__no">Photos only</span></td>
                 </tr>
                 <tr>
-                  <th scope="row">Needs electricity or a screen</th>
-                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">No</span></td>
-                  <td><span class="dl-cmp__no">Yes</span></td>
-                  <td><span class="dl-cmp__no">Yes</span></td>
-                  <td><span class="dl-cmp__yes">No</span></td>
+                  <th scope="row">Speed / setup time</th>
+                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Fast once set</span></td>
+                  <td><span class="dl-cmp__mid">No setup</span></td>
+                  <td><span class="dl-cmp__no">Slow (rule the grid)</span></td>
+                  <td><span class="dl-cmp__mid">Moderate</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Accuracy of proportions</th>
+                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">High</span></td>
+                  <td><span class="dl-cmp__no">Down to your eye</span></td>
+                  <td><span class="dl-cmp__yes">High</span></td>
+                  <td><span class="dl-cmp__yes">High</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Works in normal room light</th>
                   <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Yes</span></td>
+                  <td><span class="dl-cmp__yes">Yes</span></td>
+                  <td><span class="dl-cmp__yes">Yes</span></td>
                   <td><span class="dl-cmp__no">No (needs dark)</span></td>
-                  <td><span class="dl-cmp__mid">Yes</span></td>
-                  <td><span class="dl-cmp__mid">Yes</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Portable, no cords</th>
                   <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Yes</span></td>
-                  <td><span class="dl-cmp__no">No</span></td>
-                  <td><span class="dl-cmp__mid">Yes</span></td>
                   <td><span class="dl-cmp__yes">Yes</span></td>
+                  <td><span class="dl-cmp__yes">Yes</span></td>
+                  <td><span class="dl-cmp__no">No</span></td>
                 </tr>
                 <tr>
-                  <th scope="row">Image size</th>
-                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Large (up to 20&times;37&Prime;)</span></td>
-                  <td><span class="dl-cmp__mid">Large</span></td>
-                  <td><span class="dl-cmp__no">Screen-limited</span></td>
-                  <td><span class="dl-cmp__no">Small</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Build &amp; warranty</th>
-                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">USA-made, 1-yr</span></td>
-                  <td><span class="dl-cmp__sm">Varies</span></td>
-                  <td><span class="dl-cmp__sm">N/A</span></td>
-                  <td><span class="dl-cmp__no">Made in China, no warranty</span></td>
+                  <th scope="row">Trains your eye as you go</th>
+                  <td class="dl-cmp__lucy"><span class="dl-cmp__yes">Yes</span></td>
+                  <td><span class="dl-cmp__yes">Yes</span></td>
+                  <td><span class="dl-cmp__mid">Somewhat</span></td>
+                  <td><span class="dl-cmp__no">Little</span></td>
                 </tr>
               </tbody>
             </table>
@@ -804,58 +827,64 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
               <div class="dl-cmp__card dl-cmp__card--lucy">
                 <h3>LUCY</h3>
                 <dl>
-                  <div class="dl-cmp__row"><dt>Live 3D subjects</dt><dd class="dl-cmp__yes">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Needs power / screen</dt><dd class="dl-cmp__yes">No</dd></div>
+                  <div class="dl-cmp__row"><dt>Live subjects &amp; photos</dt><dd class="dl-cmp__yes">Both</dd></div>
+                  <div class="dl-cmp__row"><dt>Speed / setup</dt><dd class="dl-cmp__yes">Fast once set</dd></div>
+                  <div class="dl-cmp__row"><dt>Proportion accuracy</dt><dd class="dl-cmp__yes">High</dd></div>
                   <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__yes">Yes</dd></div>
                   <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__yes">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Image size</dt><dd>Large (to 20&times;37&Prime;)</dd></div>
-                  <div class="dl-cmp__row"><dt>Build &amp; warranty</dt><dd>USA-made, 1-yr</dd></div>
+                  <div class="dl-cmp__row"><dt>Trains your eye</dt><dd class="dl-cmp__yes">Yes</dd></div>
                 </dl>
               </div>
               <div class="dl-cmp__card">
-                <h3>Art projector</h3>
+                <h3>Freehand</h3>
                 <dl>
-                  <div class="dl-cmp__row"><dt>Live 3D subjects</dt><dd class="dl-cmp__no">No</dd></div>
-                  <div class="dl-cmp__row"><dt>Needs power / screen</dt><dd class="dl-cmp__no">Yes</dd></div>
+                  <div class="dl-cmp__row"><dt>Live subjects &amp; photos</dt><dd class="dl-cmp__yes">Both</dd></div>
+                  <div class="dl-cmp__row"><dt>Speed / setup</dt><dd class="dl-cmp__mid">No setup</dd></div>
+                  <div class="dl-cmp__row"><dt>Proportion accuracy</dt><dd class="dl-cmp__no">Down to your eye</dd></div>
+                  <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__yes">Yes</dd></div>
+                  <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__yes">Yes</dd></div>
+                  <div class="dl-cmp__row"><dt>Trains your eye</dt><dd class="dl-cmp__yes">Yes</dd></div>
+                </dl>
+              </div>
+              <div class="dl-cmp__card">
+                <h3>Grid method</h3>
+                <dl>
+                  <div class="dl-cmp__row"><dt>Live subjects &amp; photos</dt><dd class="dl-cmp__no">Photos only</dd></div>
+                  <div class="dl-cmp__row"><dt>Speed / setup</dt><dd class="dl-cmp__no">Slow (rule the grid)</dd></div>
+                  <div class="dl-cmp__row"><dt>Proportion accuracy</dt><dd class="dl-cmp__yes">High</dd></div>
+                  <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__yes">Yes</dd></div>
+                  <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__yes">Yes</dd></div>
+                  <div class="dl-cmp__row"><dt>Trains your eye</dt><dd class="dl-cmp__mid">Somewhat</dd></div>
+                </dl>
+              </div>
+              <div class="dl-cmp__card">
+                <h3>Projector</h3>
+                <dl>
+                  <div class="dl-cmp__row"><dt>Live subjects &amp; photos</dt><dd class="dl-cmp__no">Photos only</dd></div>
+                  <div class="dl-cmp__row"><dt>Speed / setup</dt><dd class="dl-cmp__mid">Moderate</dd></div>
+                  <div class="dl-cmp__row"><dt>Proportion accuracy</dt><dd class="dl-cmp__yes">High</dd></div>
                   <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__no">No (needs dark)</dd></div>
                   <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__no">No</dd></div>
-                  <div class="dl-cmp__row"><dt>Image size</dt><dd>Large</dd></div>
-                  <div class="dl-cmp__row"><dt>Build &amp; warranty</dt><dd>Varies</dd></div>
-                </dl>
-              </div>
-              <div class="dl-cmp__card">
-                <h3>Phone / tablet app</h3>
-                <dl>
-                  <div class="dl-cmp__row"><dt>Live 3D subjects</dt><dd class="dl-cmp__no">No</dd></div>
-                  <div class="dl-cmp__row"><dt>Needs power / screen</dt><dd class="dl-cmp__no">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__mid">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__mid">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Image size</dt><dd class="dl-cmp__no">Screen-limited</dd></div>
-                  <div class="dl-cmp__row"><dt>Build &amp; warranty</dt><dd>N/A</dd></div>
-                </dl>
-              </div>
-              <div class="dl-cmp__card">
-                <h3>NeoLucida</h3>
-                <dl>
-                  <div class="dl-cmp__row"><dt>Live 3D subjects</dt><dd class="dl-cmp__yes">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Needs power / screen</dt><dd class="dl-cmp__yes">No</dd></div>
-                  <div class="dl-cmp__row"><dt>Works in normal light</dt><dd class="dl-cmp__mid">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Portable, no cords</dt><dd class="dl-cmp__yes">Yes</dd></div>
-                  <div class="dl-cmp__row"><dt>Image size</dt><dd class="dl-cmp__no">Small</dd></div>
-                  <div class="dl-cmp__row"><dt>Build &amp; warranty</dt><dd class="dl-cmp__no">Made in China, no warranty</dd></div>
+                  <div class="dl-cmp__row"><dt>Trains your eye</dt><dd class="dl-cmp__no">Little</dd></div>
                 </dl>
               </div>
             </div>
-            <p class="dl-cmp__note">The NeoLucida is a camera lucida too, but its image is smaller and dimmer, it&rsquo;s made in China with no warranty, and it carries lower ratings. The LUCY gives you a larger, brighter image and a sturdier USA-made build backed by a 1-year warranty.</p>
+            <p class="dl-cmp__note">Freehand and the grid are honest ways to learn &mdash; the grid is genuinely accurate, it&rsquo;s just slow and photo-only. A projector gives a big image but ties you to a dark room and a flat photo. The LUCY&rsquo;s edge is doing all of it in normal light, from live subjects or photos, fast once it&rsquo;s set &mdash; while your eye keeps training as you draw.</p>
             <p class="dl-cmp__note" style="margin-top:10px;">Want the deep dive? Learn more:
               <a href="https://drawlucy.com/blogs/news/illuminating-creativity-lucy-drawing-tool-vs-art-projectors" style="text-decoration:underline;">LUCY vs. art projectors</a>
-              &middot;
-              <a href="https://drawlucy.com/blogs/news/why-drawlucy-outperforms-all-other-modern-camera-lucidas-a-comprehensive-analysis" style="text-decoration:underline;">LUCY vs. other camera lucidas</a>
             </p>
+          </div>
+          <div class="dl-item__quote">
+            <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&ldquo;So I&rsquo;ve loved to draw since I was a kid and had been taught the grid method as well as the use of dividers for proper proportions and scale. The Lucy is sooo much faster. It makes the initial layout and composition easier so that I can get down to the business of making sketches that I&rsquo;m really proud of. For the beginner or an old guy like me, I love Lucy.&rdquo;</p>
+            <cite>Dave B &middot; <span class="dl-verified">Photo Enlarger</span> &middot; Jan 17, 2024</cite>
+          </div>
+          <div class="dl-item__fig">
+            <img src="https://images.loox.io/uploads/2024/1/17/aZckCGCf8_orig.jpg" alt="Customer artwork drawn with the LUCY" loading="lazy">
           </div>
         </div>
         <div class="dl-item__cta">
-          <a class="dl-btn dl-btn--primary" data-cart="flex" data-loc="item7" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+          <a class="dl-btn dl-btn--primary" data-browse="best-sellers" data-loc="item7" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
         </div>
       </div>
     </section>
@@ -900,6 +929,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </div>
         </div>
 
+        <!-- Shopify port: buy CTAs should use the AJAX fly-out cart (fetch /cart/add.js -> open drawer) so the LUCY Learning Hub one-click upsell fires. Preview stays /cart/add. -->
         <div class="dl-ladder">
           <!-- MINI -->
           <div class="dl-tier">
@@ -1051,7 +1081,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     <div class="dl-wrap">
       <h2>So &mdash; is the LUCY worth it?</h2>
       <p>For most artists who want realistic results and have always fought with proportion, yes &mdash; as long as you go in knowing the short learning curve. Start with the flex, our most popular model.</p>
-      <a class="dl-btn dl-btn--amber dl-btn--lg" data-cart="flex" data-loc="final" href="https://drawlucy.com/products/lucy-drawing-tool">See the LUCY models &rarr;</a>
+      <a class="dl-btn dl-btn--amber dl-btn--lg" data-browse="best-sellers" data-loc="final" href="https://drawlucy.com/collections/best-sellers">See the LUCY models &rarr;</a>
       <div class="dl-final__trust">
         <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>30-Day Money-Back</span>
         <span><svg class="ph" width="18" height="18" viewBox="0 0 256 256" aria-hidden="true"><path fill="#fff" d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"></path></svg>1-Year Warranty</span>
@@ -1078,7 +1108,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 <!-- ============== STICKY MOBILE CTA (reparented to body) ============== -->
 <div class="dl-sticky" id="dl-sticky">
   <div class="dl-sticky__txt"><b>LUCY flex</b><small>$99 &middot; Most Popular</small></div>
-  <a class="dl-sticky__btn" data-cart="flex" data-loc="sticky" href="https://drawlucy.com/products/lucy-drawing-tool">See the models &rarr;</a>
+  <a class="dl-sticky__btn" data-browse="best-sellers" data-loc="sticky" href="https://drawlucy.com/collections/best-sellers">See the models &rarr;</a>
 </div>
 
 <!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
@@ -1099,7 +1129,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
 <script>
 /* =========================================================================
-   DRAW LUCY LP #2 (listicle) - instrumentation + behavior (build v2)
+   DRAW LUCY LP #2 (listicle) - instrumentation + behavior (build v3)
    - PostHog init (project DrawLucy 486255) + feature flag (default control)
    - 6-event funnel + experiment_assigned
    - UTM/attribution bridge: capture -> super-properties -> forward on cart links
@@ -1239,6 +1269,20 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     });
   }
 
+  /* ---------- 5b. Wire "See the models" browse links (best-sellers collection, no add-to-cart) ---------- */
+  function wireBrowse() {
+    var nodes = document.querySelectorAll("[data-browse]");
+    Array.prototype.forEach.call(nodes, function (el) {
+      var loc = el.getAttribute("data-loc") || "unknown";
+      var href = el.getAttribute("href") || "https://drawlucy.com/collections/best-sellers";
+      // forward captured UTMs onto the collection link (same bridge as cart links)
+      el.setAttribute("href", appendAttributionToUrl(href));
+      el.addEventListener("click", function () {
+        cap("cta_clicked", { location: loc, product: "browse_models", destination: "collections/best-sellers", variant: VARIANT, page: PAGE_NAME });
+      }, { passive: true });
+    });
+  }
+
   /* ---------- 6. FAQ + item open tracking ---------- */
   function wireFaq() {
     // Bottom PAA-style FAQ accordions
@@ -1358,6 +1402,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   function init() {
     reparentFixed();
     wireCtas();
+    wireBrowse();
     wireFaq();
     wireItemViews();
     wireVideo();
