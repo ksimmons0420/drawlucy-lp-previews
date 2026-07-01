@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!--
-  DRAW LUCY LP - Mechanism Demo - VERSION 2026-06-30 - build v3
+  DRAW LUCY LP - Mechanism Demo - VERSION 2026-07-01 - build v4
   Angle: mechanism demo ("Draw what you see." — LUCY reflects your subject so you draw over the image)
   v3 (Les feedback 2026-06-30): headline swap, de-emphasized "trace", FLEX-LED offer (all primary CTAs -> flex $99), removed 3-photo strip.
+  v4 (Les feedback 2026-07-01): hero video -> Quick Look Short (2reHC0lhVCg) in a 9:16 phone frame (no letterbox); fixed cramped warranty/return + footer disclaimer spacing; removed exit-intent popup entirely.
   Self-contained. Scoped class prefix "dl-". No theme deps. Shopify-section port = trivial.
-  Search this file for "build v3" to confirm the latest paste.
+  Search this file for "build v4" to confirm the latest paste.
 -->
 <html lang="en">
 <head>
@@ -116,10 +117,31 @@
 .dl-lp .dl-hero__sub { color:var(--muted); font-size:clamp(1.04rem,2.7vw,1.22rem); margin:15px 0 0; max-width:560px; }
 .dl-lp .dl-hero__cta-row { margin-top:22px; }
 .dl-lp .dl-hero__media {
-  position:relative; border-radius:14px; overflow:hidden;
-  box-shadow:0 18px 50px rgba(15,40,70,.18); background:#000; aspect-ratio:16/10;
+  position:relative; border-radius:22px; overflow:hidden;
+  box-shadow:0 18px 50px rgba(15,40,70,.18); background:#0b1622;
+  /* Quick Look = vertical 9:16 Short. Portrait phone-shaped frame, centered, capped so it never dominates.
+     width:100% (NOT auto) gives the box a real width basis so aspect-ratio can derive the height —
+     a width:auto + aspect-ratio item collapses to 0 inside a 1fr grid column. */
+  width:100%; max-width:min(300px,80vw); aspect-ratio:9/16; max-height:74vh;
+  margin-left:auto; margin-right:auto;
 }
-.dl-lp .dl-hero__media iframe { position:absolute; inset:0; width:100%; height:100%; border:0; pointer-events:none; }
+/* Fill the 9:16 phone frame with no letterbox and no YouTube chrome (object-fit:cover behavior).
+   The Short's content is vertical (~9:16). The player adds fixed chrome scrims — a title gradient
+   (top) and a control/wordmark band (bottom) that controls=0/modestbranding can't remove. A uniform
+   overscale pushes most of those fixed bands outside the frame; the centered subject stays framed. */
+.dl-lp .dl-hero__media iframe {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(1.34);
+  width:100%; height:100%; border:0; pointer-events:none;
+}
+/* Cinematic edge-fade: blends any residual top/bottom chrome band into an intentional vignette so the
+   frame reads premium regardless of the player's exact chrome height / viewport. Sits above the video,
+   below the badge (badge is z-index:2). pointer-events:none so it never blocks. */
+.dl-lp .dl-hero__media::after {
+  content:""; position:absolute; inset:0; z-index:1; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(to bottom,
+    rgba(11,22,34,.55) 0%, rgba(11,22,34,0) 12%,
+    rgba(11,22,34,0) 84%, rgba(11,22,34,.85) 100%);
+}
 .dl-lp .dl-hero__media-badge {
   position:absolute; left:12px; top:12px; z-index:2;
   background:rgba(0,0,0,.62); color:#fff; font-size:.74rem; font-weight:700;
@@ -297,7 +319,10 @@
 .dl-lp .dl-footer { background:#0d1b26; color:#9fb3c2; padding:40px 0 120px; font-size:.86rem; }
 .dl-lp .dl-footer__logo { height:26px; opacity:.9; margin-bottom:16px; filter:brightness(0) invert(1); }
 .dl-lp .dl-footer p { margin-bottom:10px; line-height:1.6; }
-.dl-lp .dl-footer__disc { font-size:.78rem; color:#6b8294; }
+.dl-lp .dl-footer__disc { font-size:.78rem; color:#6b8294; line-height:1.65; max-width:760px; }
+/* each legal statement on its own line with breathing room (was one cramped run-on block) */
+.dl-lp .dl-footer__disc-line { display:block; margin-bottom:8px; }
+.dl-lp .dl-footer__disc-line:last-child { margin-bottom:0; }
 .dl-lp .dl-footer a { color:#cfe0ec; text-decoration:underline; }
 
 /* ============== STICKY MOBILE CTA ============== */
@@ -366,7 +391,8 @@
 }
 @media (min-width:980px){
   .dl-lp .dl-hero__grid { grid-template-columns:1.05fr .95fr; gap:40px; }
-  .dl-lp .dl-hero__media { aspect-ratio:9/10; }
+  /* hero media stays the 9:16 Quick Look phone frame; cap height a touch tighter on desktop */
+  .dl-lp .dl-hero__media { max-height:66vh; max-width:300px; }
   .dl-sticky { display:none; }
   .dl-lp .dl-footer { padding-bottom:48px; }
   .dl-lp .dl-header__in { height:82px; }
@@ -420,8 +446,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <div class="dl-hero__media">
         <span class="dl-hero__media-badge"><span class="dl-dot"></span>Watch the LUCY in action</span>
         <iframe
-          src="https://www.youtube.com/embed/O9Ql8phbRz8?autoplay=1&mute=1&loop=1&playlist=O9Ql8phbRz8&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
-          title="The LUCY Drawing Tool - demo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="eager"></iframe>
+          src="https://www.youtube.com/embed/2reHC0lhVCg?autoplay=1&mute=1&loop=1&playlist=2reHC0lhVCg&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
+          title="The LUCY Drawing Tool - Quick Look" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="eager"></iframe>
       </div>
     </div>
   </section>
@@ -644,7 +670,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <div class="dl-risk">
         <div class="dl-risk__card">
           <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M152,32V80a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V32ZM216,72V200a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8H88V80a8,8,0,0,0,8,8h48a8,8,0,0,0,8-8V64h48A8,8,0,0,1,216,72Z" opacity="0.2"></path><path fill="currentColor" d="M128,120a8,8,0,0,0-8,8v16a8,8,0,0,0,16,0V128A8,8,0,0,0,128,120Zm51.31-31.92a8,8,0,0,0-10.07,5.16A40,40,0,0,1,88,96V88h64a16,16,0,0,0,16-16V32a16,16,0,0,0-16-16H104A16,16,0,0,0,88,32V72.23A56.08,56.08,0,0,0,184.49,93.4,8,8,0,0,0,179.31,88.08ZM104,32h48V72H104ZM208,80H180.42a72.08,72.08,0,0,1-2.94,16H208V200H48V96H78.52a72.08,72.08,0,0,1-2.94-16H48A16,16,0,0,0,32,96V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Z"></path></svg>
-          <div><h3>30-Day Money-Back</h3><p>Draw with it. If it&rsquo;s not for you, send it back for a refund within 30 days. <a href="https://drawlucy.com/pages/refund-policy" style="font-size:.78rem;text-decoration:underline;">See our full return policy.</a></p>
+          <div><h3>30-Day Money-Back</h3><p>Draw with it. If it&rsquo;s not for you, send it back for a refund within 30 days. <a href="https://drawlucy.com/pages/refund-policy" style="text-decoration:underline;">See our full return policy.</a></p></div>
         </div>
         <div class="dl-risk__card">
           <svg class="ph ph-duo" width="42" height="42" viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40V112c0,96-80,120-80,120S48,208,48,112V40a8,8,0,0,1,8-8H200A8,8,0,0,1,208,40Z" opacity="0.2"></path><path fill="currentColor" d="M208,24H48A16,16,0,0,0,32,40v72c0,39.81,16.45,72.81,47.55,95.42a153.32,153.32,0,0,0,46,22.07,8,8,0,0,0,4.9,0,153.32,153.32,0,0,0,46-22.07C207.55,184.81,224,151.81,224,112V40A16,16,0,0,0,208,24Zm0,88c0,69.92-50.45,93.62-80,102.22C98.45,205.62,48,181.92,48,112V40H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
@@ -712,9 +738,9 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
       <img class="dl-footer__logo" src="https://drawlucy.com/cdn/shop/files/LUCY_drawing_tool_2.png?v=1776125312&width=563" alt="The LUCY Drawing Tool">
       <p>The LUCY Drawing Tool &mdash; the Old Masters&rsquo; secret tool, reinvented. Quality built in the USA.</p>
       <p class="dl-footer__disc">
-        &ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.
-        30-day money-back guarantee and 1-year warranty terms apply &mdash; see our <a href="https://drawlucy.com/pages/refund-policy">full return policy</a> for details. Pay in 4 interest-free installments with Affirm, subject to eligibility. Prices and offers subject to change.
-        &copy; 2026 The LUCY Drawing Tool. All rights reserved.
+        <span class="dl-footer__disc-line">&ldquo;As Seen on Shark Tank&rdquo; refers to the product&rsquo;s televised appearance. Individual results vary and improve with practice; the LUCY is a drawing aid, not a guarantee of any particular skill level or outcome.</span>
+        <span class="dl-footer__disc-line">30-day money-back guarantee and 1-year warranty terms apply &mdash; see our <a href="https://drawlucy.com/pages/refund-policy">full return policy</a> for details. Pay in 4 interest-free installments with Affirm, subject to eligibility. Prices and offers subject to change.</span>
+        <span class="dl-footer__disc-line">&copy; 2026 The LUCY Drawing Tool. All rights reserved.</span>
       </p>
     </div>
   </footer>
@@ -727,21 +753,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <a class="dl-sticky__btn" data-cart="flex" data-loc="sticky" href="https://drawlucy.com/products/lucy-drawing-tool">Get LUCY &mdash; $99</a>
 </div>
 
-<!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
-<div class="dl-pop" id="dl-pop" role="dialog" aria-modal="true" aria-labelledby="dl-pop-title">
-  <div class="dl-pop__card">
-    <button class="dl-pop__close" id="dl-pop-close" aria-label="Close">&times;</button>
-    <div class="dl-pop__badge">10% OFF</div>
-    <h3 id="dl-pop-title">Get 10% off + free drawing tutorials</h3>
-    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus free beginner tutorials to get you drawing fast.</p>
-    <form class="dl-pop__form" id="dl-pop-form" novalidate>
-      <input type="email" id="dl-pop-email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address">
-      <button type="submit">Send my 10% off code</button>
-    </form>
-    <div class="dl-pop__thanks" id="dl-pop-thanks">Thanks! Check your inbox for your code &amp; tutorials.</div>
-    <p class="dl-pop__fine">No spam. Unsubscribe anytime. Discount applies to your first order; some exclusions may apply.</p>
-  </div>
-</div>
+<!-- exit-intent popup removed per Les (2026-07-01): markup deleted so it can never render; wirePopup() call also disabled in init() -->
 
 <script>
 /* =========================================================================
@@ -895,7 +907,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
 
   /* ---------- 7. Reparent fixed els + sticky behavior ---------- */
   function reparentFixed() {
-    ["#dl-sticky", "#dl-pop"].forEach(function (sel) {
+    ["#dl-sticky"].forEach(function (sel) {  // #dl-pop removed — popup deleted (Les, 2026-07-01)
       var el = document.querySelector(sel);
       if (el && el.parentNode !== document.body) document.body.appendChild(el);
     });
@@ -971,7 +983,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     reparentFixed();
     wireCtas();
     wireFaq();
-    wirePopup();
+    // wirePopup();  // exit-intent popup disabled per Les (2026-07-01) — never shows; no blur trigger
     wireVideo();
   }
   if (document.readyState === "loading") {

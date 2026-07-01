@@ -7,9 +7,12 @@
   build v2 (Les feedback 2026-06-30): Q1 two-part verdict + Margaret O. Loox review/art; Q2 anti-gimmick + "drawn" not "traced" + Pippa A. Loox review/art;
     Q3 lighting rewrite (not a projector, light both, use filters); Q4 30-60min expectation + video TODO; Q6 "app or projector"; Q7 "why not the other options" comparison + 2 blog links; Q8 flex-vs-pro guide + YouTube facade (fdy4YDfvuNU).
   build v3 (Les round-3 feedback 2026-07-01): matched a real, verbatim review to each question (Les: "tons of reviews").
-    Q1 unchanged (Margaret O.). Q2 sister/Lucy Flex review REPLACES the mis-moved Pippa A. (Pippa removed). Q3 +lighting review. Q4 +Bex B review/art. Q5 +Steve C review. Q6 +life-drawing review. Q7 REWORKED: question is now "How is the LUCY different from how you draw now?"; table columns = LUCY/Freehand/Grid/Projector (obscure-brand + phone-app columns REMOVED); one projector blog link kept; +Dave B review/art. Q8 +AJAX fly-out cart TODO comment.
+    Q1 unchanged (Margaret O.). Q2 got the mis-moved sister/Lucy Flex review. Q3 +lighting review. Q4 +learning-curve review/art. Q5 +Steve C review. Q6 +life-drawing review. Q7 REWORKED: question is now "How is the LUCY different from how you draw now?"; table columns = LUCY/Freehand/Grid/Projector (obscure-brand + phone-app columns REMOVED); one projector blog link kept; +Dave B review/art. Q8 +AJAX fly-out cart TODO comment.
     Buttons: all "See the models" CTAs (header, hero, item1-7, final, sticky) now data-browse -> /collections/best-sellers (no add-to-cart); UTMs forwarded via wireBrowse(). Offer-ladder mini/flex/pro buy buttons unchanged (/cart/add).
-  Search this file for "build v3" to confirm the latest paste.
+  build v4 (Les round-4 corrections 2026-07-01): fixed a review mix-up + added the missing names, and killed the exit-intent popup.
+    Q2 now Aleta P. (Oct 28, 2022). Q4 now the sister review correctly named Linda S. (Mar 20, 2024) - moved off Q2; its old learning-curve review + artwork were removed. Q3 named Shareen P.; Q6 named Rhonda S. Every question's review now carries a real name.
+    Exit-intent popup DISABLED: wirePopup() call removed from init() and the #dl-pop markup deleted (Les runs his own site popup). CSS + the uncalled wirePopup() fn left in place; no scrim/blur can trigger.
+  Search this file for "build v4" to confirm the latest paste.
 -->
 <html lang="en">
 <head>
@@ -603,8 +606,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </div>
           <div class="dl-item__quote">
             <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>&ldquo;My sister bought the Lucy Flex for me as a surprise. I&rsquo;m an artist and use a grid pattern for drawing my reference photo onto the canvas. She thought it would be much easier and quicker for me to have a drawing tool. It took about 20 minutes to figure out how to position my reference photo and the canvas. Once I figured it out, watch me now! I&rsquo;m in love with the Lucy Flex. It&rsquo;s a very clever design and well-made.&rdquo;</p>
-            <cite>Verified buyer &middot; <span class="dl-verified">LUCY flex</span> &middot; Mar 20, 2024</cite>
+            <p>&ldquo;I really had high expectations because of the videos I&rsquo;d seen... once I got the hang of it, it really, really works great! Other than the learning curve, figuring out how to use it, I really have enjoyed it and am grateful I took the leap to purchase. I highly recommend anyone - new artist or professional - everyone will get use from this great tool!&rdquo;</p>
+            <cite>Aleta P. &middot; <span class="dl-verified">LUCY flex</span> &middot; Oct 28, 2022</cite>
           </div>
           <div class="dl-item__honest">
             <b>The honest scope</b>
@@ -639,7 +642,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div class="dl-item__quote">
             <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p>&ldquo;I just received my LUCY and I&rsquo;m thrilled. My first attempt using it impressed me. It was easy to assemble and set up. Finding the right lighting is the only thing that gets in the way, but the filters that come with it help a lot. I strive to draw realistic portraits and this has given me the ability to up my game! I&rsquo;m so pleased.&rdquo;</p>
-            <cite>Verified buyer &middot; <span class="dl-verified">LUCY flex + Photo Enlarger</span> &middot; Mar 19, 2021</cite>
+            <cite>Shareen P. &middot; <span class="dl-verified">LUCY flex + Photo Enlarger</span> &middot; Mar 19, 2021</cite>
           </div>
         </div>
         <div class="dl-item__cta">
@@ -667,11 +670,8 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           </div>
           <div class="dl-item__quote">
             <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>&ldquo;It was a quick but necessary learning curve. I needed to figure out how to light the subject but as it is my first go, I&rsquo;m pretty pleased with the results... My advice: just get it. You will love it, it&rsquo;s sturdy and well made. It helps you get to painting faster. As a professional artist anything that can speed up the process is a good thing.&rdquo;</p>
-            <cite>Bex B &middot; <span class="dl-verified">LUCY flex</span> &middot; Nov 2, 2022</cite>
-          </div>
-          <div class="dl-item__fig">
-            <img src="https://images.loox.io/uploads/2022/11/2/NJ0aawj4a_orig.jpg" alt="Customer artwork drawn with the LUCY" loading="lazy">
+            <p>&ldquo;My sister bought the Lucy Flex for me as a surprise. I&rsquo;m an artist and use a grid pattern for drawing my reference photo onto the canvas. She thought it would be much easier and quicker for me to have a drawing tool. It took about 20 minutes to figure out how to position my reference photo and the canvas. Once I figured it out, watch me now! I&rsquo;m in love with the Lucy Flex. It&rsquo;s a very clever design and well-made.&rdquo;</p>
+            <cite>Linda S. &middot; <span class="dl-verified">LUCY flex</span> &middot; Mar 20, 2024</cite>
           </div>
         </div>
         <div class="dl-item__cta">
@@ -742,7 +742,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
           <div class="dl-item__quote">
             <div class="dl-q-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p>&ldquo;I love the LUCY... I use it to quickly get the correct perspective and have used it in life drawing to easily and quickly get the proportions correct. I also use it just to revive my interest in art when I find it flagging a little. It is exciting with endless possibilities. Even the dishes in the sink look exciting and are easy to draw with the LUCY.&rdquo;</p>
-            <cite>Verified buyer &middot; <span class="dl-verified">LUCY flex + Photo Enlarger</span> &middot; Mar 7, 2020</cite>
+            <cite>Rhonda S. &middot; <span class="dl-verified">LUCY flex + Photo Enlarger</span> &middot; Mar 7, 2020</cite>
           </div>
         </div>
         <div class="dl-item__cta">
@@ -1111,21 +1111,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
   <a class="dl-sticky__btn" data-browse="best-sellers" data-loc="sticky" href="https://drawlucy.com/collections/best-sellers">See the models &rarr;</a>
 </div>
 
-<!-- ============== EXIT-INTENT POPUP (reparented to body) ============== -->
-<div class="dl-pop" id="dl-pop" role="dialog" aria-modal="true" aria-labelledby="dl-pop-title">
-  <div class="dl-pop__card">
-    <button class="dl-pop__close" id="dl-pop-close" aria-label="Close">&times;</button>
-    <div class="dl-pop__badge">10% OFF</div>
-    <h3 id="dl-pop-title">Get 10% off + free drawing tutorials</h3>
-    <p>Drop your email and we&rsquo;ll send a code for your first LUCY, plus free beginner tutorials to get you drawing fast.</p>
-    <form class="dl-pop__form" id="dl-pop-form" novalidate>
-      <input type="email" id="dl-pop-email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address">
-      <button type="submit">Send my 10% off code</button>
-    </form>
-    <div class="dl-pop__thanks" id="dl-pop-thanks">Thanks! Check your inbox for your code &amp; tutorials.</div>
-    <p class="dl-pop__fine">No spam. Unsubscribe anytime. Discount applies to your first order; some exclusions may apply.</p>
-  </div>
-</div>
+<!-- EXIT-INTENT POPUP REMOVED per client (Les) 2026-07-01 - his site runs its own. wirePopup() call also disabled in init(). -->
 
 <script>
 /* =========================================================================
@@ -1406,7 +1392,7 @@ body[data-variant="variant_b"] .dl-sticky { /* no overrides yet */ }
     wireFaq();
     wireItemViews();
     wireVideo();
-    wirePopup();
+    /* wirePopup(); -- exit-intent popup DISABLED per client (Les) 2026-07-01; his site has its own. Function kept but never called, so #dl-pop stays display:none and never opens. */
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
